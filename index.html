@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.min.css?_v=20240930232707">
+   <!--<link rel="icon" type="image/svg+xml" href="favicon.svg">-->
+   <link rel="stylesheet" href="files/select2/css/select2.min.css?_v=20240930232707">
+   <link rel="stylesheet" href="files/select2/css/select2-custom.css?_v=20240930232707">
+   <title>Home - First National Van Lines</title>
+
+   <script src="files/save-position-when-updating.js?_v=20240930232707"></script>
+   
+</head>
+
+<body>
+	<div class="wrapper">
+		
+		<main class="main">
+			<section class="first-screen">
+				<div class="first-screen__wrap-breadcrumbs">
+					<div class="n_container">
+						<ul class="breadcrumbs">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Home</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="#">Our top picks</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__name">Best Moving Companies</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="first-screen__block">
+					<div class="n_container">
+						<div class="first-screen__items">
+							<div class="first-screen__item">
+								<div class="first-screen__item-content">
+									<h1 class="first-screen__title">Best Moving Companies</h1>
+									<div class="first-screen__blockText">
+										<p>Whether you’re moving across town or cross country, we’ve found the best moving companies for you. We analyzed the services, customer reviews, and costs for more than 20 movers in your area. These are our top picks.</p>
+									</div>
+								</div>
+							</div>
+							<div class="first-screen__item">
+								<div class="first-screen__blockWrapForm hidden">
+   <h6 class="first-screen__blockWrapFormTitle">How much will my move cost?</h6>
+   <p class="first-screen__blockWrapFormText">Let us help match you</p>
+   <div class="first-screen__blockWrapFormWrapper first-step">
+      <div class="first-screen__blockWrapFormWrapRadioButtons">
+         <button type="button" id="fs-form-btn-step-1" class="fs-form__btn-step active">step 1</button>
+         <button type="button" id="fs-form-btn-step-2" class="fs-form__btn-step">step 2</button>
+         <button type="button" id="fs-form-btn-step-3" class="fs-form__btn-step">step 3</button>
+         <button type="button" id="fs-form-btn-step-4" class="fs-form__btn-step">step 4</button>
+         <button type="button" id="fs-form-btn-step-5" class="fs-form__btn-step">step 5</button>
+         <button type="button" id="fs-form-btn-step-6" class="fs-form__btn-step">step 6</button>
+         <button type="button" id="fs-form-btn-step-7" class="fs-form__btn-step">step 7</button>
+      </div>
+      <form action="#" class="first-screen__form">
+         <div class="step" id="fs-form-step-1">
+            <label>Where are you moving from?</label>
+            <!-- select2 applied file location in file/select2 -->
+            <select id="where-are-you-moving-from" name="where-are-you-moving-from" required>
+               <option selected disabled></option>
+               <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
+               <option value="85001">85001, Phoenix, AZ</option>
+               <option value="99501">99501, Anchorage, AK</option>
+               <option value="72201">72201, Little Rock, AR</option>
+               <option value="94203">94203, Sacramento, CA</option>
+               <option value="80201">80201, Denver, CO</option>
+               <option value="06101">06101, Hartford, CT</option>
+               <option value="19901">19901, Dover, DE</option>
+               <option value="20001">20001, Washington, DC</option>
+               <option value="32301">32301, Tallahassee, FL</option>
+               <option value="30301">30301, Atlanta, GA</option>
+               <option value="96801">96801, Honolulu, HI</option>
+               <option value="83701">83701, Boise, ID</option>
+               <option value="62701">62701, Springfield, IL</option>
+               <option value="46201">46201, Indianapolis, IN</option>
+               <option value="50301">50301, Des Moines, IA</option>
+               <option value="66601">66601, Topeka, KS</option>
+               <option value="40601">40601, Frankfort, KY</option>
+               <option value="70801">70801, Baton Rouge, LA</option>
+               <option value="04330">04330, Augusta, ME</option>
+               <option value="21201">21201, Baltimore, MD</option>
+               <option value="02101">02101, Boston, MA</option>
+               <option value="48901">48901, Lansing, MI</option>
+               <option value="55101">55101, Saint Paul, MN</option>
+               <option value="39201">39201, Jackson, MS</option>
+               <option value="65101">65101, Jefferson City, MO</option>
+               <option value="59601">59601, Helena, MT</option>
+               <option value="68501">68501, Lincoln, NE</option>
+               <option value="89701">89701, Carson City, NV</option>
+               <option value="03301">03301, Concord, NH</option>
+               <option value="08601">08601, Trenton, NJ</option>
+               <option value="87501">87501, Santa Fe, NM</option>
+               <option value="12201">12201, Albany, NY</option>
+               <option value="27601">27601, Raleigh, NC</option>
+               <option value="58501">58501, Bismarck, ND</option>
+               <option value="43201">43201, Columbus, OH</option>
+               <option value="73101">73101, Oklahoma City, OK</option>
+               <option value="97301">97301, Salem, OR</option>
+               <option value="17101">17101, Harrisburg, PA</option>
+               <option value="02901">02901, Providence, RI</option>
+               <option value="29201">29201, Columbia, SC</option>
+               <option value="57501">57501, Pierre, SD</option>
+               <option value="37201">37201, Nashville, TN</option>
+               <option value="73301">73301, Austin, TX</option>
+               <option value="84101">84101, Salt Lake City, UT</option>
+               <option value="05601">05601, Montpelier, VT</option>
+               <option value="23218">23218, Richmond, VA</option>
+               <option value="98501">98501, Olympia, WA</option>
+               <option value="25301">25301, Charleston, WV</option>
+               <option value="53701">53701, Madison, WI</option>
+               <option value="82001">82001, Cheyenne, WY</option>
+            </select>
+            <button type="button" class="first-screen__formButton">Next Step</button>
+         </div>
+         <div class="step" id="fs-form-step-2">
+            <label>Where are you moving to?</label>
+            <!-- select2 applied file location in file/select2 -->
+            <select id="where-are-you-moving-to" name="where-are-you-moving-to" required>
+               <option selected disabled></option>
+               <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
+               <option value="85001">85001, Phoenix, AZ</option>
+               <option value="99501">99501, Anchorage, AK</option>
+               <option value="72201">72201, Little Rock, AR</option>
+               <option value="94203">94203, Sacramento, CA</option>
+               <option value="80201">80201, Denver, CO</option>
+               <option value="06101">06101, Hartford, CT</option>
+               <option value="19901">19901, Dover, DE</option>
+               <option value="20001">20001, Washington, DC</option>
+               <option value="32301">32301, Tallahassee, FL</option>
+               <option value="30301">30301, Atlanta, GA</option>
+               <option value="96801">96801, Honolulu, HI</option>
+               <option value="83701">83701, Boise, ID</option>
+               <option value="62701">62701, Springfield, IL</option>
+               <option value="46201">46201, Indianapolis, IN</option>
+               <option value="50301">50301, Des Moines, IA</option>
+               <option value="66601">66601, Topeka, KS</option>
+               <option value="40601">40601, Frankfort, KY</option>
+               <option value="70801">70801, Baton Rouge, LA</option>
+               <option value="04330">04330, Augusta, ME</option>
+               <option value="21201">21201, Baltimore, MD</option>
+               <option value="02101">02101, Boston, MA</option>
+               <option value="48901">48901, Lansing, MI</option>
+               <option value="55101">55101, Saint Paul, MN</option>
+               <option value="39201">39201, Jackson, MS</option>
+               <option value="65101">65101, Jefferson City, MO</option>
+               <option value="59601">59601, Helena, MT</option>
+               <option value="68501">68501, Lincoln, NE</option>
+               <option value="89701">89701, Carson City, NV</option>
+               <option value="03301">03301, Concord, NH</option>
+               <option value="08601">08601, Trenton, NJ</option>
+               <option value="87501">87501, Santa Fe, NM</option>
+               <option value="12201">12201, Albany, NY</option>
+               <option value="27601">27601, Raleigh, NC</option>
+               <option value="58501">58501, Bismarck, ND</option>
+               <option value="43201">43201, Columbus, OH</option>
+               <option value="73101">73101, Oklahoma City, OK</option>
+               <option value="97301">97301, Salem, OR</option>
+               <option value="17101">17101, Harrisburg, PA</option>
+               <option value="02901">02901, Providence, RI</option>
+               <option value="29201">29201, Columbia, SC</option>
+               <option value="57501">57501, Pierre, SD</option>
+               <option value="37201">37201, Nashville, TN</option>
+               <option value="73301">73301, Austin, TX</option>
+               <option value="84101">84101, Salt Lake City, UT</option>
+               <option value="05601">05601, Montpelier, VT</option>
+               <option value="23218">23218, Richmond, VA</option>
+               <option value="98501">98501, Olympia, WA</option>
+               <option value="25301">25301, Charleston, WV</option>
+               <option value="53701">53701, Madison, WI</option>
+               <option value="82001">82001, Cheyenne, WY</option>
+            </select>
+            <button type="button" class="first-screen__formButton">Next Step</button>
+         </div>
+         <div class="step" id="fs-form-step-3">
+
+         </div>
+         <div class="step" id="fs-form-step-4">
+
+         </div>
+         <div class="step" id="fs-form-step-5">
+
+         </div>
+         <div class="step" id="fs-form-step-6">
+
+         </div>
+         <div class="step" id="fs-form-step-7">
+
+         </div>
+      </form>
+   </div>
+</div>
+							</div>
+						</div>
+					</div>
+					<img class="first-screen__bg" src="images/first-screen-bg.png" alt="">
+				</div>
+			</section>
+			<div class="n_container">
+				<div class="main__columns">
+					<aside class="main__columnSidebar">
+						<div class="sticky-block">
+							<div class="aside__block aside__blockContent">
+								<div class="aside__blockContentWrapTitle">
+									<h6 class="aside__blockContent-title">Content</h6>
+								</div>
+								<div class="aside__blockContentDropdownContent">
+									<ul class="best-moving-companies__list">
+										<li class="best-moving-companies__listItem">Justo orci non</li>
+										<li class="best-moving-companies__listItem">Enim egestas ultrices</li>
+										<li class="best-moving-companies__listItem">Nam egestas fermentum pharetra semper nibh aliquet quam</li>
+										<li class="best-moving-companies__listItem">Nibh mi malesuada</li>
+										<li class="best-moving-companies__listItem dropdown">Quam id amet
+											<ul class="best-moving-companies__sublist">
+												<li>Sed porttitor vel a</li>
+												<li class="color">Viverra pulvinar nibh vivamus</li>
+												<li>In aenean vulputate justo</li>
+											</ul>
+										</li>
+										<li class="best-moving-companies__listItem">Sodales turpis sed</li>
+										<li class="best-moving-companies__listItem">Lacus at elit</li>
+										<li class="best-moving-companies__listItem">Viverra mauris arcu</li>
+										<li class="best-moving-companies__listItem">Porta dictum massa</li>
+										<li class="best-moving-companies__listItem">Maecenas consequat purus</li>
+									</ul>
+								</div>
+							</div>
+							<div class="aside__block aside__blockBestCarrier hidden">
+								<h6 class="aside__blockBestCarrier-title">Get matched with the best mover for your needs</h6>
+								<a href="#" class="aside__blockBestCarrier-btn">Start Your Quote Online</a>
+								<p class="aside__blockBestCarrier-text">or</p>
+								<a href="tel:8559304574" class="aside__blockBestCarrier-btn tel desktop">Call 855-930-4574</a>
+								<p class="aside__blockBestCarrier-btn tel mobile">or Call Us <a href="tel:8559304574">855-930-4574</a></p>
+							</div>
+						</div>
+					</aside>
+					<div class="main__columnContent">
+						<div class="first-block-content">
+							<div class="first-block-content__blockTop">
+								<div class="column written-column there-block-info">
+									<p>Written by: <a href="#" class="link-info">Our Team</a></p>
+									<!--<p>Written by: <span>Our Team</span></p>-->
+									<div class="block-info-for-link">
+										<div class="block-info-for-link__content">
+											<p>Porttitor mattis gravida iaculis nibh nisi id. Congue turpis ultrices in velit. Diam ac at mi consectetur. Ornare aliquet fames proin vitae tincidunt varius ut phasellus. Id praesent ultricies aenean ullamcorper. <a href="#">See more...</a></p>
+										</div>
+									</div>
+								</div>
+								<div class="column there-block-info">
+									<p>Reviewed by: <a href="#" class="link-info">Administrator</a></p>
+									<div class="block-info-for-link">
+										<div class="block-info-for-link__content">
+											<p>Porttitor mattis gravida iaculis nibh nisi id. Congue turpis ultrices in velit. Diam ac at mi consectetur. Ornare aliquet fames proin vitae tincidunt varius ut phasellus. Id praesent ultricies aenean ullamcorper. <a href="#">See more...</a></p>
+										</div>
+									</div>
+								</div>
+								<div class="column">
+									<p>Last Update: 9/08/2024</p>
+								</div>
+							</div>
+							<div class="first-block-content__blockText">
+								<p>Littlefinger shrugged. Rivulets of moisture twisted down the back of his cloak. “Does it matter? If you bed enough women, some will give you presents, and His Grace has never been shy on that count. I know he’s acknowledged that boy at Storm’s End, the one he fathered the night Lord Stannis wed. He could hardly do otherwise. The mother <strong><a href="#">was a Florent</a></strong>, niece to the Lady Selyse, one of her bedmaids. Renly says that Robert carried the girl upstairs during the feast, and broke in the wedding bed while Stannis and his bride were still dancing. Lord Stannis seemed to think that was a blot on the honor of his wife’s House, so when the boy was born, he shipped him off to Renly.”</p>
+							</div>
+							<div class="first-block-content__block lime-green" data-new-tab data-block-url="https://example.com">
+								<div class="first-block-content__blockLabel">
+									<p>
+										<span class="desktop">Best Overall</span>
+										<span class="mobile">Best for Something</span>
+									</p>
+								</div>
+								<div class="first-block-content__blockItems">
+									<div class="first-block-content__blockItem">
+										<div class="first-block-content__blockLogo">
+											<img src="images/svg/logo-company.svg" alt="International Van Lines">
+										</div>
+									</div>
+									<div class="first-block-content__blockItem">
+										<div class="first-block-content__blockItemName">International Van Lines</div>
+										<div class="first-block-content__blockItemBlockRating">
+											<p>4.5</p>
+											<div class="wrap-stars">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/half-a-star.svg" alt="">
+											</div>
+										</div>
+										<ul class="first-block-content__blockItemList desktop">
+											<li>Fast delivery</li>
+											<li>No minimum size</li>
+										</ul>
+									</div>
+									<div class="first-block-content__blockItem">
+										<button type="button" class="first-block-content__blockItemButton">Get a Quote</button>
+										<p class="first-block-content__blockItemText">Give Us A Call</p>
+										<a href="tel:8559304574" class="first-block-content__blockItemPhone">855-930-4574</a>
+										<ul class="first-block-content__blockItemList mobile">
+											<li>Fast delivery, no minimum size, transparent pricing.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="first-block-content__block light-yellow" data-new-tab data-block-url="https://another-example.com">
+								<div class="first-block-content__blockLabel">
+									<p>
+										<span class="desktop">Best Overall</span>
+										<span class="mobile">Best for Something</span>
+									</p>
+								</div>
+								<div class="first-block-content__blockItems">
+									<div class="first-block-content__blockItem">
+										<div class="first-block-content__blockLogo">
+											<img src="images/svg/logo-company.svg" alt="International Van Lines">
+										</div>
+									</div>
+									<div class="first-block-content__blockItem">
+										<div class="first-block-content__blockItemName">International Van Lines</div>
+										<div class="first-block-content__blockItemBlockRating">
+											<p>4.5</p>
+											<div class="wrap-stars">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/half-a-star.svg" alt="">
+											</div>
+										</div>
+										<ul class="first-block-content__blockItemList desktop">
+											<li>Fast delivery</li>
+											<li>No minimum size</li>
+										</ul>
+									</div>
+									<div class="first-block-content__blockItem">
+										<button type="button" class="first-block-content__blockItemButton">Get a Quote</button>
+										<p class="first-block-content__blockItemText">Give Us A Call</p>
+										<a href="tel:8559304574" class="first-block-content__blockItemPhone">855-930-4574</a>
+										<ul class="first-block-content__blockItemList mobile">
+											<li>Fast delivery, no minimum size, transparent pricing.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="first-block-content__block default no-label" data-new-tab data-block-url="https://google.com">
+								<div class="first-block-content__blockItems">
+									<div class="first-block-content__blockItem">
+										<div class="first-block-content__blockLogo">
+											<img src="images/svg/logo-company.svg" alt="International Van Lines">
+										</div>
+									</div>
+									<div class="first-block-content__blockItem">
+										<div class="first-block-content__blockItemName">International Van Lines</div>
+										<div class="first-block-content__blockItemBlockRating">
+											<p>4.5</p>
+											<div class="wrap-stars">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/star.svg" alt="">
+												<img src="images/svg/half-a-star.svg" alt="">
+											</div>
+										</div>
+										<ul class="first-block-content__blockItemList desktop">
+											<li>Fast delivery</li>
+											<li>No minimum size</li>
+										</ul>
+									</div>
+									<div class="first-block-content__blockItem">
+										<button type="button" class="first-block-content__blockItemButton">Get a Quote</button>
+										<p class="first-block-content__blockItemText">Give Us A Call</p>
+										<a href="tel:8559304574" class="first-block-content__blockItemPhone">855-930-4574</a>
+										<ul class="first-block-content__blockItemList mobile">
+											<li>Fast delivery, no minimum size, transparent pricing.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="bg-color">
+							<section class="best-moving-companies">
+								<h2 class="best-moving-companies__title">Best Moving Companies of 2024</h2>
+								<div class="best-moving-companies__lists">
+									<ul class="best-moving-companies__list">
+										<li class="best-moving-companies__listItem">Integer venenatis nunc</li>
+										<li class="best-moving-companies__listItem">In fusce sit</li>
+										<li class="best-moving-companies__listItem dropdown">Tellus commodo pellentesque
+											<ul class="best-moving-companies__sublist">
+												<li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas.</li>
+												<li>Lorem ipsum dolor sit amet.</li>
+												<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio impedit ipsum et?</li>
+												<li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+											</ul>
+										</li>
+										<li class="best-moving-companies__listItem">Magna adipiscing sagittis</li>
+										<li class="best-moving-companies__listItem">Feugiat dolor gravida</li>
+									</ul>
+									<ul class="best-moving-companies__list">
+										<li class="best-moving-companies__listItem">Integer venenatis nunc</li>
+										<li class="best-moving-companies__listItem">In fusce sit</li>
+										<li class="best-moving-companies__listItem dropdown open">Tellus commodo pellentesque
+											<ul class="best-moving-companies__sublist">
+												<li>Magna adipiscing sagittis</li>
+												<li>Magna adipiscing sagittis</li>
+												<li>Magna adipiscing sagittis</li>
+											</ul>
+										</li>
+										<li class="best-moving-companies__listItem">Magna adipiscing sagittis</li>
+										<li class="best-moving-companies__listItem">Feugiat dolor gravida</li>
+									</ul>
+									<ul class="best-moving-companies__list">
+										<li class="best-moving-companies__listItem">Integer venenatis nunc</li>
+										<li class="best-moving-companies__listItem">In fusce sit</li>
+										<li class="best-moving-companies__listItem dropdown">Tellus commodo pellentesque
+											<ul class="best-moving-companies__sublist">
+												<li>Magna adipiscing sagittis</li>
+												<li>Magna adipiscing sagittis</li>
+												<li>Magna adipiscing sagittis</li>
+											</ul>
+										</li>
+										<li class="best-moving-companies__listItem">Magna adipiscing sagittis</li>
+										<li class="best-moving-companies__listItem">Feugiat dolor gravida</li>
+									</ul>
+								</div>
+								<div class="best-moving-companies__blockText">
+									<p>Ned Stark screamed, clawing for his sword. Jaime was already cantering off down the street as he heard Wyl shout. Men closed from both sides. <a href="#">Ned rode one down</a>, cutting at phantoms in red cloaks who gave way before him. Jory Cassel put his heels into his mount and charged. A steel-shod hoof caught a Lannister guardsman in the face with a sickening crunch.</p>
+								</div>
+								<a href="#" class="best-moving-companies__button">Click Me</a>
+							</section>
+							<section class="recommended-text">
+								<h2 class="recommended-text__title">
+									<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M25 43.75V43.75C14.6437 43.75 6.25 35.3562 6.25 25V25C6.25 14.6437 14.6437 6.25 25 6.25V6.25C35.3562 6.25 43.75 14.6437 43.75 25V25C43.75 35.3562 35.3562 43.75 25 43.75Z" stroke="#0064D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M25 35.4167V25H22.9167" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M24.4771 16.6666C24.1896 16.6666 23.9563 16.8999 23.9583 17.1874C23.9583 17.4749 24.1917 17.7083 24.4792 17.7083C24.7667 17.7083 25 17.4749 25 17.1874C25 16.8999 24.7667 16.6666 24.4771 16.6666" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+									Very Stringy Recommended to Read This Text
+								</h2>
+								<div class="recommended-text__content">
+									<p>A second man reeled away and for an instant Jory was free. Wyl cursed as they pulled him off his dying horse, swords slashing in the rain:</p>
+									<!--<ol>
+										<li>Ned galloped to him</li>
+										<li>Bringing his longsword down</li>
+										<li>On Tregar’s helm</li>
+										<li>The jolt of impact made him grit his teeth</li>
+										<li>Tregar stumbled to his knees</li>
+										<li>His lion crest sheared in half</li>
+										<li>Blood running down</li>
+									</ol>-->
+									<ul>
+										<li>Ned galloped to him</li>
+										<li>Bringing his longsword down</li>
+										<li>On Tregar’s helm</li>
+										<li>The jolt of impact made him grit his teeth</li>
+										<li>Tregar stumbled to his knees</li>
+										<li>His lion crest sheared in half</li>
+										<li>Blood running down</li>
+									</ul>
+								</div>
+							</section>
+							<div class="wrap-table">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>Moving Company</th>
+											<th>Move type</th>
+											<th>Deposit</th>
+											<th>Sample Quote</th>
+										</tr>
+									</thead>
+									<tr>
+										<td>
+											<span class="table__blockLogo">
+												<img src="images/svg/table-logo.svg" alt="">
+											</span>
+											<a href="#" class="table__link">First National Van Lines</a>
+											<div class="first-block-content__blockItemBlockRating">
+												<div class="wrap-stars">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/half-a-star.svg" alt="">
+												</div>
+												<p>4.5</p>
+											</div>
+										</td>
+										<td>Full-service (local)</td>
+										<td>25%</td>
+										<td>$5,250–$7,688</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="table__blockLogo">
+												<img src="images/svg/table-logo.svg" alt="">
+											</span>
+											<a href="#" class="table__link">First National Van Lines</a>
+											<div class="first-block-content__blockItemBlockRating">
+												<div class="wrap-stars">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/half-a-star.svg" alt="">
+												</div>
+												<p>4.5</p>
+											</div>
+										</td>
+										<td>Full-service (local)</td>
+										<td>25%</td>
+										<td>$5,250–$7,688</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="table__blockLogo">
+												<img src="images/svg/table-logo.svg" alt="">
+											</span>
+											<a href="#" class="table__link">First National Van Lines</a>
+											<div class="first-block-content__blockItemBlockRating">
+												<div class="wrap-stars">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/half-a-star.svg" alt="">
+												</div>
+												<p>4.5</p>
+											</div>
+										</td>
+										<td>Full-service (local)</td>
+										<td>25%</td>
+										<td>$5,250–$7,688</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="table__blockLogo">
+												<img src="images/svg/table-logo.svg" alt="">
+											</span>
+											<a href="#" class="table__link">First National Van Lines</a>
+											<div class="first-block-content__blockItemBlockRating">
+												<div class="wrap-stars">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/half-a-star.svg" alt="">
+												</div>
+												<p>4.5</p>
+											</div>
+										</td>
+										<td>Full-service (local)</td>
+										<td>25%</td>
+										<td>$5,250–$7,688</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="table__blockLogo">
+												<img src="images/svg/table-logo.svg" alt="">
+											</span>
+											<a href="#" class="table__link">First National Van Lines</a>
+											<div class="first-block-content__blockItemBlockRating">
+												<div class="wrap-stars">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/half-a-star.svg" alt="">
+												</div>
+												<p>4.5</p>
+											</div>
+										</td>
+										<td>
+											Full-service (local)
+											<ul>
+												<li>Lorem ipsum dolor sit amet.</li>
+												<li>Lorem, ipsum dolor.</li>
+												<li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+												<li>Lorem ipsum dolor sit amet consectetur.</li>
+												<li>Lorem ipsum dolor sit amet.</li>
+											</ul>
+											<!--<ol>
+												<li>Lorem ipsum dolor sit amet.</li>
+												<li>Lorem, ipsum dolor.</li>
+												<li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+												<li>Lorem ipsum dolor sit amet consectetur.</li>
+												<li>Lorem ipsum dolor sit amet.</li>
+											</ol>-->
+										</td>
+										<td>25%</td>
+										<td>$5,250–$7,688</td>
+									</tr>
+									<tr>
+										<td>
+											<span class="table__blockLogo">
+												<img src="https://picsum.photos/id/296/640/260" alt="">
+											</span>
+											<a href="#" class="table__link">First National Van Lines</a>
+											<div class="first-block-content__blockItemBlockRating">
+												<div class="wrap-stars">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/half-a-star.svg" alt="">
+												</div>
+												<p>4.5</p>
+											</div>
+										</td>
+										<td>
+											Full-service (local)
+											<ol>
+												<li>Lorem ipsum dolor sit amet.</li>
+												<li>Lorem, ipsum dolor.</li>
+												<li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+												<li>Lorem ipsum dolor sit amet consectetur.</li>
+												<li>Lorem ipsum dolor sit amet.</li>
+											</ol>
+										</td>
+										<td>25%</td>
+										<td>$5,250–$7,688</td>
+									</tr>
+								</table>
+							</div>
+							<section class="recommended-text two">
+								<div class="recommended-text__content">
+									<h2 class="recommended-text__contentTwoTitle">Very Strongy Recomended to Read This Text Too</h2>
+									<p>Ned Stark screamed, clawing for his sword. Jaime was already cantering off down the street as he heard Wyl shout. Men closed from both sides. <a href="#">Ned rode one down</a>, cutting at phantoms in red cloaks who gave way before him. Jory Cassel put his heels into his mount and charged. A steel-shod hoof caught a Lannister guardsman in the face with a sickening crunch.</p>
+									<blockquote>
+										<p>Bran had sort of liked the little man, yet the name Lannister sent cold fingers creeping up his spine. </p>
+									</blockquote>
+									<p>Ned Stark screamed, clawing for his sword. <a href="#">Jaime was already</a> cantering off down the street as he heard Wyl shout. Men closed from both sides. Ned rode one down:</p>
+									<!--<ol>
+										<li>Ned galloped to him</li>
+										<li>Bringing his longsword down</li>
+										<li>On Tregar’s helm</li>
+										<li>The jolt of impact made him grit his teeth</li>
+										<li>Tregar stumbled to his knees</li>
+										<li>His lion crest sheared in half</li>
+										<li>Blood running down</li>
+									</ol>-->
+									<ul>
+										<li>Ned galloped to him</li>
+										<li>Bringing his longsword down</li>
+										<li>On Tregar’s helm</li>
+										<li>The jolt of impact made him grit his teeth</li>
+										<li>Tregar stumbled to his knees</li>
+										<li>His lion crest sheared in half</li>
+										<li>Blood running down</li>
+									</ul>
+								</div>
+							</section>
+							<section class="get-matched__blockWrapForm">
+								<h6 class="get-matched__blockWrapFormTitle">Get matched with the best mover for your needs!</h6>
+								<p class="first-screen__blockWrapFormText">Let us help match you</p>
+								<div class="get-matched__blockWrapFormWrapper get-matched-first-step">
+									<div class="get-matched__blockWrapFormWrapRadioButtons">
+										<button type="button" id="get-matched-form-btn-step-1" class="get-matched-form__btn-step active">1</button>
+										<button type="button" id="get-matched-form-btn-step-2" class="get-matched-form__btn-step">2</button>
+										<button type="button" id="get-matched-form-btn-step-3" class="get-matched-form__btn-step">3</button>
+										<button type="button" id="get-matched-form-btn-step-4" class="get-matched-form__btn-step">4</button>
+										<button type="button" id="get-matched-form-btn-step-5" class="get-matched-form__btn-step">5</button>
+										<button type="button" id="get-matched-form-btn-step-6" class="get-matched-form__btn-step">6</button>
+										<button type="button" id="get-matched-form-btn-step-7" class="get-matched-form__btn-step">7</button>
+									</div>
+									<form action="#" class="get-matched__form">
+										<div class="get-matched-step" id="get-matched-form-step-1">
+											<label>Where are you moving from?</label>
+											<!-- select2 applied file location in file/select2 -->
+											<select id="get-matched-where-are-you-moving-from" name="get-matched-where-are-you-moving-from" required>
+												<option selected disabled></option>
+												<option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
+												<option value="85001">85001, Phoenix, AZ</option>
+												<option value="99501">99501, Anchorage, AK</option>
+												<option value="72201">72201, Little Rock, AR</option>
+												<option value="94203">94203, Sacramento, CA</option>
+												<option value="80201">80201, Denver, CO</option>
+												<option value="06101">06101, Hartford, CT</option>
+												<option value="19901">19901, Dover, DE</option>
+												<option value="20001">20001, Washington, DC</option>
+												<option value="32301">32301, Tallahassee, FL</option>
+												<option value="30301">30301, Atlanta, GA</option>
+												<option value="96801">96801, Honolulu, HI</option>
+												<option value="83701">83701, Boise, ID</option>
+												<option value="62701">62701, Springfield, IL</option>
+												<option value="46201">46201, Indianapolis, IN</option>
+												<option value="50301">50301, Des Moines, IA</option>
+												<option value="66601">66601, Topeka, KS</option>
+												<option value="40601">40601, Frankfort, KY</option>
+												<option value="70801">70801, Baton Rouge, LA</option>
+												<option value="04330">04330, Augusta, ME</option>
+												<option value="21201">21201, Baltimore, MD</option>
+												<option value="02101">02101, Boston, MA</option>
+												<option value="48901">48901, Lansing, MI</option>
+												<option value="55101">55101, Saint Paul, MN</option>
+												<option value="39201">39201, Jackson, MS</option>
+												<option value="65101">65101, Jefferson City, MO</option>
+												<option value="59601">59601, Helena, MT</option>
+												<option value="68501">68501, Lincoln, NE</option>
+												<option value="89701">89701, Carson City, NV</option>
+												<option value="03301">03301, Concord, NH</option>
+												<option value="08601">08601, Trenton, NJ</option>
+												<option value="87501">87501, Santa Fe, NM</option>
+												<option value="12201">12201, Albany, NY</option>
+												<option value="27601">27601, Raleigh, NC</option>
+												<option value="58501">58501, Bismarck, ND</option>
+												<option value="43201">43201, Columbus, OH</option>
+												<option value="73101">73101, Oklahoma City, OK</option>
+												<option value="97301">97301, Salem, OR</option>
+												<option value="17101">17101, Harrisburg, PA</option>
+												<option value="02901">02901, Providence, RI</option>
+												<option value="29201">29201, Columbia, SC</option>
+												<option value="57501">57501, Pierre, SD</option>
+												<option value="37201">37201, Nashville, TN</option>
+												<option value="73301">73301, Austin, TX</option>
+												<option value="84101">84101, Salt Lake City, UT</option>
+												<option value="05601">05601, Montpelier, VT</option>
+												<option value="23218">23218, Richmond, VA</option>
+												<option value="98501">98501, Olympia, WA</option>
+												<option value="25301">25301, Charleston, WV</option>
+												<option value="53701">53701, Madison, WI</option>
+												<option value="82001">82001, Cheyenne, WY</option>
+											</select>
+											<button type="button" class="get-matched__formButton">Next Step</button>
+										</div>
+										<div class="get-matched-step" id="get-matched-form-step-2">
+											<label>Where are you moving to?</label>
+											<!-- select2 applied file location in file/select2 -->
+											<select id="get-matched-where-are-you-moving-to" name="get-matched-where-are-you-moving-to" required>
+												<option selected disabled></option>
+												<option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
+												<option value="85001">85001, Phoenix, AZ</option>
+												<option value="99501">99501, Anchorage, AK</option>
+												<option value="72201">72201, Little Rock, AR</option>
+												<option value="94203">94203, Sacramento, CA</option>
+												<option value="80201">80201, Denver, CO</option>
+												<option value="06101">06101, Hartford, CT</option>
+												<option value="19901">19901, Dover, DE</option>
+												<option value="20001">20001, Washington, DC</option>
+												<option value="32301">32301, Tallahassee, FL</option>
+												<option value="30301">30301, Atlanta, GA</option>
+												<option value="96801">96801, Honolulu, HI</option>
+												<option value="83701">83701, Boise, ID</option>
+												<option value="62701">62701, Springfield, IL</option>
+												<option value="46201">46201, Indianapolis, IN</option>
+												<option value="50301">50301, Des Moines, IA</option>
+												<option value="66601">66601, Topeka, KS</option>
+												<option value="40601">40601, Frankfort, KY</option>
+												<option value="70801">70801, Baton Rouge, LA</option>
+												<option value="04330">04330, Augusta, ME</option>
+												<option value="21201">21201, Baltimore, MD</option>
+												<option value="02101">02101, Boston, MA</option>
+												<option value="48901">48901, Lansing, MI</option>
+												<option value="55101">55101, Saint Paul, MN</option>
+												<option value="39201">39201, Jackson, MS</option>
+												<option value="65101">65101, Jefferson City, MO</option>
+												<option value="59601">59601, Helena, MT</option>
+												<option value="68501">68501, Lincoln, NE</option>
+												<option value="89701">89701, Carson City, NV</option>
+												<option value="03301">03301, Concord, NH</option>
+												<option value="08601">08601, Trenton, NJ</option>
+												<option value="87501">87501, Santa Fe, NM</option>
+												<option value="12201">12201, Albany, NY</option>
+												<option value="27601">27601, Raleigh, NC</option>
+												<option value="58501">58501, Bismarck, ND</option>
+												<option value="43201">43201, Columbus, OH</option>
+												<option value="73101">73101, Oklahoma City, OK</option>
+												<option value="97301">97301, Salem, OR</option>
+												<option value="17101">17101, Harrisburg, PA</option>
+												<option value="02901">02901, Providence, RI</option>
+												<option value="29201">29201, Columbia, SC</option>
+												<option value="57501">57501, Pierre, SD</option>
+												<option value="37201">37201, Nashville, TN</option>
+												<option value="73301">73301, Austin, TX</option>
+												<option value="84101">84101, Salt Lake City, UT</option>
+												<option value="05601">05601, Montpelier, VT</option>
+												<option value="23218">23218, Richmond, VA</option>
+												<option value="98501">98501, Olympia, WA</option>
+												<option value="25301">25301, Charleston, WV</option>
+												<option value="53701">53701, Madison, WI</option>
+												<option value="82001">82001, Cheyenne, WY</option>
+											</select>
+											<button type="button" class="first-screen__formButton">Next Step</button>
+										</div>
+										<div class="get-matched-step" id="get-matched-form-step-3">
+							
+										</div>
+										<div class="get-matched-step" id="get-matched-form-step-4">
+							
+										</div>
+										<div class="get-matched-step" id="get-matched-form-step-5">
+							
+										</div>
+										<div class="get-matched-step" id="get-matched-form-step-6">
+							
+										</div>
+										<div class="get-matched-step" id="get-matched-form-step-7">
+							
+										</div>
+									</form>
+								</div>
+							</section>
+							<section class="best-transportation-companies">
+								<h2 class="best-transportation-companies__title">Best long-distance moving company</h2>
+								<div class="best-transportation-companies__block">
+									<div class="best-transportation-companies__blockItems">
+										<div class="best-transportation-companies__blockItem">
+											<h3 class="best-transportation-companies__blockItemTitle">First National Van Lines</h3>
+											<p class="best-transportation-companies__blockItemText">Best Service Offerings</p>
+											<div class="best-transportation-companies__blockItemImage mobile">
+												<img src="images/svg/best-transportation-companies-block-item-logo.svg" alt="">
+											</div>
+											<div class="first-block-content__blockItemBlockRating">
+												<p>4.5</p>
+												<div class="wrap-stars">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/half-a-star.svg" alt="">
+												</div>
+												<div class="block-info-here">
+													<button type="button" class="icon-show-info">i</button>
+													<div class="block-info">
+														<div class="block-info__content">
+															<p>Porttitor mattis gravida iaculis nibh nisi id. Congue turpis ultrices in velit. Diam ac at mi consectetur. Ornare aliquet fames proin vitae tincidunt varius ut phasellus. Id praesent ultricies aenean ullamcorper. <a href="#">See more...</a></p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<ul class="best-transportation-companies__blockItemList">
+												<li>DOT #: 2878240</li>
+												<li>230 S Broad St, Philadelphia, PA 19102, US</li>
+											</ul>
+										</div>
+										<div class="best-transportation-companies__blockItem">
+											<div class="best-transportation-companies__blockItemImage desktop">
+												<img src="images/svg/best-transportation-companies-block-item-logo.svg" alt="">
+											</div>
+											<a href="#" class="best-transportation-companies__blockItemButton desktop">Check Prices</a>
+										</div>
+									</div>
+									<div class="best-transportation-companies__blockText">
+										<p>Dany followed on her silver, escorted by Ser Jorah Mormont and her brother Viserys, mounted once more. After the day in the grass when she had left him to walk back to the khalasar, the Dothraki had laughingly called him Khal Rhae Mhar, the Sorefoot King. Khal Drogo had offered him a place in a cart the next day, and Viserys had accepted. In his stubborn ignorance, he had not even known he was being mocked; the carts were for eunuchs, cripples, women giving birth, the very young and the very old. That won him yet another name: Khal Rhaggat, the Cart King. Her brother had thought it was the khal’s way of apologizing for the wrong Dany had done him. She had begged Ser Jorah not to tell him the truth, lest he be shamed.</p>
+									</div>
+									<a href="#" class="best-transportation-companies__blockItemButton mobile">Check Prices</a>
+									<div data-spollers data-one-spoller class="best-transportation-companies__accordion block">
+										<div class="block__item _item-active">
+											<h4 data-spoller class="block__title _active">Pros and Cons</h4>
+											<div class="block__text">
+												<div class="block__content">
+													<div class="block__columns">
+														<div class="block__column">
+															<div class="block__columnBlock">
+																<p class="block__columnTitle">Pros</p>
+																<ul class="block__columnList">
+																	<li>Hundreds of positive customer reviews</li>
+																	<li>Free storage up to 30 days</li>
+																	<li>Large network of long-distance and local movers</li>
+																	<li>Great customer service</li>
+																</ul>
+															</div>
+														</div>
+														<div class="block__column">
+															<div class="block__columnBlock color">
+																<p class="block__columnTitle">Cons</p>
+																<ul class="block__columnList">
+																	<li>Hundreds of positive customer reviews</li>
+																	<li>Free storage up to 30 days</li>
+																	<li>Large network of long-distance and local movers</li>
+																	<li>Great customer service</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="block__item">
+											<h4 data-spoller class="block__title">Services</h4>
+											<div class="block__text">
+												<div class="block__content">
+													<p>Inventore asperiores repellendus <a href="#">voluptatem minus sequi</a>, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+													<ul>
+														<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam?</li>
+														<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, architecto! Illum laboriosam fuga voluptas consequatur dolorum excepturi quam aliquid.</li>
+														<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus mollitia dolore blanditiis dignissimos excepturi.</li>
+													</ul>
+													<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+													<ol>
+														<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam?</li>
+														<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, architecto! Illum laboriosam fuga voluptas consequatur dolorum excepturi quam aliquid.</li>
+														<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus mollitia dolore blanditiis dignissimos excepturi.</li>
+													</ol>
+													<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+													<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												</div>
+											</div>
+										</div>
+										<div class="block__item">
+											<h4 data-spoller class="block__title">Cost</h4>
+											<div class="block__text">
+												<div class="block__content">
+													<p>Inventore asperiores repellendus voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												</div>
+											</div>
+										</div>
+										<div class="block__item">
+											<h4 data-spoller class="block__title">Moving</h4>
+											<div class="block__text">
+												<div class="block__content">
+													<p>Inventore asperiores repellendus voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="best-transportation-companies__block">
+									<div class="best-transportation-companies__blockItems">
+										<div class="best-transportation-companies__blockItem">
+											<h3 class="best-transportation-companies__blockItemTitle">First National Van Lines</h3>
+											<p class="best-transportation-companies__blockItemText">Best Service Offerings</p>
+											<div class="best-transportation-companies__blockItemImage mobile">
+												<img src="images/svg/best-transportation-companies-block-item-logo.svg" alt="">
+											</div>
+											<div class="first-block-content__blockItemBlockRating">
+												<p>4.5</p>
+												<div class="wrap-stars">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/star.svg" alt="">
+													<img src="images/svg/half-a-star.svg" alt="">
+												</div>
+												<div class="block-info-here">
+													<button type="button" class="icon-show-info">i</button>
+													<div class="block-info">
+														<div class="block-info__content">
+															<p>Porttitor mattis gravida iaculis nibh nisi id. Congue turpis ultrices in velit. Diam ac at mi consectetur. Ornare aliquet fames proin vitae tincidunt varius ut phasellus. Id praesent ultricies aenean ullamcorper. <a href="#">See more...</a></p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<ul class="best-transportation-companies__blockItemList">
+												<li>DOT #: 2878240</li>
+												<li>230 S Broad St, Philadelphia, PA 19102, US</li>
+											</ul>
+										</div>
+										<div class="best-transportation-companies__blockItem">
+											<div class="best-transportation-companies__blockItemImage desktop">
+												<img src="images/svg/best-transportation-companies-block-item-logo.svg" alt="">
+											</div>
+											<a href="#" class="best-transportation-companies__blockItemButton desktop">Check Prices</a>
+										</div>
+									</div>
+									<div class="best-transportation-companies__blockText">
+										<p>Dany followed on her silver, escorted by Ser Jorah Mormont and her brother Viserys, mounted once more. After the day in the grass when she had left him to walk back to the khalasar, the Dothraki had laughingly called him Khal Rhae Mhar, the Sorefoot King. Khal Drogo had offered him a place in a cart the next day, and Viserys had accepted. In his stubborn ignorance, he had not even known he was being mocked; the carts were for eunuchs, cripples, women giving birth, the very young and the very old. That won him yet another name: Khal Rhaggat, the Cart King. Her brother had thought it was the khal’s way of apologizing for the wrong Dany had done him. She had begged Ser Jorah not to tell him the truth, lest he be shamed.</p>
+									</div>
+									<a href="#" class="best-transportation-companies__blockItemButton mobile">Check Prices</a>
+									<div data-spollers data-one-spoller class="best-transportation-companies__accordion block">
+										<div class="block__item">
+											<h4 data-spoller class="block__title">Pros and Cons</h4>
+											<div class="block__text">
+												<div class="block__content">
+													<div class="block__columns">
+														<div class="block__column">
+															<div class="block__columnBlock">
+																<p class="block__columnTitle">Pros</p>
+																<ul class="block__columnList">
+																	<li>Hundreds of positive customer reviews</li>
+																	<li>Free storage up to 30 days</li>
+																	<li>Large network of long-distance and local movers</li>
+																	<li>Great customer service</li>
+																</ul>
+															</div>
+														</div>
+														<div class="block__column">
+															<div class="block__columnBlock color">
+																<p class="block__columnTitle">Cons</p>
+																<ul class="block__columnList">
+																	<li>Hundreds of positive customer reviews</li>
+																	<li>Free storage up to 30 days</li>
+																	<li>Large network of long-distance and local movers</li>
+																	<li>Great customer service</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="block__item">
+											<h4 data-spoller class="block__title">Services</h4>
+											<div class="block__text">
+												<div class="block__content">
+													<p>Inventore asperiores repellendus voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												</div>
+											</div>
+										</div>
+										<div class="block__item">
+											<h4 data-spoller class="block__title">Cost</h4>
+											<div class="block__text">
+												<div class="block__content">
+													<p>Inventore asperiores repellendus voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												</div>
+											</div>
+										</div>
+										<div class="block__item">
+											<h4 data-spoller class="block__title">Moving</h4>
+											<div class="block__text">
+												<div class="block__content">
+													<p>Inventore asperiores repellendus voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<div class="find-out-what-is-this first-color">
+								<p class="find-out-what-is-this__text">They passed beneath the gatehouse, over the drawbridge, through the outer walls.</p>
+								<a href="#" class="find-out-what-is-this__button">Find Out What is This</a>
+							</div>
+							<section class="recommended-text two two-three">
+								<div class="recommended-text__content">
+									<h2 class="recommended-text__contentTwoTitle">Moving Locally Within Best Moving Company</h2>
+									<p>Bran felt a <a href="#">sudden dread</a>. Dark wings, dark words, Old Nan always said, and of late the messenger ravens had been proving the truth of the proverb. When Robb wrote to the Lord Commander of the Night’s Watch, the bird that came back brought word that <a href="#">Uncle Benjen</a> was still missing. Then a message had arrived from the Eyrie, from Mother, but that had not been good news either. She did not say when she meant to return, <a href="#">only that</a> she had taken the Imp as prisoner.</p>
+									<blockquote>
+										<p>Bran had sort of liked the little man, yet the name Lannister sent cold fingers creeping up his spine. </p>
+									</blockquote>
+								</div>
+							</section>
+							<section class="recommended-text new-three br">
+								<h2 class="recommended-text__title new-icon">
+									<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.4527 26.0001H13.4948" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M26 12.4527V13.4948" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M16.4127 16.413L17.163 17.1634" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M29.489 32.0924H22.511" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M22.1817 31.7715C19.8234 30.1083 18.8138 27.1093 19.6862 24.3585C20.5586 21.6077 23.1121 19.7388 25.9979 19.7388C28.8837 19.7388 31.4372 21.6077 32.3096 24.3585C33.182 27.1093 32.1724 30.1083 29.8141 31.7715C29.5053 31.9775 29.3169 32.3216 29.3097 32.6927V35.7461C29.3097 36.4779 29.019 37.1798 28.5015 37.6973C27.984 38.2148 27.2821 38.5055 26.5502 38.5055H25.4456C24.7137 38.5055 24.0119 38.2148 23.4944 37.6973C22.9768 37.1798 22.6861 36.4779 22.6861 35.7461V32.699C22.681 32.3256 22.4923 31.9787 22.1817 31.7715V31.7715Z" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+										<circle cx="26" cy="26" r="18.7578" stroke="#0064D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M38.5052 26.0001H39.5473" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M34.837 17.1634L35.5873 16.413" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+									Very Strongy Recomended to Read This Text Too Again
+								</h2>
+								<div class="recommended-text__content list-with-links">
+									<p>A second man reeled away and for an instant Jory was free. Wyl cursed as they pulled him off his dying horse, swords slashing in the rain:</p>
+									<ul>
+										<li><a href="#">Ned galloped to him:</a> Time flies like an arrow</li>
+										<li><a href="#">Bringing his longsword down:</a> Banana flies like a fruit</li>
+										<li><a href="#">On Tregar’s helm:</a> I’m on a seafood diet</li>
+										<li><a href="#">The jolt of impact made him grit his teeth:</a> I see food, I eat</li>
+										<li><a href="#">Tregar stumbled to his knees:</a> Why don’t eggs tell jokes?</li>
+										<li><a href="#">His lion crest sheared in half:</a> Ghosts are bad at math</li>
+										<li><a href="#">Blood running down:</a> How do trees get online?</li>
+									</ul>
+								</div>
+							</section>
+							<section class="faq">
+								<h2 class="faq__title">FAQ</h2>
+								<div data-spollers data-one-spoller class="best-transportation-companies__accordion block__faq block">
+									<div class="block__item _item-active">
+										<h4 data-spoller class="block__title">
+											Do I need to get a parking permit for movers in Philadelphia?
+											<span class="block__titleIcon">icon</span>
+										</h4>
+										<div class="block__text">
+											<div class="block__content">
+												<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias voluptas maxime, illum aliquam impedit est minus error distinctio ad dolorum ducimus vitae fugiat nulla laudantium officiis sed quam? Magnam placeat fugit voluptatibus rem neque dicta est illum deleniti architecto consectetur natus laudantium, nostrum maxime, cum amet voluptates possimus nisi nihil rerum. Ratione maiores vero tempora omnis, nostrum fugiat veniam aperiam nulla natus pariatur in.</p>
+											</div>
+										</div>
+									</div>
+									<div class="block__item _item-active">
+										<h4 data-spoller class="block__title _active">
+											How can I save money when hiring a Philadelphia moving company?
+											<span class="block__titleIcon">icon</span>
+										</h4>
+										<div class="block__text">
+											<div class="block__content">
+												<p>It’s almost always cheaper to hire a moving company in Philadelphia outside of their busy season. Moving during the week and between October and April allows for the greatest savings. Now that you know when moving companies in Philadelphia are less busy, you can use that to negotiate your moving costs.</p>
+											</div>
+										</div>
+									</div>
+									<div class="block__item">
+										<h4 data-spoller class="block__title">
+											Do Philadelphia movers offer storage?
+											<span class="block__titleIcon">icon</span>
+										</h4>
+										<div class="block__text">
+											<div class="block__content">
+												<p>Inventore asperiores repellendus <a href="#">voluptatem minus sequi</a>, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												<ul>
+													<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam?</li>
+													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, architecto! Illum laboriosam fuga voluptas consequatur dolorum excepturi quam aliquid.</li>
+													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus mollitia dolore blanditiis dignissimos excepturi.</li>
+												</ul>
+												<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												<ol>
+													<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam?</li>
+													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, architecto! Illum laboriosam fuga voluptas consequatur dolorum excepturi quam aliquid.</li>
+													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus mollitia dolore blanditiis dignissimos excepturi.</li>
+												</ol>
+												<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section class="moving-resources">
+								<h2 class="moving-resources__title">Moving Resources</h2>
+								<div class="moving-resources__columns three-columns"><!-- one-column two-columns three-columns -->
+									<div class="moving-resources__column">
+										<h3 class="moving-resources__columnTitle">Expert Guides</h3>
+										<ul class="moving-resources__columnList">
+											<li>
+												<a href="#">Integer venenatis nunc</a>
+											</li>
+											<li>
+												<a href="#">In fusce sit</a>
+											</li>
+											<li>
+												<a href="#">Tellus commodo pellentesque</a>
+											</li>
+											<li>
+												<a href="#">Magna adipiscing sagittis</a>
+											</li>
+											<li>
+												<a href="#">Feugiat dolor gravida</a>
+											</li>
+										</ul>
+									</div>
+									<div class="moving-resources__column">
+										<h3 class="moving-resources__columnTitle">Expert Guides</h3>
+										<ul class="moving-resources__columnList">
+											<li>
+												<a href="#">Integer venenatis nunc</a>
+											</li>
+											<li>
+												<a href="#">In fusce sit</a>
+											</li>
+											<li>
+												<a href="#">Tellus commodo pellentesque</a>
+											</li>
+											<li>
+												<a href="#">Magna adipiscing sagittis</a>
+											</li>
+											<li>
+												<a href="#">Feugiat dolor gravida</a>
+											</li>
+										</ul>
+									</div>
+									<div class="moving-resources__column">
+										<h3 class="moving-resources__columnTitle">Expert Guides</h3>
+										<ul class="moving-resources__columnList">
+											<li>
+												<a href="#">Integer venenatis nunc</a>
+											</li>
+											<li>
+												<a href="#">In fusce sit</a>
+											</li>
+											<li>
+												<a href="#">Tellus commodo pellentesque</a>
+											</li>
+											<li>
+												<a href="#">Magna adipiscing sagittis</a>
+											</li>
+											<li>
+												<a href="#">Feugiat dolor gravida</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</section>
+							<section class="resources-that-you-need">
+								<h2 class="resources-that-you-need__title">Resources That You Need</h2>
+								<div class="resources-that-you-need__blockText">
+									<p>It was nice under the trees. Bran kept Dancer to a walk, holding the reins lightly and looking all around him as they went. He knew this wood, but he had been so long confined to Winterfell that he felt as though he were seeing it for the first time. The smells filled his nostrils; the sharp fresh tang of pine needles, the earthy odor of wet rotting leaves, the hints of animal musk and distant cooking fires.</p>
+								</div>
+								<div class="resources-that-you-need__items"> <!-- hide-headings -->
+									<div class="resources-that-you-need__item">
+										<h3 class="resources-that-you-need__itemTitle">Expert Guides</h3>
+										<ul class="resources-that-you-need__itemList">
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/moving-cost-calculator-icon.svg" alt="Moving Cost Calculator">
+												</span>
+												<a href="#">Moving Cost Calculator</a>
+											</li>
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/long-distance-movers-icon.svg" alt="Long Distance Movers">
+												</span>
+												<a href="#">Long Distance Movers</a>
+											</li>
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/best-interstate-movers-icon.svg" alt="Best Interstate Movers">
+												</span>
+												<a href="#">Best Interstate Movers</a>
+											</li>
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/moving-containers-icon.svg" alt="Moving Containers">
+												</span>
+												<a href="#">Moving Containers</a>
+											</li>
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/car-shippers-icon.svg" alt="Car Shippers">
+												</span>
+												<a href="#">Car Shippers</a>
+											</li>
+										</ul>
+									</div>
+									<div class="resources-that-you-need__item">
+										<h3 class="resources-that-you-need__itemTitle">Expert Guides</h3>
+										<ul class="resources-that-you-need__itemList">
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/international-movers-icon.svg" alt="International Movers">
+												</span>
+												<a href="#">International Movers</a>
+											</li>
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/small-moves-icon.svg" alt="Small Moves">
+												</span>
+												<a href="#">Small Moves</a>
+											</li>
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/truck-rental-icon.svg" alt="Truck Rental">
+												</span>
+												<a href="#">Truck Rental</a>
+											</li>
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/self-storage-icon.svg" alt="Self Storage">
+												</span>
+												<a href="#">Self Storage</a>
+											</li>
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/local-movers-icon.svg" alt="Local Movers">
+												</span>
+												<a href="#">Local Movers</a>
+											</li>
+										</ul>
+									</div>
+									<div class="resources-that-you-need__item">
+										<h3 class="resources-that-you-need__itemTitle">Expert Guides</h3>
+										<ul class="resources-that-you-need__itemList">
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/moving-boxes-icon.svg" alt="Moving Boxes">
+												</span>
+												<a href="#">Moving Boxes</a>
+											</li>
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/corporate-relocation-icon.svg" alt="Corporate Relocation">
+												</span>
+												<a href="#">Corporate Relocation</a>
+											</li>
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/moving-labor-icon.svg" alt="Moving Labor">
+												</span>
+												<a href="#">Moving Labor</a>
+											</li>
+											<li>
+												<span class="resources-that-you-need__itemWrapIcon">
+													<img src="images/svg/specialty-movers-icon.svg" alt="Specialty Movers">
+												</span>
+												<a href="#">Specialty Movers</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+    <div class="footer__head">
+        <div class="n_container">
+            <p class="footer__headText">They passed beneath the gatehouse, over the drawbridge, through the outer walls.</p>
+            <a href="#" class="footer__headButton">Find Out What is This</a>
+        </div>
+    </div>
+    <div class="n_container">
+        <div class="footer__columns">
+            <div class="footer__column">
+                <h4 class="footer__columnTitle">Expert Guides</h4>
+                <ul class="footer__columnList">
+                    <li>
+                        <a href="#">Shell erumpent which parchment</a>
+                    </li>
+                    <li>
+                        <a href="#">Veela scales palominos on</a>
+                    </li>
+                    <li>
+                        <a href="#">Charm flat sopophorous kedavra</a>
+                    </li>
+                    <li>
+                        <a href="#">Wronski suck suits hall</a>
+                    </li>
+                    <li>
+                        <a href="#">Polyjuice nearly-headless 50 tell</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h4 class="footer__columnTitle">Expert Guides</h4>
+                <ul class="footer__columnList">
+                    <li>
+                        <a href="#">Wand them mewing bat</a>
+                    </li>
+                    <li>
+                        <a href="#">Spectacles doe animagus black</a>
+                    </li>
+                    <li>
+                        <a href="#">Animagus we roaring wizard</a>
+                    </li>
+                    <li>
+                        <a href="#">Elf hall pie spell</a>
+                    </li>
+                    <li>
+                        <a href="#">Filch swiveling padma second</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h4 class="footer__columnTitle">Expert Guides</h4>
+                <ul class="footer__columnList">
+                    <li>
+                        <a href="#">Plums pie them potion</a>
+                    </li>
+                    <li>
+                        <a href="#">Many ravenclaw yaxley gillyweed</a>
+                    </li>
+                    <li>
+                        <a href="#">Wronski hippogriffs fawkes armchairs</a>
+                    </li>
+                    <li>
+                        <a href="#">Filch bagman witch aragog</a>
+                    </li>
+                    <li>
+                        <a href="#">The werewolf dog of</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h4 class="footer__columnTitle">Expert Guides</h4>
+                <ul class="footer__columnList">
+                    <li>
+                        <a href="#">Map bathrooms the hat</a>
+                    </li>
+                    <li>
+                        <a href="#">Charm shunpike half-blood forest</a>
+                    </li>
+                    <li>
+                        <a href="#">Many out robes swiveling</a>
+                    </li>
+                    <li>
+                        <a href="#">Time-turner shack hats kiss</a>
+                    </li>
+                    <li>
+                        <a href="#">To hungarian cores fanged</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__bottomLeft">
+                <nav>
+                    <ul class="footer__menu">
+                        <li>
+                            <a href="#">Terms</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy</a>
+                        </li>
+                        <li>
+                            <a href="#">Callifornia Privacy</a>
+                        </li>
+                        <li>
+                            <a href="#">Sitemap</a>
+                        </li>
+                        <li>
+                            <a href="#">Partners</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottomRight">
+                <div class="footer__blockSocial">
+                    <p>Follow Us:</p>
+                    <ul>
+                        <li>
+                            <a href="https://facebook.com/" target="_blank">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M30.0018 15.0009C30.0018 6.71687 23.2849 0 15.0009 0C6.71687 0 0 6.71687 0 15.0009C0 22.0354 4.84264 27.9387 11.3777 29.5606V19.5859H8.28402V15.0009H11.3777V13.0261C11.3777 7.92047 13.6879 5.55386 18.7017 5.55386C19.6529 5.55386 21.2924 5.74093 21.9631 5.92623V10.0806C21.6083 10.0435 20.9942 10.0241 20.23 10.0241C17.7699 10.0241 16.8204 10.9559 16.8204 13.379V15.0009H21.7195L20.8777 19.5859H16.8186V29.8924C24.245 28.9941 30.0018 22.669 30.0018 15.0009Z" fill="#0064D9"/>
+                                    <path d="M20.8759 19.5843L21.7177 14.9993H16.8186V13.3774C16.8186 10.9543 17.7699 10.0225 20.2282 10.0225C20.9924 10.0225 21.6065 10.0419 21.9613 10.079V5.92462C21.2906 5.73755 19.6511 5.55225 18.6999 5.55225C13.6878 5.55225 11.3759 7.91886 11.3759 13.0245V14.9993H8.284V19.5843H11.3777V29.559C12.539 29.8466 13.7514 30.0002 15.0009 30.0002C15.6168 30.0002 16.2221 29.9631 16.8186 29.8907V19.5843H20.8759Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/" target="_blank">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.9882 18.5519C16.7062 18.5519 18.0989 17.159 18.0989 15.4408C18.0989 13.7225 16.7062 12.3296 14.9882 12.3296C13.2702 12.3296 11.8775 13.7225 11.8775 15.4408C11.8775 17.159 13.2702 18.5519 14.9882 18.5519Z" fill="#0064D9"/>
+                                    <path d="M22.2559 9.94216C22.0883 9.5098 21.8819 9.19392 21.559 8.87098C21.229 8.54098 20.9202 8.34157 20.4879 8.17392C20.158 8.0451 19.6675 7.89686 18.7588 7.85098C17.7778 7.8051 17.4814 7.7998 14.99 7.7998C12.4986 7.7998 12.2022 7.80686 11.2211 7.85098C10.3107 7.8898 9.82018 8.0451 9.492 8.17392C9.05971 8.34157 8.74388 8.54804 8.42099 8.87098C8.09104 9.20098 7.89166 9.5098 7.72403 9.94216C7.59523 10.2722 7.44702 10.7627 7.40114 11.6716C7.35527 12.6527 7.34998 12.9492 7.34998 15.441C7.34998 17.9327 7.35703 18.2292 7.40114 19.2104C7.43996 20.121 7.59523 20.6116 7.72403 20.9398C7.89166 21.3722 8.0981 21.688 8.42099 22.011C8.75094 22.341 9.05971 22.5404 9.492 22.708C9.82194 22.8369 10.3125 22.9851 11.2211 23.031C12.2022 23.0769 12.4986 23.0822 14.99 23.0822C17.4814 23.0822 17.7778 23.0751 18.7588 23.031C19.6693 22.9922 20.1598 22.8369 20.4879 22.708C20.9202 22.5404 21.2361 22.3339 21.559 22.011C21.8889 21.681 22.0883 21.3722 22.2559 20.9398C22.3847 20.6098 22.5329 20.1192 22.5788 19.2104C22.6247 18.2292 22.63 17.9327 22.63 15.441C22.63 12.9492 22.6229 12.6527 22.5788 11.6716C22.54 10.7627 22.3847 10.2722 22.2559 9.94216ZM14.9882 20.2375C12.3416 20.2375 10.1995 18.0951 10.1995 15.448C10.1995 12.801 12.3416 10.6586 14.9882 10.6586C17.6349 10.6586 19.7769 12.801 19.7769 15.448C19.7769 18.088 17.6278 20.2375 14.9882 20.2375ZM19.9639 11.5816C19.3446 11.5816 18.847 11.0786 18.847 10.4645C18.847 9.8451 19.3499 9.34745 19.9639 9.34745C20.5832 9.34745 21.0808 9.85039 21.0808 10.4645C21.0879 11.0839 20.5832 11.5816 19.9639 11.5816Z" fill="#0064D9"/>
+                                    <path d="M15.0018 0C6.71648 0 0.00177002 6.71471 0.00177002 15C0.00177002 23.2853 6.71648 30 15.0018 30C23.2871 30 30.0018 23.2853 30.0018 15C30.0018 6.71471 23.2871 0 15.0018 0ZM24.2912 19.1824C24.2453 20.1759 24.0918 20.8535 23.8588 21.4482C23.6206 22.0606 23.3029 22.5847 22.7806 23.1C22.2635 23.6171 21.7412 23.94 21.1288 24.1782C20.5341 24.4112 19.8565 24.5647 18.8629 24.6106C17.8694 24.6565 17.5518 24.6688 15.0159 24.6688C12.4782 24.6688 12.1624 24.6565 11.1688 24.6106C10.1753 24.5647 9.49765 24.4112 8.90295 24.1782C8.29059 23.94 7.76647 23.6224 7.25118 23.1C6.73412 22.5829 6.41118 22.0606 6.17295 21.4482C5.94001 20.8535 5.78648 20.1759 5.74059 19.1824C5.69471 18.1888 5.68236 17.8712 5.68236 15.3353C5.68236 12.7994 5.69471 12.4818 5.74059 11.4882C5.78648 10.4947 5.94001 9.81706 6.17295 9.22235C6.41118 8.61 6.72883 8.08588 7.25118 7.57059C7.76824 7.05353 8.29059 6.73059 8.90295 6.49235C9.49765 6.25941 10.1753 6.10588 11.1688 6.06C12.1624 6.01412 12.48 6.00176 15.0159 6.00176C17.5535 6.00176 17.8694 6.01412 18.8629 6.06C19.8565 6.10588 20.5341 6.25941 21.1288 6.49235C21.7412 6.73059 22.2653 7.04823 22.7806 7.57059C23.2977 8.08765 23.6206 8.61 23.8588 9.22235C24.0918 9.81706 24.2453 10.4947 24.2912 11.4882C24.3371 12.4818 24.3494 12.7994 24.3494 15.3353C24.3494 17.8712 24.3353 18.1888 24.2912 19.1824Z" fill="#0064D9"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/" target="_blank">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.0018 30C23.286 30 30.0018 23.2843 30.0018 15C30.0018 6.71573 23.286 0 15.0018 0C6.7175 0 0.00177002 6.71573 0.00177002 15C0.00177002 23.2843 6.7175 30 15.0018 30Z" fill="#0064D9"/>
+                                    <path d="M5.76177 6.30908L12.9318 15.895L5.71765 23.6897H7.34118L13.6571 16.8656L18.7606 23.6897H24.2859L16.7135 13.5638L23.43 6.30908H21.8065L15.9882 12.5932L11.2871 6.30908H5.76177ZM8.14942 7.50555H10.6888L21.8982 22.495H19.3588L8.14942 7.50555Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer__wrapLogo">
+                        <img src="images/svg/footer-logo.svg" alt="">
+                    </div>
+                    <p class="footer__copyright">&copy; Name Company, 2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+	</div>
+   <script src="js/script.min.js?_v=20240930232707"></script>
+
+   <script src="files/js/jquery-3.6.1.min.js?_v=20240930232707"></script>
+	<script src="files/select2/js/select2.min.js?_v=20240930232707"></script>
+   <script src="files/select2/js/init.js?_v=20240930232707"></script>
+	
+</body>
+</html>

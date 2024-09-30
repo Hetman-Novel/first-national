@@ -1,0 +1,115 @@
+.select2-container--where-are-you-moving-from {
+   border: 1px solid #d9d9d9;
+   border-radius: 5px;
+   max-width: 100%;
+}
+.select2-container--where-are-you-moving-from.select2-container--open.select2-container--below {
+   border-bottom-left-radius: 0;
+   border-bottom-right-radius: 0;
+}
+.select2-container--where-are-you-moving-from.select2-container--open.select2-container--above {
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+}
+.select2-container--where-are-you-moving-from .selection {
+   height: 46px;
+   line-height: 46px;
+   padding-left: 30px;
+   position: relative;
+
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -moz-box;
+   display: -webkit-box;
+   -webkit-line-clamp: 1;
+   -webkit-box-orient: vertical;
+}
+.select2-container--where-are-you-moving-from .selection::before {
+   content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 13V13C10.343 13 9 11.657 9 10V10C9 8.343 10.343 7 12 7V7C13.657 7 15 8.343 15 10V10C15 11.657 13.657 13 12 13Z' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 21C12 21 5 15.25 5 10C5 6.134 8.134 3 12 3C15.866 3 19 6.134 19 10C19 15.25 12 21 12 21Z' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+   left: 9px;
+   position: absolute;
+   top: 5px;
+}
+.select2-container--where-are-you-moving-from .select2-search--dropdown .select2-search__field,
+.select2-container--where-are-you-moving-from .select2-results__option,
+.select2-container--where-are-you-moving-from .select2-selection__rendered,
+.select2-container--where-are-you-moving-from .select2-selection__placeholder {
+   font-size: 16px;
+   font-weight: 400;
+   /*line-height: 25px;*/
+   text-align: left;
+}
+.select2-container--where-are-you-moving-from .select2-selection__placeholder {
+   color: #696969;
+}
+
+/*.select2-selection__arrow {
+   display: none;
+   opacity: 0;
+}*/
+.select2-container--where-are-you-moving-from.select2-container--open:not(.select2-container--above) .select2-dropdown {
+   left: -1px;
+   top: -1px;
+}
+/*
+.select2-container--where-are-you-moving-from.select2-container--open:not(.select2-container--below) .select2-dropdown {
+   bottom: -1px;
+   left: -1px;
+}*/
+.select2-container--where-are-you-moving-from .select2-dropdown {
+   border-color: #d9d9d9;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   max-height: 370px;
+   overflow-x: auto;
+}
+
+.select2-container--where-are-you-moving-from .select2-search--dropdown {
+   background-color: #fff;
+   left: 0;
+   padding: 12px 8px 8px 12px;
+   position: sticky;
+   right: 0;
+   top: 0;
+}
+
+.select2-container--where-are-you-moving-from .select2-search--dropdown .select2-search__field {
+   border: 1px solid #d9d9d9;
+   border-radius: 5px;
+   height: 41px;
+   line-height: 41px;
+   outline: none;
+   padding: 1px 14px 0;
+}
+.select2-container--where-are-you-moving-from .select2-dropdown::-webkit-scrollbar {
+   width: 7px;
+}
+.select2-container--where-are-you-moving-from .select2-dropdown::-webkit-scrollbar-track {
+   background-color: #fff;
+   border-radius: 20px;
+}
+.select2-container--where-are-you-moving-from .select2-dropdown::-webkit-scrollbar-thumb {
+   background-color: #D9D9D9;
+   border-radius: 20px;
+   border: 2px solid #fff;
+}
+.select2-container--where-are-you-moving-from .select2-results__option {
+   background-color: transparent;
+   padding: 8px 15px 7px;
+   transition: 0.3s ease 0s;
+}
+.select2-container--where-are-you-moving-from .select2-results__option.select2-results__option--selected,
+.select2-container--where-are-you-moving-from .select2-results__option:hover {
+   background-color: #efefef;
+}
+
+@media (max-width: 575.98px) {
+   
+   .select2-container--where-are-you-moving-from .selection {
+      height: 44px;
+      line-height: 44px;
+   }
+   .select2-container--where-are-you-moving-from .selection::before {
+      top: 6px;
+   }
+}
