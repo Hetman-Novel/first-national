@@ -4,13 +4,13 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/style.min.css?_v=20241001192951">
+   <link rel="stylesheet" href="css/style.min.css?_v=20241001233047">
    <!--<link rel="icon" type="image/svg+xml" href="favicon.svg">-->
-   <link rel="stylesheet" href="files/select2/css/select2.min.css?_v=20241001192951">
-   <link rel="stylesheet" href="files/select2/css/select2-custom.css?_v=20241001192951">
+   <link rel="stylesheet" href="files/select2/css/select2.min.css?_v=20241001233047">
+   <link rel="stylesheet" href="files/select2/css/select2-custom.css?_v=20241001233047">
    <title>Home - First National Van Lines</title>
 
-   <script src="files/save-position-when-updating.js?_v=20241001192951"></script>
+   <script src="files/save-position-when-updating.js?_v=20241001233047"></script>
    
 </head>
 
@@ -531,24 +531,24 @@
 								</div>
 							</div>
 							<div class="first-screen__item">
-								<div class="first-screen__blockWrapForm hidden">
-   <h6 class="first-screen__blockWrapFormTitle">How much will my move cost?</h6>
+								<div class="first-screen__blockWrapForm hidden"> <!-- sent-successfully -->
+   <p class="first-screen__blockWrapFormTitle">How much will my move cost?</p>
    <p class="first-screen__blockWrapFormText">Let us help match you</p>
-   <div class="first-screen__blockWrapFormWrapper first-step">
+   <div id="fs-wrapper-steps" class="first-screen__blockWrapFormWrapper step-1"><!-- step-1 step-2 step-3 step-4 step-5 step-6 step-7 -->
       <div class="first-screen__blockWrapFormWrapRadioButtons">
-         <button type="button" id="fs-form-btn-step-1" class="fs-form__btn-step active">step 1</button>
-         <button type="button" id="fs-form-btn-step-2" class="fs-form__btn-step">step 2</button>
-         <button type="button" id="fs-form-btn-step-3" class="fs-form__btn-step">step 3</button>
-         <button type="button" id="fs-form-btn-step-4" class="fs-form__btn-step">step 4</button>
-         <button type="button" id="fs-form-btn-step-5" class="fs-form__btn-step">step 5</button>
-         <button type="button" id="fs-form-btn-step-6" class="fs-form__btn-step">step 6</button>
-         <button type="button" id="fs-form-btn-step-7" class="fs-form__btn-step">step 7</button>
+         <button type="button" id="fs-btn-step-1" class="fs-form__btn-step">step 1</button>
+         <button type="button" id="fs-btn-step-2" class="fs-form__btn-step">step 2</button>
+         <button type="button" id="fs-btn-step-3" class="fs-form__btn-step">step 3</button>
+         <button type="button" id="fs-btn-step-4" class="fs-form__btn-step">step 4</button>
+         <button type="button" id="fs-btn-step-5" class="fs-form__btn-step">step 5</button>
+         <button type="button" id="fs-btn-step-6" class="fs-form__btn-step">step 6</button>
+         <button type="button" id="fs-btn-step-7" class="fs-form__btn-step">step 7</button>
       </div>
       <form action="#" class="first-screen__form">
-         <div class="step" id="fs-form-step-1">
+         <div class="step">
             <label>Where are you moving from?</label>
             <!-- select2 applied file location in file/select2 -->
-            <select id="where-are-you-moving-from" name="where-are-you-moving-from" required>
+            <select id="where-are-you-moving-from" name="f-where-are-you-moving-from" required>
                <option selected disabled></option>
                <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
                <option value="85001">85001, Phoenix, AZ</option>
@@ -602,12 +602,12 @@
                <option value="53701">53701, Madison, WI</option>
                <option value="82001">82001, Cheyenne, WY</option>
             </select>
-            <button type="button" class="first-screen__formButton">Next Step</button>
+            <button type="button" class="first-screen__formButton" id="fs-btn-next-2">Next Step</button>
          </div>
-         <div class="step" id="fs-form-step-2">
+         <div class="step">
             <label>Where are you moving to?</label>
             <!-- select2 applied file location in file/select2 -->
-            <select id="where-are-you-moving-to" name="where-are-you-moving-to" required>
+            <select id="where-are-you-moving-to" name="f-where-are-you-moving-to" required>
                <option selected disabled></option>
                <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
                <option value="85001">85001, Phoenix, AZ</option>
@@ -661,24 +661,97 @@
                <option value="53701">53701, Madison, WI</option>
                <option value="82001">82001, Cheyenne, WY</option>
             </select>
-            <button type="button" class="first-screen__formButton">Next Step</button>
+            <div class="first-screen__formButtons">
+               <button type="button" class="first-screen__formButton back" id="fs-btn-back-1">Back</button>
+               <button type="button" class="first-screen__formButton" id="fs-btn-next-3">Next Step</button>
+            </div>
          </div>
-         <div class="step" id="fs-form-step-3">
-
+         <div class="step">
+            <label>When do you want to move?</label>
+            there will be a calendar here
+            <div class="first-screen__formButtons">
+               <button type="button" class="first-screen__formButton back" id="fs-btn-back-2">Back</button>
+               <button type="button" class="first-screen__formButton" id="fs-btn-next-4">Next Step</button>
+            </div>
          </div>
-         <div class="step" id="fs-form-step-4">
-
+         <div class="step step-four">
+            <label>How much needs to be moved?</label>
+            <!-- select2 applied file location in file/select2 -->
+            <select id="how-much-needs-to-be-moved" name="f-how-much-needs-to-be-moved" required>
+               <option selected disabled></option>
+               <option value="5">5</option>
+               <option value="10">10</option>
+               <option value="15">15</option>
+               <option value="20">20</option>
+               <option value="50">50</option>
+               <option value="до 100">до 100</option>
+               <option value="более 100">более 100</option>
+            </select>
+            <div class="first-screen__formButtons">
+               <button type="button" class="first-screen__formButton back" id="fs-btn-back-3">Back</button>
+               <button type="button" class="first-screen__formButton" id="fs-btn-next-5">Next Step</button>
+            </div>
          </div>
-         <div class="step" id="fs-form-step-5">
-
+         <div class="step">
+            <label>What's Your Name?</label>
+            <div class="first-screen__formWrapField name">
+               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.7633 16.91L15.4133 16.031C15.2363 15.585 14.9613 15.185 14.6093 14.859L14.5453 14.8C13.9913 14.286 13.2633 14 12.5073 14H7.49333C6.73733 14 6.00933 14.286 5.45433 14.799L5.39033 14.859C5.03833 15.185 4.76433 15.585 4.58633 16.031L4.23633 16.91" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12.4749 5.44713C13.8417 6.81397 13.8417 9.03004 12.4749 10.3969C11.108 11.7637 8.89197 11.7637 7.52513 10.3969C6.15829 9.03004 6.15829 6.81397 7.52513 5.44713C8.89197 4.08029 11.108 4.08029 12.4749 5.44713" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16.3639 3.63604C19.8787 7.15076 19.8787 12.8492 16.3639 16.3639C12.8492 19.8787 7.15074 19.8787 3.63604 16.3639C0.12132 12.8492 0.12132 7.15074 3.63604 3.63604C7.15076 0.12132 12.8492 0.12132 16.3639 3.63604" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg>
+               <input type="text" name="f-name" class="input-name" placeholder="Your Name">
+            </div>
+            <div class="first-screen__formButtons">
+               <button type="button" class="first-screen__formButton back" id="fs-btn-back-4">Back</button>
+               <button type="button" class="first-screen__formButton" id="fs-btn-next-6">Next Step</button>
+            </div>
          </div>
-         <div class="step" id="fs-form-step-6">
-
+         <div class="step">
+            <label>What's Your Email Address?</label>
+            <div class="first-screen__formWrapField email">
+               <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1 2.8V2.8C1 3.4 1.3 3.9 1.8 4.3L7.8 8.4C9.2 9.3 10.9 9.3 12.3 8.4L18.3 4.4C18.7 3.9 19 3.4 19 2.8V2.8C19 1.8 18.2 1 17.2 1H2.8C1.8 1 1 1.8 1 2.8Z" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M1 3V13C1 14.1 1.9 15 3 15H17C18.1 15 19 14.1 19 13V3" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M1.58801 14.412L7.68201 8.31799" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12.3604 8.35999L18.4124 14.412" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg>
+               <input type="text" name="f-email" class="input-email" placeholder="Email">
+            </div>
+            <div class="first-screen__formButtons">
+               <button type="button" class="first-screen__formButton back" id="fs-btn-back-5">Back</button>
+               <button type="button" class="first-screen__formButton" id="fs-btn-next-7">Next Step</button>
+            </div>
          </div>
-         <div class="step" id="fs-form-step-7">
-
+         <div class="step">
+            <label>What's Your Phone Number ?</label>
+            <div class="first-screen__formWrapField phone">
+               <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 1V2.8C4 3.131 4.224 3.4 4.5 3.4H7.5C7.776 3.4 8 3.131 8 2.8V1" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4.88 14.5H7.12" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3 1H9C10.105 1 11 1.895 11 3V15C11 16.105 10.105 17 9 17H3C1.895 17 1 16.105 1 15V3C1 1.895 1.895 1 3 1Z" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg>
+               <input type="text" name="f-phone" class="input-phone" placeholder="Phone Number">
+            </div>
+            <div class="first-screen__formButtons">
+               <button type="button" class="first-screen__formButton back" id="fs-btn-back-6">Back</button>
+               <button type="submit" class="first-screen__formButton" id="fs-btn-submit">Get My Quote</button>
+            </div>
          </div>
       </form>
+   </div>
+   <div class="first-screen__blockWrapForm-sent-successfully">
+      <p class="title">Thank you!</p>
+      <p class="text">We will contact you shortly.</p>
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12.5 29.1667H8.33331" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M16.6666 16.6667H8.33331" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+         <path fill-rule="evenodd" clip-rule="evenodd" d="M72.6583 66.6667H28.5417C21.8417 66.6667 17.0375 60.2083 18.9625 53.7917L27.9625 23.7917C29.2333 19.5625 33.125 16.6667 37.5417 16.6667H81.6625C88.3625 16.6667 93.1667 23.125 91.2417 29.5417L82.2417 59.5417C80.9708 63.7708 77.075 66.6667 72.6583 66.6667Z" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M19.75 61.3333L48.75 42.0417" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M59.2083 41.875L80.3333 63" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M70.8333 83.3333H12.5" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M29.9916 20.15L50.0041 43.5C51.3541 45.075 53.6541 45.4167 55.4041 44.3042L90.4541 22.0208" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
    </div>
 </div>
 							</div>
@@ -1927,11 +2000,13 @@
     </div>
 </footer>
 	</div>
-   <script src="js/script.min.js?_v=20241001192951"></script>
+   <script src="js/script.min.js?_v=20241001233047"></script>
 
-   <script src="files/js/jquery-3.6.1.min.js?_v=20241001192951"></script>
-	<script src="files/select2/js/select2.min.js?_v=20241001192951"></script>
-   <script src="files/select2/js/init.js?_v=20241001192951"></script>
+   <script src="files/js/jquery-3.6.1.min.js?_v=20241001233047"></script>
+	<script src="files/select2/js/select2.min.js?_v=20241001233047"></script>
+   <script src="files/select2/js/init.js?_v=20241001233047"></script>
+
+	<script src="files/js/validation-form.js?_v=20241001233047"></script>
 	
 </body>
 </html>
