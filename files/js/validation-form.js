@@ -72,5 +72,9 @@ document.getElementById('fs-btn-submit').addEventListener('click', () => {
    setTimeout(function() {
       document.querySelector('.first-screen__blockWrapForm').classList.remove('sent-successfully');
    }, 3000);
+   setTimeout(function() {
+      fsWrapper.classList.remove('step-7');
+      fsWrapper.classList.add('step-1');
+   }, 600);
 });
 /* <- demo */
