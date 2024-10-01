@@ -557,19 +557,19 @@ body strong {
 .first-screen__formWrapField.name img,
 .first-screen__formWrapField.name svg {
   left: 13px;
-  top: 12px;
+  top: 13px;
 }
 
 .first-screen__formWrapField.email img,
 .first-screen__formWrapField.email svg {
   left: 12px;
-  top: 15px;
+  top: 16px;
 }
 
 .first-screen__formWrapField.phone img,
 .first-screen__formWrapField.phone svg {
   left: 16px;
-  top: 13px;
+  top: 14px;
 }
 
 .first-screen__formWrapField img,
@@ -810,7 +810,7 @@ body strong {
   background-color: #fff;
   border: 1px solid #D9D9D9;
   border-radius: 5px;
-  height: 46px;
+  height: 48px;
   font-size: 16px;
   font-weight: 400;
   line-height: 25px;
