@@ -1518,10 +1518,6 @@ body {
   padding-top: 50px;
 }
 
-.main__columnSidebar {
-  padding-bottom: 5px;
-}
-
 .main__columnSidebar .sticky-block {
   position: relative;
   z-index: 2;
@@ -3619,6 +3615,7 @@ body {
 
   .main__columnSidebar {
     order: 1;
+    padding-bottom: 61px;
     width: 267px;
   }
 
@@ -3904,7 +3901,8 @@ body {
   }
 
   .main__columnSidebar {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 5px;
     position: relative;
   }
 
