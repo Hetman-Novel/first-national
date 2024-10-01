@@ -571,11 +571,55 @@ body strong {
   background-color: #F9FAFF;
 }
 
+.first-screen__wrap-breadcrumbs .n_container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-screen__wrap-breadcrumbsLink {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  margin-left: 25px;
+  text-align: right;
+}
+
 .first-screen__block {
   background-color: #0F37BD;
   padding-bottom: 61px;
   padding-top: 60px;
   position: relative;
+  /*
+  @include media-min-768 {
+
+  	&::after {
+  		background-color: rgba(0, 12, 90, 0.8);
+  		bottom: 0;
+  		content: '';
+  		left: 0;
+  		height: 100%;
+  		position: absolute;
+  		right: 0;
+  		top: 0;
+  		width: 100%;
+  		z-index: 1;
+  	}
+  }
+  	*/
+}
+
+.first-screen__block::after {
+  background-color: rgba(0, 12, 90, 0.8);
+  bottom: 0;
+  content: "";
+  left: 0;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .first-screen .n_container {
@@ -737,7 +781,6 @@ body strong {
 .breadcrumbs__link,
 .breadcrumbs__name {
   color: #696969;
-  font-family: "Nunito", system-ui;
 }
 
 .breadcrumbs__link {
@@ -753,6 +796,7 @@ body strong {
   height: 1px;
   left: 0;
   position: absolute;
+  transition: 0.3s ease 0s;
   width: 100%;
 }
 
@@ -771,6 +815,10 @@ h4,
 h5,
 h6 {
   font-weight: 800;
+}
+
+a {
+  color: #0064D9;
 }
 
 .n_object-fit {
@@ -3522,19 +3570,6 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .first-screen__block::after {
-    background-color: rgba(0, 12, 90, 0.8);
-    bottom: 0;
-    content: "";
-    left: 0;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-  }
-
   .first-screen__items {
     align-items: center;
     display: flex;
@@ -3754,6 +3789,12 @@ body {
     line-height: 58px;
   }
 
+  .first-screen__bg {
+    left: 0;
+    min-width: 1440px;
+    transform: translateX(0);
+  }
+
   .n_container {
     padding-left: 25px;
     padding-right: 25px;
@@ -3934,10 +3975,6 @@ body {
     text-align: center;
   }
 
-  .first-screen__bg {
-    display: none;
-  }
-
   .best-transportation-companies__accordion._init .block__column:not(:last-child) {
     margin-bottom: 20px;
   }
@@ -3958,6 +3995,10 @@ body {
 }
 
 @media screen and (max-width: 720.98px) {
+  .first-screen__wrap-breadcrumbsLink {
+    display: none;
+  }
+
   .n_container {
     padding-left: 20px;
     padding-right: 20px;
@@ -4756,6 +4797,18 @@ body {
 
   .first-screen__blockWrapForm .first-screen__formButton:hover {
     background-color: #00499E;
+  }
+
+  .breadcrumbs__link {
+    transition: 0.3s ease 0s;
+  }
+
+  .breadcrumbs__link:hover {
+    color: #0064D9;
+  }
+
+  .breadcrumbs__link:hover::after {
+    background-color: #398ef0;
   }
 
   .first-block-content__blockItemButton {
