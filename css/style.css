@@ -1519,12 +1519,11 @@ body {
 }
 
 .main__columnSidebar {
-  padding-bottom: 30px;
+  padding-bottom: 5px;
 }
 
 .main__columnSidebar .sticky-block {
-  position: sticky;
-  top: 100px;
+  position: relative;
   z-index: 2;
 }
 
@@ -3623,6 +3622,11 @@ body {
     width: 267px;
   }
 
+  .main__columnSidebar .sticky-block {
+    position: sticky;
+    top: 100px;
+  }
+
   .resources-that-you-need__items {
     margin-left: 0;
     margin-right: 0;
@@ -3900,13 +3904,13 @@ body {
   }
 
   .main__columnSidebar {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     position: relative;
   }
 
   .main__columnSidebar::after {
     background-color: #F9FAFF;
-    bottom: -25px;
+    bottom: -12px;
     content: "";
     left: -25px;
     position: absolute;
@@ -3931,6 +3935,12 @@ body {
 
   .aside__blockBestCarrier.hidden {
     transform: translateY(120%);
+  }
+}
+
+@media screen and (max-width: 860.98px) and (max-width: 575.98px) {
+  .main__columnSidebar::after {
+    bottom: -1px;
   }
 }
 
@@ -4159,6 +4169,10 @@ body {
 
   .header__blockSearch {
     width: 100%;
+  }
+
+  .main__columnSidebar {
+    margin-bottom: 30px;
   }
 
   .written-column .block-info-for-link {
