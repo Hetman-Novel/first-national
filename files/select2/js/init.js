@@ -15,4 +15,8 @@ $(function() {
       placeholder: "10001, New York, NY",
       theme: 'where-are-you-moving-from'
    });
+   $('#how-much-needs-to-be-moved').select2({
+      placeholder: "Move Size",
+      theme: 'where-are-you-moving-from'
+   });
 });
