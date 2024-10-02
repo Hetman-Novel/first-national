@@ -5312,8 +5312,8 @@ body {
   }
 
   .first-screen__item .first-screen__blockWrapForm {
-    max-width: 100%;
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .first-screen__title {
