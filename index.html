@@ -4,13 +4,15 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/style.min.css?_v=20241001233047">
+   <link rel="stylesheet" href="css/style.min.css?_v=20241003002703">
    <!--<link rel="icon" type="image/svg+xml" href="favicon.svg">-->
-   <link rel="stylesheet" href="files/select2/css/select2.min.css?_v=20241001233047">
-   <link rel="stylesheet" href="files/select2/css/select2-custom.css?_v=20241001233047">
+   <link rel="stylesheet" href="files/calendar/main.min.css?_v=20241003002703">
+   <link rel="stylesheet" href="files/calendar/custom.css?_v=20241003002703">
+   <link rel="stylesheet" href="files/select2/css/select2.min.css?_v=20241003002703">
+   <link rel="stylesheet" href="files/select2/css/select2-custom.css?_v=20241003002703">
    <title>Home - First National Van Lines</title>
 
-   <script src="files/save-position-when-updating.js?_v=20241001233047"></script>
+   <script src="files/save-position-when-updating.js?_v=20241003002703"></script>
    
 </head>
 
@@ -536,142 +538,151 @@
    <p class="first-screen__blockWrapFormText">Let us help match you</p>
    <div id="fs-wrapper-steps" class="first-screen__blockWrapFormWrapper step-1"><!-- step-1 step-2 step-3 step-4 step-5 step-6 step-7 -->
       <div class="first-screen__blockWrapFormWrapRadioButtons">
-         <button type="button" id="fs-btn-step-1" class="fs-form__btn-step">step 1</button>
-         <button type="button" id="fs-btn-step-2" class="fs-form__btn-step">step 2</button>
-         <button type="button" id="fs-btn-step-3" class="fs-form__btn-step">step 3</button>
-         <button type="button" id="fs-btn-step-4" class="fs-form__btn-step">step 4</button>
-         <button type="button" id="fs-btn-step-5" class="fs-form__btn-step">step 5</button>
-         <button type="button" id="fs-btn-step-6" class="fs-form__btn-step">step 6</button>
-         <button type="button" id="fs-btn-step-7" class="fs-form__btn-step">step 7</button>
+         <div class="fs-form__btn-step">step 1</div>
+         <div class="fs-form__btn-step">step 2</div>
+         <div class="fs-form__btn-step">step 3</div>
+         <div class="fs-form__btn-step">step 4</div>
+         <div class="fs-form__btn-step">step 5</div>
+         <div class="fs-form__btn-step">step 6</div>
+         <div class="fs-form__btn-step">step 7</div>
       </div>
-      <form action="#" class="first-screen__form">
+      <form action="#" class="first-screen__form" id="fs-form">
          <div class="step">
             <label>Where are you moving from?</label>
-            <!-- select2 applied file location in file/select2 -->
-            <select id="where-are-you-moving-from" name="f-where-are-you-moving-from" required>
-               <option selected disabled></option>
-               <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
-               <option value="85001">85001, Phoenix, AZ</option>
-               <option value="99501">99501, Anchorage, AK</option>
-               <option value="72201">72201, Little Rock, AR</option>
-               <option value="94203">94203, Sacramento, CA</option>
-               <option value="80201">80201, Denver, CO</option>
-               <option value="06101">06101, Hartford, CT</option>
-               <option value="19901">19901, Dover, DE</option>
-               <option value="20001">20001, Washington, DC</option>
-               <option value="32301">32301, Tallahassee, FL</option>
-               <option value="30301">30301, Atlanta, GA</option>
-               <option value="96801">96801, Honolulu, HI</option>
-               <option value="83701">83701, Boise, ID</option>
-               <option value="62701">62701, Springfield, IL</option>
-               <option value="46201">46201, Indianapolis, IN</option>
-               <option value="50301">50301, Des Moines, IA</option>
-               <option value="66601">66601, Topeka, KS</option>
-               <option value="40601">40601, Frankfort, KY</option>
-               <option value="70801">70801, Baton Rouge, LA</option>
-               <option value="04330">04330, Augusta, ME</option>
-               <option value="21201">21201, Baltimore, MD</option>
-               <option value="02101">02101, Boston, MA</option>
-               <option value="48901">48901, Lansing, MI</option>
-               <option value="55101">55101, Saint Paul, MN</option>
-               <option value="39201">39201, Jackson, MS</option>
-               <option value="65101">65101, Jefferson City, MO</option>
-               <option value="59601">59601, Helena, MT</option>
-               <option value="68501">68501, Lincoln, NE</option>
-               <option value="89701">89701, Carson City, NV</option>
-               <option value="03301">03301, Concord, NH</option>
-               <option value="08601">08601, Trenton, NJ</option>
-               <option value="87501">87501, Santa Fe, NM</option>
-               <option value="12201">12201, Albany, NY</option>
-               <option value="27601">27601, Raleigh, NC</option>
-               <option value="58501">58501, Bismarck, ND</option>
-               <option value="43201">43201, Columbus, OH</option>
-               <option value="73101">73101, Oklahoma City, OK</option>
-               <option value="97301">97301, Salem, OR</option>
-               <option value="17101">17101, Harrisburg, PA</option>
-               <option value="02901">02901, Providence, RI</option>
-               <option value="29201">29201, Columbia, SC</option>
-               <option value="57501">57501, Pierre, SD</option>
-               <option value="37201">37201, Nashville, TN</option>
-               <option value="73301">73301, Austin, TX</option>
-               <option value="84101">84101, Salt Lake City, UT</option>
-               <option value="05601">05601, Montpelier, VT</option>
-               <option value="23218">23218, Richmond, VA</option>
-               <option value="98501">98501, Olympia, WA</option>
-               <option value="25301">25301, Charleston, WV</option>
-               <option value="53701">53701, Madison, WI</option>
-               <option value="82001">82001, Cheyenne, WY</option>
-            </select>
-            <button type="button" class="first-screen__formButton" id="fs-btn-next-2">Next Step</button>
+            <div class="first-screen__formWrapSelect">
+               <!-- select2 applied file location in file/select2 -->
+               <select id="where-are-you-moving-from" name="f-where-are-you-moving-from" required>
+                  <option selected disabled></option>
+                  <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
+                  <option value="85001">85001, Phoenix, AZ</option>
+                  <option value="99501">99501, Anchorage, AK</option>
+                  <option value="72201">72201, Little Rock, AR</option>
+                  <option value="94203">94203, Sacramento, CA</option>
+                  <option value="80201">80201, Denver, CO</option>
+                  <option value="06101">06101, Hartford, CT</option>
+                  <option value="19901">19901, Dover, DE</option>
+                  <option value="20001">20001, Washington, DC</option>
+                  <option value="32301">32301, Tallahassee, FL</option>
+                  <option value="30301">30301, Atlanta, GA</option>
+                  <option value="96801">96801, Honolulu, HI</option>
+                  <option value="83701">83701, Boise, ID</option>
+                  <option value="62701">62701, Springfield, IL</option>
+                  <option value="46201">46201, Indianapolis, IN</option>
+                  <option value="50301">50301, Des Moines, IA</option>
+                  <option value="66601">66601, Topeka, KS</option>
+                  <option value="40601">40601, Frankfort, KY</option>
+                  <option value="70801">70801, Baton Rouge, LA</option>
+                  <option value="04330">04330, Augusta, ME</option>
+                  <option value="21201">21201, Baltimore, MD</option>
+                  <option value="02101">02101, Boston, MA</option>
+                  <option value="48901">48901, Lansing, MI</option>
+                  <option value="55101">55101, Saint Paul, MN</option>
+                  <option value="39201">39201, Jackson, MS</option>
+                  <option value="65101">65101, Jefferson City, MO</option>
+                  <option value="59601">59601, Helena, MT</option>
+                  <option value="68501">68501, Lincoln, NE</option>
+                  <option value="89701">89701, Carson City, NV</option>
+                  <option value="03301">03301, Concord, NH</option>
+                  <option value="08601">08601, Trenton, NJ</option>
+                  <option value="87501">87501, Santa Fe, NM</option>
+                  <option value="12201">12201, Albany, NY</option>
+                  <option value="27601">27601, Raleigh, NC</option>
+                  <option value="58501">58501, Bismarck, ND</option>
+                  <option value="43201">43201, Columbus, OH</option>
+                  <option value="73101">73101, Oklahoma City, OK</option>
+                  <option value="97301">97301, Salem, OR</option>
+                  <option value="17101">17101, Harrisburg, PA</option>
+                  <option value="02901">02901, Providence, RI</option>
+                  <option value="29201">29201, Columbia, SC</option>
+                  <option value="57501">57501, Pierre, SD</option>
+                  <option value="37201">37201, Nashville, TN</option>
+                  <option value="73301">73301, Austin, TX</option>
+                  <option value="84101">84101, Salt Lake City, UT</option>
+                  <option value="05601">05601, Montpelier, VT</option>
+                  <option value="23218">23218, Richmond, VA</option>
+                  <option value="98501">98501, Olympia, WA</option>
+                  <option value="25301">25301, Charleston, WV</option>
+                  <option value="53701">53701, Madison, WI</option>
+                  <option value="82001">82001, Cheyenne, WY</option>
+               </select>
+               <p class="text-no-valid">Please tell us where you're moving from</p>
+            </div>
+            <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-2">Next Step</button>
          </div>
          <div class="step">
             <label>Where are you moving to?</label>
-            <!-- select2 applied file location in file/select2 -->
-            <select id="where-are-you-moving-to" name="f-where-are-you-moving-to" required>
-               <option selected disabled></option>
-               <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
-               <option value="85001">85001, Phoenix, AZ</option>
-               <option value="99501">99501, Anchorage, AK</option>
-               <option value="72201">72201, Little Rock, AR</option>
-               <option value="94203">94203, Sacramento, CA</option>
-               <option value="80201">80201, Denver, CO</option>
-               <option value="06101">06101, Hartford, CT</option>
-               <option value="19901">19901, Dover, DE</option>
-               <option value="20001">20001, Washington, DC</option>
-               <option value="32301">32301, Tallahassee, FL</option>
-               <option value="30301">30301, Atlanta, GA</option>
-               <option value="96801">96801, Honolulu, HI</option>
-               <option value="83701">83701, Boise, ID</option>
-               <option value="62701">62701, Springfield, IL</option>
-               <option value="46201">46201, Indianapolis, IN</option>
-               <option value="50301">50301, Des Moines, IA</option>
-               <option value="66601">66601, Topeka, KS</option>
-               <option value="40601">40601, Frankfort, KY</option>
-               <option value="70801">70801, Baton Rouge, LA</option>
-               <option value="04330">04330, Augusta, ME</option>
-               <option value="21201">21201, Baltimore, MD</option>
-               <option value="02101">02101, Boston, MA</option>
-               <option value="48901">48901, Lansing, MI</option>
-               <option value="55101">55101, Saint Paul, MN</option>
-               <option value="39201">39201, Jackson, MS</option>
-               <option value="65101">65101, Jefferson City, MO</option>
-               <option value="59601">59601, Helena, MT</option>
-               <option value="68501">68501, Lincoln, NE</option>
-               <option value="89701">89701, Carson City, NV</option>
-               <option value="03301">03301, Concord, NH</option>
-               <option value="08601">08601, Trenton, NJ</option>
-               <option value="87501">87501, Santa Fe, NM</option>
-               <option value="12201">12201, Albany, NY</option>
-               <option value="27601">27601, Raleigh, NC</option>
-               <option value="58501">58501, Bismarck, ND</option>
-               <option value="43201">43201, Columbus, OH</option>
-               <option value="73101">73101, Oklahoma City, OK</option>
-               <option value="97301">97301, Salem, OR</option>
-               <option value="17101">17101, Harrisburg, PA</option>
-               <option value="02901">02901, Providence, RI</option>
-               <option value="29201">29201, Columbia, SC</option>
-               <option value="57501">57501, Pierre, SD</option>
-               <option value="37201">37201, Nashville, TN</option>
-               <option value="73301">73301, Austin, TX</option>
-               <option value="84101">84101, Salt Lake City, UT</option>
-               <option value="05601">05601, Montpelier, VT</option>
-               <option value="23218">23218, Richmond, VA</option>
-               <option value="98501">98501, Olympia, WA</option>
-               <option value="25301">25301, Charleston, WV</option>
-               <option value="53701">53701, Madison, WI</option>
-               <option value="82001">82001, Cheyenne, WY</option>
-            </select>
+            <div class="first-screen__formWrapSelect">
+               <!-- select2 applied file location in file/select2 -->
+               <select id="where-are-you-moving-to" name="f-where-are-you-moving-to" required>
+                  <option selected disabled></option>
+                  <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
+                  <option value="85001">85001, Phoenix, AZ</option>
+                  <option value="99501">99501, Anchorage, AK</option>
+                  <option value="72201">72201, Little Rock, AR</option>
+                  <option value="94203">94203, Sacramento, CA</option>
+                  <option value="80201">80201, Denver, CO</option>
+                  <option value="06101">06101, Hartford, CT</option>
+                  <option value="19901">19901, Dover, DE</option>
+                  <option value="20001">20001, Washington, DC</option>
+                  <option value="32301">32301, Tallahassee, FL</option>
+                  <option value="30301">30301, Atlanta, GA</option>
+                  <option value="96801">96801, Honolulu, HI</option>
+                  <option value="83701">83701, Boise, ID</option>
+                  <option value="62701">62701, Springfield, IL</option>
+                  <option value="46201">46201, Indianapolis, IN</option>
+                  <option value="50301">50301, Des Moines, IA</option>
+                  <option value="66601">66601, Topeka, KS</option>
+                  <option value="40601">40601, Frankfort, KY</option>
+                  <option value="70801">70801, Baton Rouge, LA</option>
+                  <option value="04330">04330, Augusta, ME</option>
+                  <option value="21201">21201, Baltimore, MD</option>
+                  <option value="02101">02101, Boston, MA</option>
+                  <option value="48901">48901, Lansing, MI</option>
+                  <option value="55101">55101, Saint Paul, MN</option>
+                  <option value="39201">39201, Jackson, MS</option>
+                  <option value="65101">65101, Jefferson City, MO</option>
+                  <option value="59601">59601, Helena, MT</option>
+                  <option value="68501">68501, Lincoln, NE</option>
+                  <option value="89701">89701, Carson City, NV</option>
+                  <option value="03301">03301, Concord, NH</option>
+                  <option value="08601">08601, Trenton, NJ</option>
+                  <option value="87501">87501, Santa Fe, NM</option>
+                  <option value="12201">12201, Albany, NY</option>
+                  <option value="27601">27601, Raleigh, NC</option>
+                  <option value="58501">58501, Bismarck, ND</option>
+                  <option value="43201">43201, Columbus, OH</option>
+                  <option value="73101">73101, Oklahoma City, OK</option>
+                  <option value="97301">97301, Salem, OR</option>
+                  <option value="17101">17101, Harrisburg, PA</option>
+                  <option value="02901">02901, Providence, RI</option>
+                  <option value="29201">29201, Columbia, SC</option>
+                  <option value="57501">57501, Pierre, SD</option>
+                  <option value="37201">37201, Nashville, TN</option>
+                  <option value="73301">73301, Austin, TX</option>
+                  <option value="84101">84101, Salt Lake City, UT</option>
+                  <option value="05601">05601, Montpelier, VT</option>
+                  <option value="23218">23218, Richmond, VA</option>
+                  <option value="98501">98501, Olympia, WA</option>
+                  <option value="25301">25301, Charleston, WV</option>
+                  <option value="53701">53701, Madison, WI</option>
+                  <option value="82001">82001, Cheyenne, WY</option>
+               </select>
+               <p class="text-no-valid">Please tell us where you're moving to</p>
+            </div>
             <div class="first-screen__formButtons">
                <button type="button" class="first-screen__formButton back" id="fs-btn-back-1">Back</button>
-               <button type="button" class="first-screen__formButton" id="fs-btn-next-3">Next Step</button>
+               <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-3">Next Step</button>
             </div>
          </div>
          <div class="step">
             <label>When do you want to move?</label>
-            there will be a calendar here
+            <div class="wrap-calendar">
+               <div id="calendar"></div>
+               <input type="hidden" id="fs-date" value="">
+            </div>
             <div class="first-screen__formButtons">
                <button type="button" class="first-screen__formButton back" id="fs-btn-back-2">Back</button>
-               <button type="button" class="first-screen__formButton" id="fs-btn-next-4">Next Step</button>
+               <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-4">Next Step</button>
             </div>
          </div>
          <div class="step step-four">
@@ -687,9 +698,10 @@
                <option value="до 100">до 100</option>
                <option value="более 100">более 100</option>
             </select>
+            <p class="text-no-valid">Please tell us how much stuff you have</p>
             <div class="first-screen__formButtons">
                <button type="button" class="first-screen__formButton back" id="fs-btn-back-3">Back</button>
-               <button type="button" class="first-screen__formButton" id="fs-btn-next-5">Next Step</button>
+               <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-5">Next Step</button>
             </div>
          </div>
          <div class="step">
@@ -700,11 +712,12 @@
                   <path d="M12.4749 5.44713C13.8417 6.81397 13.8417 9.03004 12.4749 10.3969C11.108 11.7637 8.89197 11.7637 7.52513 10.3969C6.15829 9.03004 6.15829 6.81397 7.52513 5.44713C8.89197 4.08029 11.108 4.08029 12.4749 5.44713" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M16.3639 3.63604C19.8787 7.15076 19.8787 12.8492 16.3639 16.3639C12.8492 19.8787 7.15074 19.8787 3.63604 16.3639C0.12132 12.8492 0.12132 7.15074 3.63604 3.63604C7.15076 0.12132 12.8492 0.12132 16.3639 3.63604" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                </svg>
-               <input type="text" name="f-name" class="input-name" placeholder="Your Name">
+               <input type="text" name="f-name" class="input-name" id="f-name" placeholder="Your Name">
             </div>
+            <p class="text-no-valid">Please tell us your name</p>
             <div class="first-screen__formButtons">
                <button type="button" class="first-screen__formButton back" id="fs-btn-back-4">Back</button>
-               <button type="button" class="first-screen__formButton" id="fs-btn-next-6">Next Step</button>
+               <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-6">Next Step</button>
             </div>
          </div>
          <div class="step">
@@ -716,11 +729,12 @@
                   <path d="M1.58801 14.412L7.68201 8.31799" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M12.3604 8.35999L18.4124 14.412" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                </svg>
-               <input type="text" name="f-email" class="input-email" placeholder="Email">
+               <input type="text" name="f-email" class="input-email" id="f-email" placeholder="Email">
             </div>
+            <p class="text-no-valid">Please tell us your email</p>
             <div class="first-screen__formButtons">
                <button type="button" class="first-screen__formButton back" id="fs-btn-back-5">Back</button>
-               <button type="button" class="first-screen__formButton" id="fs-btn-next-7">Next Step</button>
+               <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-7">Next Step</button>
             </div>
          </div>
          <div class="step">
@@ -731,11 +745,12 @@
                   <path d="M4.88 14.5H7.12" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M3 1H9C10.105 1 11 1.895 11 3V15C11 16.105 10.105 17 9 17H3C1.895 17 1 16.105 1 15V3C1 1.895 1.895 1 3 1Z" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                </svg>
-               <input type="text" name="f-phone" class="input-phone" placeholder="Phone Number">
+               <input type="text" name="f-phone" class="input-phone" id="f-phone" placeholder="Phone Number">
             </div>
+            <p class="text-no-valid">Please tell us your phone number</p>
             <div class="first-screen__formButtons">
                <button type="button" class="first-screen__formButton back" id="fs-btn-back-6">Back</button>
-               <button type="submit" class="first-screen__formButton" id="fs-btn-submit">Get My Quote</button>
+               <button type="submit" class="first-screen__formButton form-submit used-for-validation" id="fs-btn-submit">Get My Quote</button>
             </div>
          </div>
       </form>
@@ -1215,151 +1230,237 @@
 							<section class="get-matched__blockWrapForm">
 								<h6 class="get-matched__blockWrapFormTitle">Get matched with the best mover for your needs!</h6>
 								<p class="first-screen__blockWrapFormText">Let us help match you</p>
-								<div class="get-matched__blockWrapFormWrapper get-matched-first-step">
+								<div id="fs-wrapper-steps2" class="get-matched__blockWrapFormWrapper step2-1">
 									<div class="get-matched__blockWrapFormWrapRadioButtons">
-										<button type="button" id="get-matched-form-btn-step-1" class="get-matched-form__btn-step active">1</button>
-										<button type="button" id="get-matched-form-btn-step-2" class="get-matched-form__btn-step">2</button>
-										<button type="button" id="get-matched-form-btn-step-3" class="get-matched-form__btn-step">3</button>
-										<button type="button" id="get-matched-form-btn-step-4" class="get-matched-form__btn-step">4</button>
-										<button type="button" id="get-matched-form-btn-step-5" class="get-matched-form__btn-step">5</button>
-										<button type="button" id="get-matched-form-btn-step-6" class="get-matched-form__btn-step">6</button>
-										<button type="button" id="get-matched-form-btn-step-7" class="get-matched-form__btn-step">7</button>
+										<div class="get-matched-form__btn-step">1</div>
+										<div class="get-matched-form__btn-step">2</div>
+										<div class="get-matched-form__btn-step">3</div>
+										<div class="get-matched-form__btn-step">4</div>
+										<div class="get-matched-form__btn-step">5</div>
+										<div class="get-matched-form__btn-step">6</div>
+										<div class="get-matched-form__btn-step">7</div>
 									</div>
-									<form action="#" class="get-matched__form">
-										<div class="get-matched-step" id="get-matched-form-step-1">
+									<form action="#" class="get-matched__form" id="get-matched-form">
+										<div class="get-matched-step step2">
 											<label>Where are you moving from?</label>
-											<!-- select2 applied file location in file/select2 -->
-											<select id="get-matched-where-are-you-moving-from" name="get-matched-where-are-you-moving-from" required>
-												<option selected disabled></option>
-												<option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
-												<option value="85001">85001, Phoenix, AZ</option>
-												<option value="99501">99501, Anchorage, AK</option>
-												<option value="72201">72201, Little Rock, AR</option>
-												<option value="94203">94203, Sacramento, CA</option>
-												<option value="80201">80201, Denver, CO</option>
-												<option value="06101">06101, Hartford, CT</option>
-												<option value="19901">19901, Dover, DE</option>
-												<option value="20001">20001, Washington, DC</option>
-												<option value="32301">32301, Tallahassee, FL</option>
-												<option value="30301">30301, Atlanta, GA</option>
-												<option value="96801">96801, Honolulu, HI</option>
-												<option value="83701">83701, Boise, ID</option>
-												<option value="62701">62701, Springfield, IL</option>
-												<option value="46201">46201, Indianapolis, IN</option>
-												<option value="50301">50301, Des Moines, IA</option>
-												<option value="66601">66601, Topeka, KS</option>
-												<option value="40601">40601, Frankfort, KY</option>
-												<option value="70801">70801, Baton Rouge, LA</option>
-												<option value="04330">04330, Augusta, ME</option>
-												<option value="21201">21201, Baltimore, MD</option>
-												<option value="02101">02101, Boston, MA</option>
-												<option value="48901">48901, Lansing, MI</option>
-												<option value="55101">55101, Saint Paul, MN</option>
-												<option value="39201">39201, Jackson, MS</option>
-												<option value="65101">65101, Jefferson City, MO</option>
-												<option value="59601">59601, Helena, MT</option>
-												<option value="68501">68501, Lincoln, NE</option>
-												<option value="89701">89701, Carson City, NV</option>
-												<option value="03301">03301, Concord, NH</option>
-												<option value="08601">08601, Trenton, NJ</option>
-												<option value="87501">87501, Santa Fe, NM</option>
-												<option value="12201">12201, Albany, NY</option>
-												<option value="27601">27601, Raleigh, NC</option>
-												<option value="58501">58501, Bismarck, ND</option>
-												<option value="43201">43201, Columbus, OH</option>
-												<option value="73101">73101, Oklahoma City, OK</option>
-												<option value="97301">97301, Salem, OR</option>
-												<option value="17101">17101, Harrisburg, PA</option>
-												<option value="02901">02901, Providence, RI</option>
-												<option value="29201">29201, Columbia, SC</option>
-												<option value="57501">57501, Pierre, SD</option>
-												<option value="37201">37201, Nashville, TN</option>
-												<option value="73301">73301, Austin, TX</option>
-												<option value="84101">84101, Salt Lake City, UT</option>
-												<option value="05601">05601, Montpelier, VT</option>
-												<option value="23218">23218, Richmond, VA</option>
-												<option value="98501">98501, Olympia, WA</option>
-												<option value="25301">25301, Charleston, WV</option>
-												<option value="53701">53701, Madison, WI</option>
-												<option value="82001">82001, Cheyenne, WY</option>
-											</select>
-											<button type="button" class="get-matched__formButton">Next Step</button>
+											<div class="first-screen__formWrapSelect">
+												<!-- select2 applied file location in file/select2 -->
+												<select id="get-matched-where-are-you-moving-from2" name="get-matched-where-are-you-moving-from2" required>
+													<option selected disabled></option>
+													<option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
+													<option value="85001">85001, Phoenix, AZ</option>
+													<option value="99501">99501, Anchorage, AK</option>
+													<option value="72201">72201, Little Rock, AR</option>
+													<option value="94203">94203, Sacramento, CA</option>
+													<option value="80201">80201, Denver, CO</option>
+													<option value="06101">06101, Hartford, CT</option>
+													<option value="19901">19901, Dover, DE</option>
+													<option value="20001">20001, Washington, DC</option>
+													<option value="32301">32301, Tallahassee, FL</option>
+													<option value="30301">30301, Atlanta, GA</option>
+													<option value="96801">96801, Honolulu, HI</option>
+													<option value="83701">83701, Boise, ID</option>
+													<option value="62701">62701, Springfield, IL</option>
+													<option value="46201">46201, Indianapolis, IN</option>
+													<option value="50301">50301, Des Moines, IA</option>
+													<option value="66601">66601, Topeka, KS</option>
+													<option value="40601">40601, Frankfort, KY</option>
+													<option value="70801">70801, Baton Rouge, LA</option>
+													<option value="04330">04330, Augusta, ME</option>
+													<option value="21201">21201, Baltimore, MD</option>
+													<option value="02101">02101, Boston, MA</option>
+													<option value="48901">48901, Lansing, MI</option>
+													<option value="55101">55101, Saint Paul, MN</option>
+													<option value="39201">39201, Jackson, MS</option>
+													<option value="65101">65101, Jefferson City, MO</option>
+													<option value="59601">59601, Helena, MT</option>
+													<option value="68501">68501, Lincoln, NE</option>
+													<option value="89701">89701, Carson City, NV</option>
+													<option value="03301">03301, Concord, NH</option>
+													<option value="08601">08601, Trenton, NJ</option>
+													<option value="87501">87501, Santa Fe, NM</option>
+													<option value="12201">12201, Albany, NY</option>
+													<option value="27601">27601, Raleigh, NC</option>
+													<option value="58501">58501, Bismarck, ND</option>
+													<option value="43201">43201, Columbus, OH</option>
+													<option value="73101">73101, Oklahoma City, OK</option>
+													<option value="97301">97301, Salem, OR</option>
+													<option value="17101">17101, Harrisburg, PA</option>
+													<option value="02901">02901, Providence, RI</option>
+													<option value="29201">29201, Columbia, SC</option>
+													<option value="57501">57501, Pierre, SD</option>
+													<option value="37201">37201, Nashville, TN</option>
+													<option value="73301">73301, Austin, TX</option>
+													<option value="84101">84101, Salt Lake City, UT</option>
+													<option value="05601">05601, Montpelier, VT</option>
+													<option value="23218">23218, Richmond, VA</option>
+													<option value="98501">98501, Olympia, WA</option>
+													<option value="25301">25301, Charleston, WV</option>
+													<option value="53701">53701, Madison, WI</option>
+													<option value="82001">82001, Cheyenne, WY</option>
+												</select>
+												<p class="text-no-valid">Please tell us where you're moving from</p>
+											</div>
+											<button type="button" class="first-screen__formButton used-for-validation" id="get-matched-btn-next-2">Next Step</button>
 										</div>
-										<div class="get-matched-step" id="get-matched-form-step-2">
+										<div class="get-matched-step step2">
 											<label>Where are you moving to?</label>
+											<div class="first-screen__formWrapSelect">
+												<!-- select2 applied file location in file/select2 -->
+												<select id="get-matched-where-are-you-moving-to2" name="get-matched-where-are-you-moving-to2" required>
+													<option selected disabled></option>
+													<option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
+													<option value="85001">85001, Phoenix, AZ</option>
+													<option value="99501">99501, Anchorage, AK</option>
+													<option value="72201">72201, Little Rock, AR</option>
+													<option value="94203">94203, Sacramento, CA</option>
+													<option value="80201">80201, Denver, CO</option>
+													<option value="06101">06101, Hartford, CT</option>
+													<option value="19901">19901, Dover, DE</option>
+													<option value="20001">20001, Washington, DC</option>
+													<option value="32301">32301, Tallahassee, FL</option>
+													<option value="30301">30301, Atlanta, GA</option>
+													<option value="96801">96801, Honolulu, HI</option>
+													<option value="83701">83701, Boise, ID</option>
+													<option value="62701">62701, Springfield, IL</option>
+													<option value="46201">46201, Indianapolis, IN</option>
+													<option value="50301">50301, Des Moines, IA</option>
+													<option value="66601">66601, Topeka, KS</option>
+													<option value="40601">40601, Frankfort, KY</option>
+													<option value="70801">70801, Baton Rouge, LA</option>
+													<option value="04330">04330, Augusta, ME</option>
+													<option value="21201">21201, Baltimore, MD</option>
+													<option value="02101">02101, Boston, MA</option>
+													<option value="48901">48901, Lansing, MI</option>
+													<option value="55101">55101, Saint Paul, MN</option>
+													<option value="39201">39201, Jackson, MS</option>
+													<option value="65101">65101, Jefferson City, MO</option>
+													<option value="59601">59601, Helena, MT</option>
+													<option value="68501">68501, Lincoln, NE</option>
+													<option value="89701">89701, Carson City, NV</option>
+													<option value="03301">03301, Concord, NH</option>
+													<option value="08601">08601, Trenton, NJ</option>
+													<option value="87501">87501, Santa Fe, NM</option>
+													<option value="12201">12201, Albany, NY</option>
+													<option value="27601">27601, Raleigh, NC</option>
+													<option value="58501">58501, Bismarck, ND</option>
+													<option value="43201">43201, Columbus, OH</option>
+													<option value="73101">73101, Oklahoma City, OK</option>
+													<option value="97301">97301, Salem, OR</option>
+													<option value="17101">17101, Harrisburg, PA</option>
+													<option value="02901">02901, Providence, RI</option>
+													<option value="29201">29201, Columbia, SC</option>
+													<option value="57501">57501, Pierre, SD</option>
+													<option value="37201">37201, Nashville, TN</option>
+													<option value="73301">73301, Austin, TX</option>
+													<option value="84101">84101, Salt Lake City, UT</option>
+													<option value="05601">05601, Montpelier, VT</option>
+													<option value="23218">23218, Richmond, VA</option>
+													<option value="98501">98501, Olympia, WA</option>
+													<option value="25301">25301, Charleston, WV</option>
+													<option value="53701">53701, Madison, WI</option>
+													<option value="82001">82001, Cheyenne, WY</option>
+												</select>
+												<p class="text-no-valid">Please tell us where you're moving to</p>
+											</div>
+											<div class="first-screen__formButtons">
+												<button type="button" class="first-screen__formButton back" id="get-matched-btn-back-1">Back</button>
+												<button type="button" class="first-screen__formButton used-for-validation" id="get-matched-btn-next-3">Next Step</button>
+											</div>
+										</div>
+										<div class="get-matched-step step2">
+							            <label>When do you want to move?</label>
+											<div class="wrap-calendar">
+												<div id="calendar2"></div>
+												<input type="hidden" id="get-matched-date" value="">
+											</div>
+											<div class="first-screen__formButtons">
+												<button type="button" class="first-screen__formButton back" id="get-matched-btn-back-2">Back</button>
+												<button type="button" class="first-screen__formButton used-for-validation" id="get-matched-btn-next-4">Next Step</button>
+											</div>
+										</div>
+										<div class="get-matched-step step-four step2">
+							            <label>How much needs to be moved?</label>
 											<!-- select2 applied file location in file/select2 -->
-											<select id="get-matched-where-are-you-moving-to" name="get-matched-where-are-you-moving-to" required>
+											<select id="how-much-needs-to-be-moved2" name="f-how-much-needs-to-be-moved2" required>
 												<option selected disabled></option>
-												<option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
-												<option value="85001">85001, Phoenix, AZ</option>
-												<option value="99501">99501, Anchorage, AK</option>
-												<option value="72201">72201, Little Rock, AR</option>
-												<option value="94203">94203, Sacramento, CA</option>
-												<option value="80201">80201, Denver, CO</option>
-												<option value="06101">06101, Hartford, CT</option>
-												<option value="19901">19901, Dover, DE</option>
-												<option value="20001">20001, Washington, DC</option>
-												<option value="32301">32301, Tallahassee, FL</option>
-												<option value="30301">30301, Atlanta, GA</option>
-												<option value="96801">96801, Honolulu, HI</option>
-												<option value="83701">83701, Boise, ID</option>
-												<option value="62701">62701, Springfield, IL</option>
-												<option value="46201">46201, Indianapolis, IN</option>
-												<option value="50301">50301, Des Moines, IA</option>
-												<option value="66601">66601, Topeka, KS</option>
-												<option value="40601">40601, Frankfort, KY</option>
-												<option value="70801">70801, Baton Rouge, LA</option>
-												<option value="04330">04330, Augusta, ME</option>
-												<option value="21201">21201, Baltimore, MD</option>
-												<option value="02101">02101, Boston, MA</option>
-												<option value="48901">48901, Lansing, MI</option>
-												<option value="55101">55101, Saint Paul, MN</option>
-												<option value="39201">39201, Jackson, MS</option>
-												<option value="65101">65101, Jefferson City, MO</option>
-												<option value="59601">59601, Helena, MT</option>
-												<option value="68501">68501, Lincoln, NE</option>
-												<option value="89701">89701, Carson City, NV</option>
-												<option value="03301">03301, Concord, NH</option>
-												<option value="08601">08601, Trenton, NJ</option>
-												<option value="87501">87501, Santa Fe, NM</option>
-												<option value="12201">12201, Albany, NY</option>
-												<option value="27601">27601, Raleigh, NC</option>
-												<option value="58501">58501, Bismarck, ND</option>
-												<option value="43201">43201, Columbus, OH</option>
-												<option value="73101">73101, Oklahoma City, OK</option>
-												<option value="97301">97301, Salem, OR</option>
-												<option value="17101">17101, Harrisburg, PA</option>
-												<option value="02901">02901, Providence, RI</option>
-												<option value="29201">29201, Columbia, SC</option>
-												<option value="57501">57501, Pierre, SD</option>
-												<option value="37201">37201, Nashville, TN</option>
-												<option value="73301">73301, Austin, TX</option>
-												<option value="84101">84101, Salt Lake City, UT</option>
-												<option value="05601">05601, Montpelier, VT</option>
-												<option value="23218">23218, Richmond, VA</option>
-												<option value="98501">98501, Olympia, WA</option>
-												<option value="25301">25301, Charleston, WV</option>
-												<option value="53701">53701, Madison, WI</option>
-												<option value="82001">82001, Cheyenne, WY</option>
+												<option value="5">5</option>
+												<option value="10">10</option>
+												<option value="15">15</option>
+												<option value="20">20</option>
+												<option value="50">50</option>
+												<option value="до 100">до 100</option>
+												<option value="более 100">более 100</option>
 											</select>
-											<button type="button" class="first-screen__formButton">Next Step</button>
+											<p class="text-no-valid">Please tell us how much stuff you have</p>
+											<div class="first-screen__formButtons">
+												<button type="button" class="first-screen__formButton back" id="get-matched-btn-back-3">Back</button>
+												<button type="button" class="first-screen__formButton used-for-validation" id="get-matched-btn-next-5">Next Step</button>
+											</div>
 										</div>
-										<div class="get-matched-step" id="get-matched-form-step-3">
-							
+										<div class="get-matched-step step2">
+							            <label>What's Your Name?</label>
+											<div class="first-screen__formWrapField name">
+												<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M15.7633 16.91L15.4133 16.031C15.2363 15.585 14.9613 15.185 14.6093 14.859L14.5453 14.8C13.9913 14.286 13.2633 14 12.5073 14H7.49333C6.73733 14 6.00933 14.286 5.45433 14.799L5.39033 14.859C5.03833 15.185 4.76433 15.585 4.58633 16.031L4.23633 16.91" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													<path d="M12.4749 5.44713C13.8417 6.81397 13.8417 9.03004 12.4749 10.3969C11.108 11.7637 8.89197 11.7637 7.52513 10.3969C6.15829 9.03004 6.15829 6.81397 7.52513 5.44713C8.89197 4.08029 11.108 4.08029 12.4749 5.44713" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													<path d="M16.3639 3.63604C19.8787 7.15076 19.8787 12.8492 16.3639 16.3639C12.8492 19.8787 7.15074 19.8787 3.63604 16.3639C0.12132 12.8492 0.12132 7.15074 3.63604 3.63604C7.15076 0.12132 12.8492 0.12132 16.3639 3.63604" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+												<input type="text" name="get-matched-name" class="input-name" id="get-matched-name" placeholder="Your Name">
+											</div>
+											<p class="text-no-valid">Please tell us your name</p>
+											<div class="first-screen__formButtons">
+												<button type="button" class="first-screen__formButton back" id="get-matched-btn-back-4">Back</button>
+												<button type="button" class="first-screen__formButton used-for-validation" id="get-matched-btn-next-6">Next Step</button>
+											</div>
 										</div>
-										<div class="get-matched-step" id="get-matched-form-step-4">
-							
+										<div class="get-matched-step step2">
+							            <label>What's Your Email Address?</label>
+											<div class="first-screen__formWrapField email">
+												<svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M1 2.8V2.8C1 3.4 1.3 3.9 1.8 4.3L7.8 8.4C9.2 9.3 10.9 9.3 12.3 8.4L18.3 4.4C18.7 3.9 19 3.4 19 2.8V2.8C19 1.8 18.2 1 17.2 1H2.8C1.8 1 1 1.8 1 2.8Z" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													<path d="M1 3V13C1 14.1 1.9 15 3 15H17C18.1 15 19 14.1 19 13V3" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													<path d="M1.58801 14.412L7.68201 8.31799" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													<path d="M12.3604 8.35999L18.4124 14.412" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+												<input type="text" name="get-matched-email" class="input-email" id="get-matched-email" placeholder="Email">
+											</div>
+											<p class="text-no-valid">Please tell us your email</p>
+											<div class="first-screen__formButtons">
+												<button type="button" class="first-screen__formButton back" id="get-matched-btn-back-5">Back</button>
+												<button type="button" class="first-screen__formButton used-for-validation" id="get-matched-btn-next-7">Next Step</button>
+											</div>
 										</div>
-										<div class="get-matched-step" id="get-matched-form-step-5">
-							
-										</div>
-										<div class="get-matched-step" id="get-matched-form-step-6">
-							
-										</div>
-										<div class="get-matched-step" id="get-matched-form-step-7">
-							
+										<div class="get-matched-step step2">
+											<label>What's Your Phone Number ?</label>
+											<div class="first-screen__formWrapField phone">
+												<svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M4 1V2.8C4 3.131 4.224 3.4 4.5 3.4H7.5C7.776 3.4 8 3.131 8 2.8V1" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													<path d="M4.88 14.5H7.12" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M3 1H9C10.105 1 11 1.895 11 3V15C11 16.105 10.105 17 9 17H3C1.895 17 1 16.105 1 15V3C1 1.895 1.895 1 3 1Z" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>
+												<input type="text" name="get-matched-phone" class="input-phone" id="get-matched-phone" placeholder="Phone Number">
+											</div>
+											<p class="text-no-valid">Please tell us your phone number</p>
+											<div class="first-screen__formButtons">
+												<button type="button" class="first-screen__formButton back" id="get-matched-btn-back-6">Back</button>
+												<button type="submit" class="first-screen__formButton form-submit used-for-validation" id="get-matched-btn-submit">Get My Quote</button>
+											</div>
 										</div>
 									</form>
+								</div>
+								<div class="first-screen__blockWrapForm-sent-successfully">
+									<p class="title">Thank you!</p>
+									<p class="text">We will contact you shortly.</p>
+									<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.5 29.1667H8.33331" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M16.6666 16.6667H8.33331" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M72.6583 66.6667H28.5417C21.8417 66.6667 17.0375 60.2083 18.9625 53.7917L27.9625 23.7917C29.2333 19.5625 33.125 16.6667 37.5417 16.6667H81.6625C88.3625 16.6667 93.1667 23.125 91.2417 29.5417L82.2417 59.5417C80.9708 63.7708 77.075 66.6667 72.6583 66.6667Z" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M19.75 61.3333L48.75 42.0417" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M59.2083 41.875L80.3333 63" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M70.8333 83.3333H12.5" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M29.9916 20.15L50.0041 43.5C51.3541 45.075 53.6541 45.4167 55.4041 44.3042L90.4541 22.0208" stroke="#0064D9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
 								</div>
 							</section>
 							<section class="best-transportation-companies">
@@ -2000,13 +2101,16 @@
     </div>
 </footer>
 	</div>
-   <script src="js/script.min.js?_v=20241001233047"></script>
+   <script src="js/script.min.js?_v=20241003002703"></script>
 
-   <script src="files/js/jquery-3.6.1.min.js?_v=20241001233047"></script>
-	<script src="files/select2/js/select2.min.js?_v=20241001233047"></script>
-   <script src="files/select2/js/init.js?_v=20241001233047"></script>
+   <script src="files/js/jquery-3.6.1.min.js?_v=20241003002703"></script>
+	<script src="files/select2/js/select2.min.js?_v=20241003002703"></script>
+   <script src="files/select2/js/init.js?_v=20241003002703"></script>
 
-	<script src="files/js/validation-form.js?_v=20241001233047"></script>
+	<script src="files/js/validation-form.js?_v=20241003002703"></script>
+
+	<script src="files/calendar/main.min.js?_v=20241003002703"></script>
+	<script src="files/calendar/init.js?_v=20241003002703"></script>
 	
 </body>
 </html>

@@ -578,6 +578,608 @@ body strong {
   z-index: 1;
 }
 
+.no-valid .text-no-valid {
+  display: block;
+}
+
+.no-valid .first-screen__formWrapField input,
+.no-valid .select2-container--where-are-you-moving-from {
+  border-color: #F43048;
+}
+
+.no-valid .used-for-validation {
+  background-color: #b8b8b8 !important;
+  color: #fff;
+  cursor: no-drop;
+}
+
+.text-no-valid {
+  color: #F43048;
+  display: none;
+  font-size: 12px;
+  line-height: 20px;
+  margin: 3px 0 -7px !important;
+  text-align: left;
+}
+
+.step-four .select2-container--where-are-you-moving-from .selection::before {
+  content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='22' height='17' viewBox='0 0 22 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M17 10H5V7.5C5 6.672 4.328 6 3.5 6H2.5C1.672 6 1 6.672 1 7.5V12C1 13.105 1.895 14 3 14H19C20.105 14 21 13.105 21 12V7.5C21 6.672 20.328 6 19.5 6H18.5C17.672 6 17 6.672 17 7.5V10Z' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M4 14V16' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M18 14V16' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M3 6V4C3 2.343 4.343 1 6 1H16C17.657 1 19 2.343 19 4V6' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+  top: 2px;
+}
+
+.get-matched__form .step,
+.get-matched__form .step2,
+.first-screen__form .step,
+.first-screen__form .step2 {
+  display: none;
+}
+
+.get-matched__form input:not([type=submit]),
+.first-screen__form input:not([type=submit]) {
+  background-color: #fff;
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  padding-left: 40px;
+  padding-right: 15px;
+  position: relative;
+  outline: none;
+  width: 100%;
+}
+
+.get-matched__form input:not([type=submit])::-moz-placeholder, .first-screen__form input:not([type=submit])::-moz-placeholder {
+  color: #696969;
+}
+
+.get-matched__form input:not([type=submit])::placeholder,
+.first-screen__form input:not([type=submit])::placeholder {
+  color: #696969;
+}
+
+.first-screen__formButtons {
+  display: flex;
+}
+
+.first-screen__formButtons .first-screen__formButton:nth-child(1) {
+  margin-right: 10px;
+}
+
+.first-screen__formButtons .first-screen__formButton:nth-child(2) {
+  margin-left: 10px;
+}
+
+.first-screen__formButton {
+  align-items: center;
+  background-color: #0064D9;
+  color: #fff;
+  border-radius: 5px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 25px;
+  margin-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.first-screen__formButton.back {
+  background-color: #fff;
+  color: #0064D9;
+  border: 2px solid #0064D9;
+}
+
+.get-matched__blockWrapFormWrapper.step-1 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-1 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-1 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-1 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-1 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-1 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-1 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-1 .get-matched-form__btn-step:nth-child(1) {
+  background-color: #FFD93D;
+}
+
+.get-matched__blockWrapFormWrapper.step-1 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-1 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-1 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-1 .get-matched-form__btn-step:nth-child(1) {
+  color: #fff;
+}
+
+.get-matched__blockWrapFormWrapper.step-1 .step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-1 .step2:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-1 .step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-1 .step2:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-1 .step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-1 .step2:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-1 .step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-1 .step2:nth-child(1) {
+  display: block;
+}
+
+.get-matched__blockWrapFormWrapper.step-2 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-2 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-2 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-2 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-2 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-2 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-2 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-2 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-2 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-2 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-2 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-2 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-2 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-2 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-2 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-2 .get-matched-form__btn-step:nth-child(2) {
+  background-color: #FFD93D;
+}
+
+.get-matched__blockWrapFormWrapper.step-2 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-2 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-2 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-2 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-2 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-2 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-2 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-2 .get-matched-form__btn-step:nth-child(2) {
+  color: #fff;
+}
+
+.get-matched__blockWrapFormWrapper.step-2 .step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-2 .step2:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-2 .step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-2 .step2:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-2 .step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-2 .step2:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-2 .step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-2 .step2:nth-child(2) {
+  display: block;
+}
+
+.get-matched__blockWrapFormWrapper.step-3 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-3 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-3 .fs-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-3 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-3 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-3 .fs-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-3 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-3 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-3 .fs-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-3 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-3 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-3 .fs-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(3) {
+  background-color: #FFD93D;
+}
+
+.get-matched__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-3 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-3 .get-matched-form__btn-step:nth-child(3) {
+  color: #fff;
+}
+
+.get-matched__blockWrapFormWrapper.step-3 .step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-3 .step2:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-3 .step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-3 .step2:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-3 .step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-3 .step2:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-3 .step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-3 .step2:nth-child(3) {
+  display: block;
+}
+
+.get-matched__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-4 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-4 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-4 .fs-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-4 .fs-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-4 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-4 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-4 .fs-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-4 .fs-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(4) {
+  background-color: #FFD93D;
+}
+
+.get-matched__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-4 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-4 .get-matched-form__btn-step:nth-child(4) {
+  color: #fff;
+}
+
+.get-matched__blockWrapFormWrapper.step-4 .step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step-4 .step2:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-4 .step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-4 .step2:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-4 .step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-4 .step2:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-4 .step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-4 .step2:nth-child(4) {
+  display: block;
+}
+
+.get-matched__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step2-5 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-5 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-5 .fs-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-5 .fs-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-5 .fs-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step2-5 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-5 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-5 .fs-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-5 .fs-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-5 .fs-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(5) {
+  background-color: #FFD93D;
+}
+
+.get-matched__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-5 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-5 .get-matched-form__btn-step:nth-child(5) {
+  color: #fff;
+}
+
+.get-matched__blockWrapFormWrapper.step-5 .step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step-5 .step2:nth-child(5),
+.get-matched__blockWrapFormWrapper.step2-5 .step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step2-5 .step2:nth-child(5),
+.first-screen__blockWrapFormWrapper.step-5 .step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step-5 .step2:nth-child(5),
+.first-screen__blockWrapFormWrapper.step2-5 .step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step2-5 .step2:nth-child(5) {
+  display: block;
+}
+
+.get-matched__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step2-6 .fs-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(6) {
+  background-color: #FFD93D;
+}
+
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step-6 .get-matched-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step2-6 .get-matched-form__btn-step:nth-child(6) {
+  color: #fff;
+}
+
+.get-matched__blockWrapFormWrapper.step-6 .step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step-6 .step2:nth-child(6),
+.get-matched__blockWrapFormWrapper.step2-6 .step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step2-6 .step2:nth-child(6),
+.first-screen__blockWrapFormWrapper.step-6 .step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step-6 .step2:nth-child(6),
+.first-screen__blockWrapFormWrapper.step2-6 .step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step2-6 .step2:nth-child(6) {
+  display: block;
+}
+
+.get-matched__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(7),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(7),
+.get-matched__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(7),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(7),
+.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(7),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(7),
+.first-screen__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step2-7 .fs-form__btn-step:nth-child(7),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(7) {
+  background-color: #FFD93D;
+}
+
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(7),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(1),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(2),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(3),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(4),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(5),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(6),
+.get-matched__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(7),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step-7 .get-matched-form__btn-step:nth-child(7),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(1),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(2),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(3),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(4),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(5),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(6),
+.first-screen__blockWrapFormWrapper.step2-7 .get-matched-form__btn-step:nth-child(7) {
+  color: #fff;
+}
+
+.get-matched__blockWrapFormWrapper.step-7 .step:nth-child(7),
+.get-matched__blockWrapFormWrapper.step-7 .step2:nth-child(7),
+.get-matched__blockWrapFormWrapper.step2-7 .step:nth-child(7),
+.get-matched__blockWrapFormWrapper.step2-7 .step2:nth-child(7),
+.first-screen__blockWrapFormWrapper.step-7 .step:nth-child(7),
+.first-screen__blockWrapFormWrapper.step-7 .step2:nth-child(7),
+.first-screen__blockWrapFormWrapper.step2-7 .step:nth-child(7),
+.first-screen__blockWrapFormWrapper.step2-7 .step2:nth-child(7) {
+  display: block;
+}
+
+.get-matched__blockWrapForm.sent-successfully .first-screen__blockWrapForm-sent-successfully,
+.first-screen__blockWrapForm.sent-successfully .first-screen__blockWrapForm-sent-successfully {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.get-matched__blockWrapForm-sent-successfully,
+.first-screen__blockWrapForm-sent-successfully {
+  align-items: center;
+  background-color: #F9FAFF;
+  border-radius: inherit;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  padding: 25px;
+  right: 0;
+  transition: opacity 0.3s ease 0s;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.get-matched__blockWrapForm-sent-successfully p,
+.first-screen__blockWrapForm-sent-successfully p {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  margin: 0 !important;
+  text-align: center;
+}
+
+.get-matched__blockWrapForm-sent-successfully p.title,
+.first-screen__blockWrapForm-sent-successfully p.title {
+  color: #0064D9;
+}
+
+.get-matched__blockWrapForm-sent-successfully img,
+.get-matched__blockWrapForm-sent-successfully svg,
+.first-screen__blockWrapForm-sent-successfully img,
+.first-screen__blockWrapForm-sent-successfully svg {
+  display: table;
+  margin: 20px auto 0;
+}
+
 .first-screen {
   position: relative;
   z-index: 2;
@@ -663,88 +1265,147 @@ body strong {
   padding: 25px;
   position: relative;
   transition: 0.3s ease 0s;
+  /*
+  &Wrapper {
+
+  	&.step-1 {
+
+  		.fs-form__btn-step:nth-child(1) {
+  			background-color: #FFD93D;
+  		}
+  		.step:nth-child(1) {
+  			display: block;
+  		}
+  	}
+  	&.step-2 {
+
+  		.fs-form__btn-step:nth-child(1),
+  		.fs-form__btn-step:nth-child(2) {
+  			background-color: #FFD93D;
+  		}
+  		.step:nth-child(2) {
+  			display: block;
+  		}
+  	}
+  	&.step-3 {
+
+  		.fs-form__btn-step:nth-child(1),
+  		.fs-form__btn-step:nth-child(2),
+  		.fs-form__btn-step:nth-child(3) {
+  			background-color: #FFD93D;
+  		}
+  		.step:nth-child(3) {
+  			display: block;
+  		}
+  	}
+  	&.step-4 {
+
+  		.fs-form__btn-step:nth-child(1),
+  		.fs-form__btn-step:nth-child(2),
+  		.fs-form__btn-step:nth-child(3),
+  		.fs-form__btn-step:nth-child(4) {
+  			background-color: #FFD93D;
+  		}
+  		.step:nth-child(4) {
+  			display: block;
+  		}
+  	}
+  	&.step-5 {
+
+  		.fs-form__btn-step:nth-child(1),
+  		.fs-form__btn-step:nth-child(2),
+  		.fs-form__btn-step:nth-child(3),
+  		.fs-form__btn-step:nth-child(4),
+  		.fs-form__btn-step:nth-child(5) {
+  			background-color: #FFD93D;
+  		}
+  		.step:nth-child(5) {
+  			display: block;
+  		}
+  	}
+  	&.step-6 {
+
+  		.fs-form__btn-step:nth-child(1),
+  		.fs-form__btn-step:nth-child(2),
+  		.fs-form__btn-step:nth-child(3),
+  		.fs-form__btn-step:nth-child(4),
+  		.fs-form__btn-step:nth-child(5),
+  		.fs-form__btn-step:nth-child(6) {
+  			background-color: #FFD93D;
+  		}
+  		.step:nth-child(6) {
+  			display: block;
+  		}
+  	}
+  	&.step-7 {
+
+  		.fs-form__btn-step:nth-child(1),
+  		.fs-form__btn-step:nth-child(2),
+  		.fs-form__btn-step:nth-child(3),
+  		.fs-form__btn-step:nth-child(4),
+  		.fs-form__btn-step:nth-child(5),
+  		.fs-form__btn-step:nth-child(6),
+  		.fs-form__btn-step:nth-child(7) {
+  			background-color: #FFD93D;
+  		}
+  		.step:nth-child(7) {
+  			display: block;
+  		}
+  	}
+  }
+  */
+  /*
+  &.sent-successfully {
+
+  	.first-screen__blockWrapForm-sent-successfully {
+  		opacity: 1;
+  		pointer-events: all;
+  	}
+  }
+
+  &-sent-successfully {
+  	align-items: center;
+  	background-color: #F9FAFF;
+  	border-radius: inherit;
+  	bottom: 0;
+  	left: 0;
+  	height: 100%;
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+  	opacity: 0;
+  	pointer-events: none;
+  	position: absolute;
+  	padding: 25px;
+  	right: 0;
+  	transition: opacity 0.3s ease 0s;
+  	top: 0;
+  	width: 100%;
+
+  	p {
+  		font-size: 20px;
+  		font-weight: 700;
+  		line-height: 26px;
+  		margin: 0 !important;
+  		text-align: center;
+
+  		&.title {
+  			color: #0064D9;
+  		}
+  	}
+
+  	img,
+  	svg {
+  		display: table;
+  		margin: 20px auto 0;
+  	}
+  }
+  */
 }
 
 .first-screen__blockWrapForm.hidden {
   opacity: 0;
   pointer-events: none;
-}
-
-.first-screen__blockWrapFormWrapper.step-1 .fs-form__btn-step:nth-child(1) {
-  background-color: #FFD93D;
-}
-
-.first-screen__blockWrapFormWrapper.step-1 .step:nth-child(1) {
-  display: block;
-}
-
-.first-screen__blockWrapFormWrapper.step-2 .fs-form__btn-step:nth-child(1),
-.first-screen__blockWrapFormWrapper.step-2 .fs-form__btn-step:nth-child(2) {
-  background-color: #FFD93D;
-}
-
-.first-screen__blockWrapFormWrapper.step-2 .step:nth-child(2) {
-  display: block;
-}
-
-.first-screen__blockWrapFormWrapper.step-3 .fs-form__btn-step:nth-child(1),
-.first-screen__blockWrapFormWrapper.step-3 .fs-form__btn-step:nth-child(2),
-.first-screen__blockWrapFormWrapper.step-3 .fs-form__btn-step:nth-child(3) {
-  background-color: #FFD93D;
-}
-
-.first-screen__blockWrapFormWrapper.step-3 .step:nth-child(3) {
-  display: block;
-}
-
-.first-screen__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(1),
-.first-screen__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(2),
-.first-screen__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(3),
-.first-screen__blockWrapFormWrapper.step-4 .fs-form__btn-step:nth-child(4) {
-  background-color: #FFD93D;
-}
-
-.first-screen__blockWrapFormWrapper.step-4 .step:nth-child(4) {
-  display: block;
-}
-
-.first-screen__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(1),
-.first-screen__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(2),
-.first-screen__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(3),
-.first-screen__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(4),
-.first-screen__blockWrapFormWrapper.step-5 .fs-form__btn-step:nth-child(5) {
-  background-color: #FFD93D;
-}
-
-.first-screen__blockWrapFormWrapper.step-5 .step:nth-child(5) {
-  display: block;
-}
-
-.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(1),
-.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(2),
-.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(3),
-.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(4),
-.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(5),
-.first-screen__blockWrapFormWrapper.step-6 .fs-form__btn-step:nth-child(6) {
-  background-color: #FFD93D;
-}
-
-.first-screen__blockWrapFormWrapper.step-6 .step:nth-child(6) {
-  display: block;
-}
-
-.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(1),
-.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(2),
-.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(3),
-.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(4),
-.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(5),
-.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(6),
-.first-screen__blockWrapFormWrapper.step-7 .fs-form__btn-step:nth-child(7) {
-  background-color: #FFD93D;
-}
-
-.first-screen__blockWrapFormWrapper.step-7 .step:nth-child(7) {
-  display: block;
 }
 
 .first-screen__blockWrapFormTitle,
@@ -771,6 +1432,7 @@ body strong {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  pointer-events: none;
 }
 
 .first-screen__blockWrapForm .fs-form__btn-step {
@@ -786,15 +1448,30 @@ body strong {
 
 .first-screen__blockWrapForm .first-screen__form {
   margin-top: 13px;
-}
+  /*
+  .step {
+  	display: none;
+  }
+  */
+  /*
+  input:not([type=submit]) {
+  	background-color: #fff;
+  	border: 1px solid #D9D9D9;
+  	border-radius: 5px;
+  	height: 48px;
+  	font-size: 16px;
+  	font-weight: 400;
+  	line-height: 25px;
+  	padding-left: 40px;
+  	padding-right: 15px;
+  	position: relative;
+  	outline: none;
+  	width: 100%;
 
-.first-screen__blockWrapForm .first-screen__form .step {
-  display: none;
-}
-
-.first-screen__blockWrapForm .first-screen__form .step-four .select2-container--where-are-you-moving-from .selection::before {
-  content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='22' height='17' viewBox='0 0 22 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M17 10H5V7.5C5 6.672 4.328 6 3.5 6H2.5C1.672 6 1 6.672 1 7.5V12C1 13.105 1.895 14 3 14H19C20.105 14 21 13.105 21 12V7.5C21 6.672 20.328 6 19.5 6H18.5C17.672 6 17 6.672 17 7.5V10Z' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M4 14V16' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M18 14V16' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M3 6V4C3 2.343 4.343 1 6 1H16C17.657 1 19 2.343 19 4V6' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
-  top: 2px;
+  	&::placeholder {
+  		color: #696969;
+  	}
+  }*/
 }
 
 .first-screen__blockWrapForm .first-screen__form label {
@@ -806,111 +1483,9 @@ body strong {
   text-align: left;
 }
 
-.first-screen__blockWrapForm .first-screen__form input:not([type=submit]) {
-  background-color: #fff;
-  border: 1px solid #D9D9D9;
-  border-radius: 5px;
-  height: 48px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 25px;
-  padding-left: 40px;
-  padding-right: 15px;
-  position: relative;
-  outline: none;
-  width: 100%;
-}
-
-.first-screen__blockWrapForm .first-screen__form input:not([type=submit])::-moz-placeholder {
-  color: #696969;
-}
-
-.first-screen__blockWrapForm .first-screen__form input:not([type=submit])::placeholder {
-  color: #696969;
-}
-
 .first-screen__blockWrapForm .first-screen__form select {
   position: relative;
   width: 100%;
-}
-
-.first-screen__blockWrapForm .first-screen__formButtons {
-  display: flex;
-}
-
-.first-screen__blockWrapForm .first-screen__formButtons .first-screen__formButton:nth-child(1) {
-  margin-right: 10px;
-}
-
-.first-screen__blockWrapForm .first-screen__formButtons .first-screen__formButton:nth-child(2) {
-  margin-left: 10px;
-}
-
-.first-screen__blockWrapForm .first-screen__formButton {
-  align-items: center;
-  background-color: #0064D9;
-  color: #fff;
-  border-radius: 5px;
-  height: 46px;
-  display: flex;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 25px;
-  margin-top: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: center;
-  width: 100%;
-}
-
-.first-screen__blockWrapForm .first-screen__formButton.back {
-  background-color: #fff;
-  color: #0064D9;
-  border: 2px solid #0064D9;
-}
-
-.first-screen__blockWrapForm.sent-successfully .first-screen__blockWrapForm-sent-successfully {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.first-screen__blockWrapForm-sent-successfully {
-  align-items: center;
-  background-color: #F9FAFF;
-  border-radius: inherit;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  padding: 25px;
-  right: 0;
-  transition: opacity 0.3s ease 0s;
-  top: 0;
-  width: 100%;
-}
-
-.first-screen__blockWrapForm-sent-successfully p {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 26px;
-  margin: 0 !important;
-  text-align: center;
-}
-
-.first-screen__blockWrapForm-sent-successfully p.title {
-  color: #0064D9;
-}
-
-.first-screen__blockWrapForm-sent-successfully img,
-.first-screen__blockWrapForm-sent-successfully svg {
-  display: table;
-  margin: 20px auto 0;
 }
 
 .first-screen__bg {
@@ -2660,6 +3235,7 @@ body {
   border-radius: 10px;
   margin-top: 39px;
   padding: 38px 35px;
+  position: relative;
   transition: 0.3s ease 0s;
   width: 100%;
 }
@@ -2672,10 +3248,6 @@ body {
 .get-matched__blockWrapFormWrapper.get-matched-first-step .get-matched-form__btn-step:nth-child(1) {
   background-color: #FFD93D;
   color: #fff;
-}
-
-.get-matched__blockWrapFormWrapper.get-matched-first-step .get-matched-step:nth-child(1) {
-  display: block;
 }
 
 .get-matched__blockWrapFormTitle,
@@ -2749,7 +3321,7 @@ body {
 }
 
 .get-matched__blockWrapForm .get-matched__form .get-matched-step {
-  display: none;
+  position: relative;
 }
 
 .get-matched__blockWrapForm .get-matched__form label {
@@ -3851,6 +4423,10 @@ body {
     border-radius: 12px;
   }
 
+  .header__wrapper {
+    width: calc(100% - 8px);
+  }
+
   .footer__bottom {
     display: flex;
     flex-wrap: wrap;
@@ -3873,24 +4449,6 @@ body {
     justify-content: space-between;
     padding-right: 7px;
     width: 47%;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .header__wrapper {
-    width: calc(100% - 8px);
-  }
-
-  body._touch .header .menu__list > li {
-    align-items: center;
-    display: flex;
-  }
-
-  body._touch .header .menu__list > li._active .menu__sub-list {
-    opacity: 1;
-    pointer-events: all;
-    transform: translate(0, 0);
-    visibility: visible;
   }
 }
 
@@ -4178,6 +4736,20 @@ body {
   .header .menu__list li:hover .menu__arrow {
     color: inherit;
     transform: scale(1, -1);
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  body._touch .header .menu__list > li {
+    align-items: center;
+    display: flex;
+  }
+
+  body._touch .header .menu__list > li._active .menu__sub-list {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(0, 0);
+    visibility: visible;
   }
 }
 
@@ -5579,25 +6151,25 @@ body {
 }
 
 @media (any-hover: hover) {
+  .first-screen__formButton.back:hover {
+    background-color: #0064D9;
+    color: #fff;
+  }
+
+  .first-screen__formButton {
+    transition: 0.3s ease 0s;
+  }
+
+  .first-screen__formButton:hover {
+    background-color: #00499E;
+  }
+
   .first-screen__wrap-breadcrumbsLink {
     transition: 0.3s ease 0s;
   }
 
   .first-screen__wrap-breadcrumbsLink:hover {
     color: #4D96FF;
-  }
-
-  .first-screen__blockWrapForm .first-screen__formButton.back:hover {
-    background-color: #0064D9;
-    color: #fff;
-  }
-
-  .first-screen__blockWrapForm .first-screen__formButton {
-    transition: 0.3s ease 0s;
-  }
-
-  .first-screen__blockWrapForm .first-screen__formButton:hover {
-    background-color: #00499E;
   }
 
   .breadcrumbs__link {
