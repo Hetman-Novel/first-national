@@ -3065,6 +3065,14 @@ body {
   text-align: left;
 }
 
+.recommended-text.two.no-border-top {
+  padding-top: 40px;
+}
+
+.recommended-text.two.no-border-top::before {
+  display: none;
+}
+
 .recommended-text.two::before {
   background-color: #E7E6E6;
   content: "";
@@ -3174,6 +3182,7 @@ body {
 
 .table.table-only-text tr th:first-child::before,
 .table.table-only-text tr td:first-child::before {
+  width: 100%;
   z-index: -1;
 }
 
@@ -3213,6 +3222,75 @@ body {
   padding-bottom: 20px !important;
   padding-top: 20px !important;
   vertical-align: middle;
+}
+
+.table.just-text-with-button tr th,
+.table.just-text-with-button tr td {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.table.just-text-with-button tr th:first-child::before,
+.table.just-text-with-button tr td:first-child::before {
+  width: 100%;
+  z-index: -1;
+}
+
+.table.just-text-with-button tr th:nth-child(2),
+.table.just-text-with-button tr th:nth-child(3),
+.table.just-text-with-button tr th:nth-child(4) {
+  color: #0064D9;
+  text-decoration: underline;
+}
+
+.table.just-text-with-button tr th:nth-child(1),
+.table.just-text-with-button tr td:nth-child(1) {
+  padding-left: 29px;
+  width: calc(25% - 32.5px);
+}
+
+.table.just-text-with-button tr th:nth-child(2),
+.table.just-text-with-button tr td:nth-child(2) {
+  width: calc(25% - 32.5px);
+}
+
+.table.just-text-with-button tr th:nth-child(3),
+.table.just-text-with-button tr td:nth-child(3) {
+  width: calc(25% - 32.5px);
+}
+
+.table.just-text-with-button tr th:nth-child(4),
+.table.just-text-with-button tr td:nth-child(4) {
+  width: calc(25% - 32.5px);
+}
+
+.table.just-text-with-button tr th:nth-child(5),
+.table.just-text-with-button tr td:nth-child(5) {
+  padding-right: 30px;
+  width: 130px;
+}
+
+.table.just-text-with-button tr td {
+  padding-bottom: 20px !important;
+  padding-top: 20px !important;
+  vertical-align: middle;
+}
+
+.table.just-text-with-button tr td .table__button {
+  align-items: center;
+  background-color: #4D96FF;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  height: 34px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 15px;
+  padding: 0 8px;
+  text-decoration: none;
+  text-align: center;
+  width: 100px;
 }
 
 .table thead th,
@@ -3278,7 +3356,7 @@ body {
   pointer-events: none;
   position: absolute;
   top: 0;
-  width: 80%;
+  width: 100%;
   z-index: -1;
 }
 
@@ -3828,6 +3906,11 @@ body {
   background-color: #0064D9;
 }
 
+.find-out-what-is-this.linear-gradient-color {
+  background: linear-gradient(92.07deg, #0064D9 0%, #FFD93D 98.24%);
+  margin-top: 40px;
+}
+
 .find-out-what-is-this__text {
   color: #fff;
   font-size: 24px;
@@ -3885,6 +3968,18 @@ body {
   transform: translateX(48%);
 }
 
+.faq.no-bg-color {
+  background-color: inherit;
+  margin-top: 0;
+  padding-bottom: 40px;
+  padding-top: 50px;
+}
+
+.faq.no-bg-color::before,
+.faq.no-bg-color::after {
+  display: none;
+}
+
 .faq__title,
 .faq .block {
   position: relative;
@@ -3895,6 +3990,27 @@ body {
   font-size: 44px;
   line-height: 57px;
   margin-bottom: 0;
+}
+
+.faq__title.smaller-size {
+  font-size: 24px;
+  line-height: 31px;
+}
+
+.faq .block.with-smaller-headings {
+  margin-top: 11px;
+}
+
+.faq .block.with-smaller-headings .block__title {
+  font-size: 18px;
+  line-height: 28px;
+  padding-bottom: 18px !important;
+  padding-top: 21px !important;
+}
+
+.faq .block.with-smaller-headings .block__content {
+  padding-bottom: 16px !important;
+  padding-top: 2px !important;
 }
 
 .faq .block__item:first-child {
@@ -4129,6 +4245,17 @@ body {
 .wrap-map #map {
   border-radius: 15px;
   height: 100%;
+  width: 100%;
+}
+
+.block-image {
+  border-bottom: 1px solid #E7E6E6;
+  padding-bottom: 59px;
+  width: 100%;
+}
+
+.block-image img {
+  border-radius: 10px;
   width: 100%;
 }
 
@@ -4513,6 +4640,14 @@ body {
   }
 
   .first-screen__item-content {
+    max-width: 560px;
+  }
+
+  .first-screen__item-content.more-width {
+    max-width: 570px;
+  }
+
+  .first-screen__item-content.more-width .first-screen__blockText {
     max-width: 560px;
   }
 
@@ -5955,6 +6090,10 @@ body {
     line-height: 26px;
   }
 
+  .recommended-text.two.no-border-top {
+    padding-top: 31px;
+  }
+
   .recommended-text.two {
     margin-top: 0;
     padding: 0;
@@ -6018,6 +6157,15 @@ body {
     padding-right: 20px;
   }
 
+  .table.just-text-with-button {
+    width: 820px;
+  }
+
+  .table.just-text-with-button tr th:nth-child(1),
+  .table.just-text-with-button tr td:nth-child(1) {
+    text-align: left;
+  }
+
   .table thead th:first-child,
   .table tr td:first-child {
     padding-left: 28px;
@@ -6041,10 +6189,6 @@ body {
   .table thead th:nth-child(4),
   .table tr td:nth-child(4) {
     width: 24%;
-  }
-
-  .table thead tr th:first-child::before {
-    width: 100%;
   }
 
   .table tr td {
@@ -6229,6 +6373,10 @@ body {
     padding: 30px 36px 30px;
   }
 
+  .find-out-what-is-this.linear-gradient-color {
+    margin-top: 29px;
+  }
+
   .find-out-what-is-this__text {
     font-size: 22px;
     line-height: 28px;
@@ -6244,9 +6392,34 @@ body {
     padding-top: 40px;
   }
 
+  .faq.no-bg-color {
+    padding-bottom: 37px;
+    padding-top: 30px;
+  }
+
   .faq__title {
     font-size: 26px;
     line-height: 34px;
+  }
+
+  .faq__title.smaller-size {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .faq .block.with-smaller-headings {
+    margin-top: -3px !important;
+  }
+
+  .faq .block.with-smaller-headings .block__title {
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 7px !important;
+  }
+
+  .faq .block.with-smaller-headings .block__content {
+    padding-bottom: 7px !important;
+    padding-top: 13px !important;
   }
 
   .faq .block__item:first-child {
@@ -6468,6 +6641,14 @@ body {
     color: #0064D9;
   }
 
+  [data-block-url] {
+    transition: box-shadow 0.3s ease 0s;
+  }
+
+  [data-block-url]:hover {
+    box-shadow: 0 8px 34px 0 rgba(0, 0, 0, 0.07);
+  }
+
   .first-block-content__blockItemButton {
     transition: 0.3s ease 0s;
   }
@@ -6499,6 +6680,14 @@ body {
 
   .best-moving-companies__button:hover {
     background-color: #00499E;
+  }
+
+  .table.just-text-with-button tr td .table__button {
+    transition: 0.3s ease 0s;
+  }
+
+  .table.just-text-with-button tr td .table__button:hover {
+    background-color: #0064D9;
   }
 
   .get-matched__blockWrapForm .get-matched__formButton {
