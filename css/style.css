@@ -584,7 +584,12 @@ body strong {
 
 .no-valid .first-screen__formWrapField input,
 .no-valid .select2-container--where-are-you-moving-from {
-  border-color: #F43048;
+  border-color: #F43048 !important;
+}
+
+.valid .first-screen__formWrapField input,
+.valid .select2-container--where-are-you-moving-from {
+  border-color: #10c510 !important;
 }
 
 .no-valid .used-for-validation {
