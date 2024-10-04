@@ -1,36 +1,60 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function() {
+
+
 	// Обработчик для формы с ID fs-form
-	$('#fs-form').on('submit', function(event) {
-		event.preventDefault(); // Предотвращаем перезагрузку страницы
+	//$('#fs-form').on('submit', function(event) {
+		//event.preventDefault();
 
-		// Логика отправки формы через AJAX
-		console.log('Форма fs-form отправлена!');
-
-		$('.first-screen__blockWrapForm').addClass('sent-successfully');
+		/*$('.first-screen__blockWrapForm').addClass('sent-successfully');
 		setTimeout(function() {
 			$('.first-screen__blockWrapForm').removeClass('sent-successfully');
 		}, 3000);
 		setTimeout(function() {
-			//$('#fs-wrapper-steps').removeClass('step-7');
-		  	//$('#fs-wrapper-steps').addClass('step-1');
-		}, 600);
+			$('#fs-wrapper-steps').removeClass('step-7');
+		  	$('#fs-wrapper-steps').addClass('step-1');
+		}, 600);*/
 
 		// Сброс всех input и textarea в форме
-		//$('#fs-form').find('input[type="text"], input[type="email"], textarea').val('');
+		//$('#fs-form').find('input[type="text"], input[type="email"]').val('');
 
-		/*
-		 setTimeout(function() {
+		/*setTimeout(function() {
 			// Сброс Select2
 			$('#fs-form').find('select').val(null).trigger('change').trigger('select2:unselect');
 		}, 600);*/
-	});
+
+		/*
+		setTimeout(function() {
+			$('.first-screen__blockWrapForm').reload();
+		}, 600);
+		*/
+	//});
 
 	// Обработчик для формы с ID get-matched-form
 	$('#get-matched-form').on('submit', function(event) {
-		 event.preventDefault(); // Предотвращаем перезагрузку страницы
-
-		// Логика отправки формы через AJAX
-		console.log('Форма get-matched-form отправлена!');
+		event.preventDefault();
 		
 		$('.get-matched__blockWrapForm').addClass('sent-successfully');
 		setTimeout(function() {
@@ -178,6 +202,42 @@ if (fsForm) {
 
 			// Здесь можно добавить логику для отправки формы
 			// Например, getMatchedForm.submit(); // Если вы хотите отправить форму
+			
+			// показ уведомления
+			document.querySelector('.first-screen__blockWrapForm').classList.add('sent-successfully');
+			setTimeout(function() {
+				document.querySelector('.first-screen__blockWrapForm').classList.remove('sent-successfully');
+			}, 3000);
+			
+			
+			setTimeout(function() {
+				
+				// Сброс всех input в форме
+				$('#fs-form').find('input[type="text"], input[type="email"]').val('');
+				
+				// Сброс Select2
+				$('#fs-form').find('select').val(null).trigger('change').trigger('select2:unselect');
+			
+				// удаление всех классов valid и no-valid если есть
+				const fsSteps = document.querySelectorAll('#fs-form .step')
+				fsSteps.forEach((fsStep) => {
+					if (fsStep.classList.contains('valid')) {
+						fsStep.classList.remove('valid');
+					}
+					if (fsStep.classList.contains('no-valid')) {
+						fsStep.classList.remove('no-valid');
+					}
+				});
+				
+			}, 600);
+			
+			// вызов логики валидации и пошагового перехода
+			currentStepIndex = 0; // Сбрасываем индекс текущего шага
+			
+			// возврат шагов на исходную
+			$('#fs-wrapper-steps').removeClass('step-2');
+			$('#fs-wrapper-steps').removeClass('step-7');
+			$('#fs-wrapper-steps').addClass('step-1');
 		}
 	});
 
@@ -392,6 +452,42 @@ if (getMatchedForm) {
 
 			// Здесь можно добавить логику для отправки формы
 			// Например, getMatchedForm.submit(); // Если вы хотите отправить форму
+			
+			// показ уведомления
+			document.querySelector('.get-matched__blockWrapForm').classList.add('sent-successfully');
+			setTimeout(function() {
+				document.querySelector('.get-matched__blockWrapForm').classList.remove('sent-successfully');
+			}, 3000);
+			
+			setTimeout(function() {
+				
+				// Сброс всех input в форме
+				$('#get-matched-form').find('input[type="text"], input[type="email"]').val('');
+			
+				// Сброс Select2
+				$('#get-matched-form').find('select').val(null).trigger('change').trigger('select2:unselect');
+				
+				// удаление всех классов valid и no-valid если есть
+				const fsSteps2 = document.querySelectorAll('#get-matched-form .step2')
+				fsSteps2.forEach((fsStep2) => {
+					if (fsStep2.classList.contains('valid')) {
+						fsStep2.classList.remove('valid');
+					}
+					if (fsStep2.classList.contains('no-valid')) {
+						fsStep2.classList.remove('no-valid');
+					}
+				});
+				
+			}, 400);
+				
+			// вызов логики валидации и пошагового перехода
+			currentStepIndex2 = 0; // Сбрасываем индекс текущего шага
+		
+			// возврат шагов на исходную
+			$('#fs-wrapper-steps2').removeClass('step2-2');
+			$('#fs-wrapper-steps2').removeClass('step2-7');
+			$('#fs-wrapper-steps2').addClass('step2-1');
+
 		}
 	});
 
@@ -481,3 +577,46 @@ if (getMatchedForm) {
 		}
 	});
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	// Обработчик для формы с ID fs-form
+	document.getElementById('fs-form').addEventListener('submit', function(event) {
+		event.preventDefault(); // Предотвращаем стандартное поведение формы
+
+		const form = this;
+
+		// Используем Fetch API для отправки формы на текущий URL
+		fetch(window.location.href, {
+			method: 'POST',
+			body: new FormData(form) // Отправляем данные формы
+		})
+		.then(response => response.text())
+		.then(html => {
+			
+		})
+		.catch(error => {
+			console.error('An error occurred:', error);
+		});
+	});
+	
+	// Обработчик для формы с ID get-matched-form
+	document.getElementById('get-matched-form').addEventListener('submit', function(event) {
+		event.preventDefault(); // Предотвращаем стандартное поведение формы
+
+		const form = this;
+
+		// Используем Fetch API для отправки формы на текущий URL
+		fetch(window.location.href, {
+			method: 'POST',
+			body: new FormData(form) // Отправляем данные формы
+		})
+		.then(response => response.text())
+		.then(html => {
+			
+		})
+		.catch(error => {
+			console.error('An error occurred:', error);
+		});
+	});
+});
