@@ -1,82 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$(document).ready(function() {
-
-
-	// Обработчик для формы с ID fs-form
-	//$('#fs-form').on('submit', function(event) {
-		//event.preventDefault();
-
-		/*$('.first-screen__blockWrapForm').addClass('sent-successfully');
-		setTimeout(function() {
-			$('.first-screen__blockWrapForm').removeClass('sent-successfully');
-		}, 3000);
-		setTimeout(function() {
-			$('#fs-wrapper-steps').removeClass('step-7');
-		  	$('#fs-wrapper-steps').addClass('step-1');
-		}, 600);*/
-
-		// Сброс всех input и textarea в форме
-		//$('#fs-form').find('input[type="text"], input[type="email"]').val('');
-
-		/*setTimeout(function() {
-			// Сброс Select2
-			$('#fs-form').find('select').val(null).trigger('change').trigger('select2:unselect');
-		}, 600);*/
-
-		/*
-		setTimeout(function() {
-			$('.first-screen__blockWrapForm').reload();
-		}, 600);
-		*/
-	//});
-
-	// Обработчик для формы с ID get-matched-form
-	$('#get-matched-form').on('submit', function(event) {
-		event.preventDefault();
-		
-		$('.get-matched__blockWrapForm').addClass('sent-successfully');
-		setTimeout(function() {
-			$('.get-matched__blockWrapForm').removeClass('sent-successfully');
-		}, 3000);
-		setTimeout(function() {
-			//$('#fs-wrapper-steps2').removeClass('step-7');
-		  	//$('#fs-wrapper-steps2').addClass('step-1');
-		}, 600);
-
-		/*
-		// Сброс всех input и textarea в форме
-		$('#get-matched-form').find('input[type="text"], input[type="email"], textarea').val('');
-
-		// Сброс Select2
-		$('#get-matched-form').find('select').val(null).trigger('change').trigger('select2:unselect');
-		*/
-
-	});
-
-});
-
 // Форма в первом блоке
 const fsForm = document.getElementById('fs-form');
 if (fsForm) {
@@ -115,7 +36,7 @@ if (fsForm) {
 
 	// Функция для проверки валидности email
 	function isValidEmail(email) {
-		const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|example\.com)$/; // Добавьте другие домены при необходимости
+		const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)$/; // Добавьте другие домены при необходимости
 		return emailRegex.test(email);
 	}
 
@@ -365,7 +286,7 @@ if (getMatchedForm) {
 
 	// Функция для проверки валидности email
 	function isValidEmail2(email2) {
-		const emailRegex2 = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|example\.com)$/; // Добавьте другие домены при необходимости
+		const emailRegex2 = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)$/; // Добавьте другие домены при необходимости
 		return emailRegex2.test(email2);
 	}
 
