@@ -2257,13 +2257,12 @@ body {
   display: block;
   height: 1px;
   font-size: 0;
-  margin-bottom: 40px;
   margin-top: 40px;
   width: 100%;
 }
 
 .separator.more-indent {
-  margin: 60px 0;
+  margin: 60px 0 0;
 }
 
 .there-block-info.show-info .block-info-for-link {
@@ -2872,6 +2871,10 @@ body {
   position: relative;
 }
 
+.bg-color.padding-top-none {
+  padding-top: 2px;
+}
+
 .bg-color::before,
 .bg-color::after {
   background-color: inherit;
@@ -3105,6 +3108,7 @@ body {
 }
 
 .block-text.two {
+  margin-top: 40px;
   /*
   &::before {
      background-color: #E7E6E6;
@@ -3124,7 +3128,7 @@ body {
 }
 
 .block-text.two.no-border-top {
-  padding-top: 40px;
+  margin-top: 40px;
 }
 
 .block-text.two.no-border-top::before {
@@ -3147,6 +3151,10 @@ body {
   margin-top: 20px;
 }
 
+.block-text.two.two-three {
+  margin-top: 61px;
+}
+
 .block-text.two.two-three::before {
   display: none;
 }
@@ -3163,16 +3171,16 @@ body {
   padding-top: 0;
 }
 
-.block-text.two.two-three.new-page .recommended-text__contentTwoTitle {
+.block-text.two.two-three.new-page .block-text__contentTwoTitle {
   max-width: 100%;
 }
 
-.block-text.two.two-three.new-page h1:not(.recommended-text__contentTwoTitle),
-.block-text.two.two-three.new-page h2:not(.recommended-text__contentTwoTitle),
-.block-text.two.two-three.new-page h3:not(.recommended-text__contentTwoTitle),
-.block-text.two.two-three.new-page h4:not(.recommended-text__contentTwoTitle),
-.block-text.two.two-three.new-page h5:not(.recommended-text__contentTwoTitle),
-.block-text.two.two-three.new-page h6:not(.recommended-text__contentTwoTitle) {
+.block-text.two.two-three.new-page h1:not(.block-text__contentTwoTitle),
+.block-text.two.two-three.new-page h2:not(.block-text__contentTwoTitle),
+.block-text.two.two-three.new-page h3:not(.block-text__contentTwoTitle),
+.block-text.two.two-three.new-page h4:not(.block-text__contentTwoTitle),
+.block-text.two.two-three.new-page h5:not(.block-text__contentTwoTitle),
+.block-text.two.two-three.new-page h6:not(.block-text__contentTwoTitle) {
   font-size: 24px;
   font-weight: 700;
   line-height: 31px;
@@ -3290,10 +3298,14 @@ body {
   line-height: 25px;
 }
 
+.table.just-text-with-button tr th:first-child,
+.table.just-text-with-button tr td:first-child {
+  position: static;
+}
+
 .table.just-text-with-button tr th:first-child::before,
 .table.just-text-with-button tr td:first-child::before {
-  width: 100%;
-  z-index: -1;
+  display: none;
 }
 
 .table.just-text-with-button tr th:nth-child(2),
@@ -3568,6 +3580,10 @@ body {
   pointer-events: none;
 }
 
+.get-matched__blockWrapForm.margin-top {
+  margin-top: 64px;
+}
+
 .get-matched__blockWrapFormWrapper.get-matched-first-step .get-matched-form__btn-step:nth-child(1) {
   background-color: #FFD93D;
   color: #fff;
@@ -3682,6 +3698,7 @@ body {
 }
 
 .best-transportation-companies {
+  margin-top: 41px;
   position: relative;
   /*
   &::before {
@@ -4057,7 +4074,7 @@ body {
 .faq.no-bg-color {
   background-color: inherit;
   margin-top: 0;
-  padding-bottom: 40px;
+  padding-bottom: 0;
   padding-top: 50px;
 }
 
@@ -4331,7 +4348,6 @@ body {
 }
 
 .wrap-map {
-  margin-bottom: 64px;
   margin-top: 39px;
   height: 380px;
   width: 100%;
@@ -4346,6 +4362,7 @@ body {
 }
 
 .block-image {
+  margin-top: 40px;
   width: 100%;
 }
 
@@ -4354,11 +4371,28 @@ body {
   width: 100%;
 }
 
+.block-image__figcaption {
+  color: #B8B8B8;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 8px;
+  text-align: left;
+}
+
 .about__title {
   font-size: 44px;
   font-weight: 700;
   line-height: 57px;
   margin: 0 0 0 0 !important;
+}
+
+.about__subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  margin-bottom: -20px;
+  margin-top: 38px;
 }
 
 .about .first-block-content__blockItemBlockRating .block-info-here {
@@ -4376,13 +4410,18 @@ body {
   right: -9px;
 }
 
+.about__columns {
+  margin-top: 39px;
+}
+
 .about__column .about__blockText {
   margin-bottom: 0;
+  padding-top: 0;
 }
 
 .about__blockLogo {
   height: 50px;
-  margin-top: 47px;
+  margin-top: -22px;
 }
 
 .about__blockLogo img {
@@ -4395,15 +4434,7 @@ body {
   padding-top: 19px;
 }
 
-.about__blockText h1,
-.about__blockText h2,
-.about__blockText h3,
-.about__blockText h4,
-.about__blockText h5,
-.about__blockText h6 {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 31px;
+.about__blockText .about__subtitle {
   margin-bottom: 19px;
   margin-top: 19px;
 }
@@ -4473,6 +4504,7 @@ body {
 }
 
 .what-you-need {
+  margin-top: 41px;
   /*
   &::before {
      background-color: #E7E6E6;
@@ -4506,6 +4538,7 @@ body {
 }
 
 .what-you-need__blocks {
+  background-color: #fff;
   margin-top: 40px;
 }
 
@@ -4524,7 +4557,7 @@ body {
   justify-content: center;
   font-size: 18px;
   font-weight: 700;
-  line-height: 24px;
+  line-height: 21px;
   height: 55px;
   padding: 0 5px;
   text-align: center;
@@ -4873,6 +4906,10 @@ body {
     padding-left: 74px;
     padding-top: 19px;
   }
+
+  .about__blockText a {
+    font-weight: 700;
+  }
 }
 
 @media screen and (min-width: 641px) {
@@ -5006,7 +5043,7 @@ body {
   }
 
   .what-you-need__blockWrapTitle::after {
-    background-color: #F9FAFF;
+    background-color: #fff;
     bottom: 0;
     content: "";
     height: 100%;
@@ -6000,15 +6037,19 @@ body {
   }
 
   .what-you-need__blocksButton {
-    width: calc(50% - 10px);
+    width: calc(50% - 5px);
   }
 
   .what-you-need__blocksButton:nth-child(odd) {
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   .what-you-need__blocksButton:nth-child(even) {
-    margin-left: 10px;
+    margin-left: 5px;
+  }
+
+  .what-you-need__blocksButton:not(:last-child) {
+    margin-bottom: 10px;
   }
 
   .what-you-need__blocksBlocks {
@@ -6334,6 +6375,11 @@ body {
     margin-right: -20px;
   }
 
+  .about__subtitle {
+    margin-bottom: 11px;
+    margin-top: 18px;
+  }
+
   .about .first-block-content__blockItemBlockRating {
     margin-bottom: 18px;
     margin-top: 39px;
@@ -6361,8 +6407,18 @@ body {
     top: -15px;
   }
 
+  .about__columns {
+    margin-top: 15px;
+  }
+
   .about__blockLogo {
     height: 47px;
+    margin-top: 47px;
+  }
+
+  .about__blockText .about__subtitle {
+    margin-bottom: 11px;
+    margin-top: 9px;
   }
 
   .about__block.positive::after,
@@ -6449,12 +6505,11 @@ body {
   }
 
   .separator {
-    margin-bottom: 29px;
     margin-top: 30px;
   }
 
   .separator.more-indent {
-    margin: 40px 0;
+    margin: 40px 0 0;
   }
 
   .written-column .block-info-for-link {
@@ -6646,13 +6701,13 @@ body {
     line-height: 26px;
   }
 
-  .block-text.two.no-border-top {
-    padding-top: 31px;
+  .block-text.two {
+    margin-top: 29px;
+    padding: 0;
   }
 
-  .block-text.two {
-    margin-top: 0;
-    padding: 0;
+  .block-text.two.no-border-top {
+    margin-top: 31px;
   }
 
   .block-text.two .block-text__contentTwoTitle {
@@ -6664,6 +6719,10 @@ body {
   .block-text.two .block-text__content ul,
   .block-text.two .block-text__content ol {
     margin-top: -8px;
+  }
+
+  .block-text.two.two-three {
+    margin-top: 40px;
   }
 
   .block-text.two.two-three .block-text__contentTwoTitle {
@@ -6679,6 +6738,11 @@ body {
 
   .block-text.new-three .block-text__title svg {
     left: -2px;
+  }
+
+  .block-text .best-moving-companies__button {
+    margin-bottom: 30px;
+    margin-top: 19px;
   }
 
   .wrap-table {
@@ -6767,6 +6831,10 @@ body {
 
   .get-matched__blockWrapForm {
     padding: 24px 16px 23px;
+  }
+
+  .get-matched__blockWrapForm.margin-top {
+    margin-top: 40px;
   }
 
   .get-matched__blockWrapFormTitle {
@@ -6940,7 +7008,7 @@ body {
   }
 
   .faq.no-bg-color {
-    padding-bottom: 37px;
+    padding-bottom: 0;
     padding-top: 30px;
   }
 
@@ -7065,13 +7133,25 @@ body {
   }
 
   .wrap-map {
-    margin-bottom: 40px;
     margin-top: 29px;
+  }
+
+  .block-image {
+    margin-top: 37px;
+  }
+
+  .block-image__figcaption {
+    margin-top: 6px;
   }
 
   .about__title {
     font-size: 26px;
     line-height: 34px;
+  }
+
+  .about__subtitle {
+    font-size: 22px;
+    line-height: 28px;
   }
 
   .about .first-block-content__blockItemBlockRating .block-info-here .block-info {
@@ -7088,16 +7168,8 @@ body {
     padding-top: 10px;
   }
 
-  .about__blockText h1,
-  .about__blockText h2,
-  .about__blockText h3,
-  .about__blockText h4,
-  .about__blockText h5,
-  .about__blockText h6 {
-    font-size: 22px;
-    line-height: 28px;
-    margin-bottom: 11px;
-    margin-top: 9px;
+  .about__blockText a {
+    text-decoration: none;
   }
 
   .about__block {
@@ -7125,10 +7197,6 @@ body {
 
   .what-you-need__blockText {
     padding-top: 20px;
-  }
-
-  .what-you-need__blocksButton:not(:last-child) {
-    margin-bottom: 20px;
   }
 
   .what-you-need__blocksBlocks {
