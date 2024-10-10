@@ -2210,16 +2210,6 @@ body._pc .pc-no-arrow-on-submenu .menu__arrow {
 
 /* ------------------- */
 
-body._touch .header .menu__list > li._active .menu__sub-list {
-  top: calc(100% - 0px);
-}
-
-body._pc .header .menu__list > li:hover .menu__sub-list {
-  opacity: 1;
-  pointer-events: all;
-  visibility: visible;
-}
-
 body._touch .header .menu__list {
   flex: 0 0 auto;
 }
@@ -2462,7 +2452,6 @@ body {
 
 .first-block-content__block.lime-green {
   border: 2px solid rgba(107, 203, 119, 0.35);
-  box-shadow: 0px 8px 34px 0px rgba(0, 0, 0, 0.07);
 }
 
 .first-block-content__block.lime-green .first-block-content__blockLabel {
@@ -2770,6 +2759,14 @@ body {
   line-height: 25px;
 }
 
+.aside__blockContent .best-moving-companies__list li:hover > a {
+  font-weight: 700;
+}
+
+.aside__blockContent .best-moving-companies__list li.dropdown > a {
+  pointer-events: none;
+}
+
 .aside__blockContent .best-moving-companies__list li ul {
   padding-left: 24px;
 }
@@ -2779,15 +2776,7 @@ body {
   position: relative;
 }
 
-.aside__blockContent .best-moving-companies__list li ul li:not(.color) {
-  color: #191919;
-}
-
-.aside__blockContent .best-moving-companies__list li ul li.color {
-  font-weight: 700;
-}
-
-.aside__blockContent .best-moving-companies__list li ul li.color::before {
+.aside__blockContent .best-moving-companies__list li ul li:hover::before {
   background-color: #0064D9;
 }
 
@@ -2801,6 +2790,11 @@ body {
   position: absolute;
   top: 9px;
   width: 6px;
+}
+
+.aside__blockContent .best-moving-companies__list li a {
+  color: #191919;
+  text-decoration: none;
 }
 
 .aside__blockBestCarrier {
@@ -3003,6 +2997,10 @@ body {
 
 .best-moving-companies__button.another-color {
   background-color: #4D96FF;
+}
+
+.block-text.br {
+  border-radius: 10px;
 }
 
 .block-text:not(.two) {
@@ -3732,9 +3730,11 @@ body {
 }
 
 .best-transportation-companies__blockItemTitle {
+  display: block;
   font-size: 36px;
   font-weight: 700;
   line-height: 47px;
+  margin: 0 0 0 0 !important;
 }
 
 .best-transportation-companies__blockItemText {
@@ -3837,6 +3837,7 @@ body {
 
 .best-transportation-companies__accordion._init .block__title {
   color: #191919;
+  display: flex;
   font-size: 24px;
   font-weight: 700;
   line-height: 31px;
@@ -4187,11 +4188,6 @@ body {
   padding-top: 3px !important;
 }
 
-.faq .block p a {
-  color: inherit !important;
-  font-weight: 400 !important;
-}
-
 .moving-resources {
   padding-top: 60px;
 }
@@ -4478,6 +4474,7 @@ body {
 }
 
 .about__blockTitle {
+  display: block;
   font-size: 22px;
   font-weight: 700;
   line-height: 33px;
@@ -4642,7 +4639,7 @@ body {
 .what-you-need__blockWrapTitle {
   align-items: flex-start;
   display: flex;
-  padding-bottom: 19px;
+  padding-bottom: 13px;
 }
 
 .what-you-need__blockWrapTitle .block-icon {
@@ -5036,22 +5033,6 @@ body {
     flex-wrap: wrap;
     width: 100%;
   }
-
-  .what-you-need__blockWrapTitle {
-    position: sticky;
-    top: 0;
-  }
-
-  .what-you-need__blockWrapTitle::after {
-    background-color: #fff;
-    bottom: 0;
-    content: "";
-    height: 100%;
-    position: absolute;
-    top: -15px;
-    width: 100%;
-    z-index: -1;
-  }
 }
 
 @media screen and (min-width: 761px) {
@@ -5249,6 +5230,7 @@ body {
 
   .what-you-need__blocksBlocks {
     margin-left: 24px;
+    position: relative;
     width: calc(100% - 267px - 24px);
   }
 
@@ -5270,22 +5252,28 @@ body {
     z-index: 2;
   }
 
+  .what-you-need__blocksBlocks.more-text .what-you-need__blocksBlockText {
+    padding-bottom: 38px;
+  }
+
   .what-you-need__blocksBlock {
+    padding-bottom: 30px;
+  }
+
+  .what-you-need__blocksBlockText {
     max-height: 100%;
-    padding-bottom: 50px;
-    padding-right: 5px;
     overflow-x: auto;
   }
 
-  .what-you-need__blocksBlock::-webkit-scrollbar {
+  .what-you-need__blocksBlockText::-webkit-scrollbar {
     width: 3px;
   }
 
-  .what-you-need__blocksBlock::-webkit-scrollbar-track {
+  .what-you-need__blocksBlockText::-webkit-scrollbar-track {
     background-color: #F9FAFF;
   }
 
-  .what-you-need__blocksBlock::-webkit-scrollbar-thumb {
+  .what-you-need__blocksBlockText::-webkit-scrollbar-thumb {
     background-color: #D9D9D9;
     border-radius: 4px;
   }
@@ -5315,6 +5303,12 @@ body {
   }
 }
 
+@media screen and (min-width: 1025px) and (min-width: 1025px) {
+  .what-you-need__blocksBlocks.more-text .what-you-need__blocksBlockText {
+    padding-right: 5px;
+  }
+}
+
 @media (min-width: 1100px) {
   .header__wrapper::after {
     background-color: #0064D9;
@@ -5325,7 +5319,6 @@ body {
     opacity: 0;
     pointer-events: none;
     position: absolute;
-    transition: opacity 0.4s ease 0s;
     width: 100%;
     z-index: 10;
   }
@@ -5335,7 +5328,7 @@ body {
   }
 
   body._pc .big-submenu > a::before {
-    bottom: -12px;
+    bottom: -24px;
     border: 2px solid transparent;
     border-radius: 50px;
     content: "";
@@ -5344,7 +5337,6 @@ body {
     left: calc(50% + 3px);
     pointer-events: none;
     position: absolute;
-    transition: 0.3s ease;
     transform: translateX(-50%);
     width: 12px;
     z-index: 12;
@@ -5471,9 +5463,6 @@ body {
     margin: 0;
     padding: 7px 20px;
     min-width: 200px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    visibility: hidden;
     box-shadow: 0 20px 32px -8px rgba(17, 16, 19, 0.15), 0 0 1px rgba(17, 16, 19, 0.05);
   }
 
@@ -5500,7 +5489,7 @@ body {
     position: fixed !important;
     right: 0;
     border-top: 39px solid #fff;
-    top: 60px !important;
+    top: -105% !important;
     width: calc(100% - 8px);
   }
 
@@ -5518,7 +5507,7 @@ body {
 
   .header .big-submenu.six-columns-count .menu__sub-list,
   .header .big-submenu.six-columns .menu__sub-list {
-    height: 460px;
+    max-height: calc(100dvh - 100px);
   }
 
   .header .big-submenu.six-columns-count .big-submenu__wrap-list {
@@ -5570,6 +5559,7 @@ body {
     line-height: 25px;
   }
 
+  .header .big-submenu__list li a:hover,
   .header .big-submenu__list li.current-menu-item a,
   .header .big-submenu__list li.current_page_item a {
     font-weight: 700;
@@ -5604,6 +5594,14 @@ body {
 }
 
 @media screen and (min-width: 1100px) {
+  body._touch .header .menu__list > li._active .menu__sub-list {
+    top: 60px !important;
+  }
+
+  body._pc .header .menu__list > li:hover .menu__sub-list {
+    top: 60px !important;
+  }
+
   body._touch .header .menu__list > li {
     align-items: center;
     display: flex;
@@ -6890,7 +6888,7 @@ body {
   .best-transportation-companies__blockItemTitle {
     font-size: 24px;
     line-height: 31px;
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
   }
 
   .best-transportation-companies__blockItemText {
@@ -7369,6 +7367,10 @@ body {
     background-color: #2A69E3;
   }
 
+  .aside__blockContent .best-moving-companies__list li a:hover {
+    color: #0064D9;
+  }
+
   .aside__blockBestCarrier-btn {
     transition: 0.3s ease 0s;
   }
@@ -7428,14 +7430,6 @@ body {
 
   .find-out-what-is-this__button:hover {
     color: #191919;
-  }
-
-  .faq .block p a {
-    transition: 0.3s ease 0s;
-  }
-
-  .faq .block p a:hover {
-    color: #0064D9 !important;
   }
 
   .moving-resources__columnList li a {

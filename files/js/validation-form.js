@@ -36,7 +36,8 @@ if (fsForm) {
 
 	// Функция для проверки валидности email
 	function isValidEmail(email) {
-		const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)$/; // Добавьте другие домены при необходимости
+		//const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)$/; // Добавьте другие домены при необходимости
+		const emailRegex = /^[a-zA-Z0-9._%+-]+@$/; // Добавьте другие домены при необходимости
 		return emailRegex.test(email);
 	}
 
@@ -286,6 +287,7 @@ if (getMatchedForm) {
 
 	// Функция для проверки валидности email
 	function isValidEmail2(email2) {
+		//const emailRegex2 = /^[a-zA-Z0-9._%+-]+@$/; // Добавьте другие домены при необходимости
 		const emailRegex2 = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)$/; // Добавьте другие домены при необходимости
 		return emailRegex2.test(email2);
 	}
@@ -502,42 +504,48 @@ if (getMatchedForm) {
 document.addEventListener('DOMContentLoaded', function() {
 
 	// Обработчик для формы с ID fs-form
-	document.getElementById('fs-form').addEventListener('submit', function(event) {
-		event.preventDefault(); // Предотвращаем стандартное поведение формы
+	//document.getElementById('fs-form')
+	if (fsForm) {
+		fsForm.addEventListener('submit', function(event) {
+			event.preventDefault(); // Предотвращаем стандартное поведение формы
 
-		const form = this;
+			const form = this;
 
-		// Используем Fetch API для отправки формы на текущий URL
-		fetch(window.location.href, {
-			method: 'POST',
-			body: new FormData(form) // Отправляем данные формы
-		})
-		.then(response => response.text())
-		.then(html => {
-			
-		})
-		.catch(error => {
-			console.error('An error occurred:', error);
+			// Используем Fetch API для отправки формы на текущий URL
+			fetch(window.location.href, {
+				method: 'POST',
+				body: new FormData(form) // Отправляем данные формы
+			})
+			.then(response => response.text())
+			.then(html => {
+				
+			})
+			.catch(error => {
+				console.error('An error occurred:', error);
+			});
 		});
-	});
+	}
 	
 	// Обработчик для формы с ID get-matched-form
-	document.getElementById('get-matched-form').addEventListener('submit', function(event) {
-		event.preventDefault(); // Предотвращаем стандартное поведение формы
+	//document.getElementById('get-matched-form')
+	if (getMatchedForm) {
+		getMatchedForm.addEventListener('submit', function(event) {
+			event.preventDefault(); // Предотвращаем стандартное поведение формы
 
-		const form = this;
+			const form = this;
 
-		// Используем Fetch API для отправки формы на текущий URL
-		fetch(window.location.href, {
-			method: 'POST',
-			body: new FormData(form) // Отправляем данные формы
-		})
-		.then(response => response.text())
-		.then(html => {
-			
-		})
-		.catch(error => {
-			console.error('An error occurred:', error);
+			// Используем Fetch API для отправки формы на текущий URL
+			fetch(window.location.href, {
+				method: 'POST',
+				body: new FormData(form) // Отправляем данные формы
+			})
+			.then(response => response.text())
+			.then(html => {
+				
+			})
+			.catch(error => {
+				console.error('An error occurred:', error);
+			});
 		});
-	});
+	}
 });
