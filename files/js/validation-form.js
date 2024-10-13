@@ -37,7 +37,7 @@ if (fsForm) {
 	// Функция для проверки валидности email
 	function isValidEmail(email) {
 		//const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)$/; // Добавьте другие домены при необходимости
-		const emailRegex = /^[a-zA-Z0-9._%+-]+@$/; // Добавьте другие домены при необходимости
+		const emailRegex = /^[a-zA-Z0-9._%+-]+@/; // Добавьте другие домены при необходимости
 		return emailRegex.test(email);
 	}
 
@@ -287,8 +287,8 @@ if (getMatchedForm) {
 
 	// Функция для проверки валидности email
 	function isValidEmail2(email2) {
-		//const emailRegex2 = /^[a-zA-Z0-9._%+-]+@$/; // Добавьте другие домены при необходимости
-		const emailRegex2 = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)$/; // Добавьте другие домены при необходимости
+		const emailRegex2 = /^[a-zA-Z0-9._%+-]+@/; // Добавьте другие домены при необходимости
+		//const emailRegex2 = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)$/; // Добавьте другие домены при необходимости
 		return emailRegex2.test(email2);
 	}
 

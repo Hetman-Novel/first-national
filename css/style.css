@@ -1251,11 +1251,12 @@ body strong {
 }
 
 .first-screen__title {
+  display: block;
   color: #fff;
   font-size: 48px;
   font-weight: 700;
   line-height: 62px;
-  margin: 0;
+  margin: 0 !important;
 }
 
 .first-screen__blockText {
@@ -1415,6 +1416,7 @@ body strong {
 
 .first-screen__blockWrapFormTitle,
 .first-screen__blockWrapFormText {
+  display: block;
   margin: 0;
   text-align: center;
 }
@@ -2255,6 +2257,183 @@ body {
   margin: 60px 0 0;
 }
 
+.section-title {
+  display: block;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 57px;
+  margin: 60px 0 0 !important;
+}
+
+.section-subtitle {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  margin-bottom: -20px;
+  margin-top: 38px;
+}
+
+.info__lists {
+  margin-top: 39px;
+}
+
+.info__lists li {
+  color: #0064D9;
+  list-style: none;
+}
+
+.info__list::before {
+  background-color: #6BCB77;
+  border-radius: 2px 2px 0 0;
+  content: "";
+  display: block;
+  height: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.info__listItem.dropdown {
+  cursor: pointer;
+  padding-left: 15px;
+  position: relative;
+}
+
+.info__listItem.dropdown ul {
+  margin-left: -15px;
+}
+
+.info__listItem.dropdown.open {
+  color: #063FAF;
+  font-weight: 700;
+}
+
+.info__listItem.dropdown.open::before {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.66666 6.66675L4.33332 4.00008L1.66666 1.33341' stroke='%23063FAF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+}
+
+.info__listItem.dropdown::before {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.66666 6.66675L4.33332 4.00008L1.66666 1.33341' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  left: 0;
+  display: inline-block;
+  height: 16px;
+  margin: 0 0 0 -1px;
+  position: absolute;
+  transition: 0.3s ease 0s;
+  top: 5px;
+  width: 16px;
+}
+
+.info__listItem:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.info__listItem a {
+  text-decoration: none;
+}
+
+.info__listItem.dropdown.open::before {
+  transform: rotate(-90deg);
+}
+
+.info__sublist {
+  cursor: default;
+  height: 0;
+  padding-left: 36px;
+  overflow: hidden;
+  transition: 0.5s ease 0s;
+}
+
+.info__sublist li {
+  cursor: default;
+  font-weight: 400;
+}
+
+.info__sublist li:first-child {
+  margin-top: 10px;
+}
+
+.info__sublist li:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.info__sublist li a {
+  text-decoration: none;
+}
+
+.info__blockText {
+  margin-top: 40px;
+}
+
+.info__blockText p a {
+  color: #0064D9;
+  font-weight: 700;
+}
+
+.n_btn {
+  color: #fff;
+  border-radius: 5px;
+  height: 55px;
+  display: none;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 56px;
+  text-align: center;
+  margin-top: 40px;
+  padding: 0 15px;
+  text-decoration: none;
+  width: 274px;
+  max-width: 100%;
+  /*
+  &.another-color {
+     background-color: #4D96FF;
+  }
+
+  @media (any-hover: hover) {
+     transition: 0.3s ease 0s;
+
+     &:hover {
+        background-color: #00499E;
+     }
+  }
+  */
+}
+
+.n_btn.center-all {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.n_btn.bg-mostly-pure-blue {
+  background-color: #0064D9;
+}
+
+.n_btn.bg-light-blue {
+  background-color: #4D96FF;
+}
+
+.n_btn.bg-light-blue-two {
+  background-color: #4D96FF;
+}
+
+.n_btn.bg-white {
+  background-color: #fff;
+  color: #0064D9;
+}
+
+.n_btn.bg-none-border {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.n_btn.show-all {
+  display: block;
+}
+
 .there-block-info.show-info .block-info-for-link {
   opacity: 1;
   pointer-events: all;
@@ -2507,9 +2686,11 @@ body {
 }
 
 .first-block-content__blockItemName {
+  display: block;
   font-size: 22px;
   font-weight: 700;
   line-height: 34px;
+  margin: 0 0 0 0 !important;
 }
 
 .first-block-content__blockItemBlockRating {
@@ -2627,6 +2808,8 @@ body {
 }
 
 .first-block-content__blockTop {
+  -moz-column-gap: 25px;
+       column-gap: 25px;
   margin-bottom: 39px;
   padding-top: 1px;
 }
@@ -2661,7 +2844,7 @@ body {
   max-width: 100%;
 }
 
-.first-block-content__blockText.minus-margin-top {
+.first-block-content__blockText {
   margin-top: -15px;
 }
 
@@ -2670,7 +2853,7 @@ body {
 }
 
 .first-block-content__wrapBlosks {
-  padding-top: 39px;
+  margin-top: 39px;
 }
 
 .aside {
@@ -2726,6 +2909,7 @@ body {
 }
 
 .aside__blockContent-title {
+  display: block;
   color: #0064D9;
   font-size: 20px;
   font-weight: 700;
@@ -2743,44 +2927,44 @@ body {
   top: 50%;
 }
 
-.aside__blockContent .best-moving-companies__list {
+.aside__blockContent .info__list {
   margin-left: 0;
   margin-right: 0;
   width: 100%;
 }
 
-.aside__blockContent .best-moving-companies__list::before {
+.aside__blockContent .info__list::before {
   display: none;
 }
 
-.aside__blockContent .best-moving-companies__list li {
-  list-style: none;
+.aside__blockContent .info__list li {
   font-size: 16px;
+  list-style: none;
   line-height: 25px;
 }
 
-.aside__blockContent .best-moving-companies__list li:hover > a {
+.aside__blockContent .info__list li:hover > a {
   font-weight: 700;
 }
 
-.aside__blockContent .best-moving-companies__list li.dropdown > a {
-  pointer-events: none;
+.aside__blockContent .info__list li.dropdown::before {
+  top: 4px;
 }
 
-.aside__blockContent .best-moving-companies__list li ul {
+.aside__blockContent .info__list li ul {
   padding-left: 24px;
 }
 
-.aside__blockContent .best-moving-companies__list li ul li {
+.aside__blockContent .info__list li ul li {
   padding-left: 16px;
   position: relative;
 }
 
-.aside__blockContent .best-moving-companies__list li ul li:hover::before {
+.aside__blockContent .info__list li ul li:hover::before {
   background-color: #0064D9;
 }
 
-.aside__blockContent .best-moving-companies__list li ul li::before {
+.aside__blockContent .info__list li ul li::before {
   background-color: #191919;
   border-radius: 50px;
   content: "";
@@ -2792,7 +2976,7 @@ body {
   width: 6px;
 }
 
-.aside__blockContent .best-moving-companies__list li a {
+.aside__blockContent .info__list li a {
   color: #191919;
   text-decoration: none;
 }
@@ -2807,6 +2991,7 @@ body {
 }
 
 .aside__blockBestCarrier-title {
+  display: block;
   color: #fff;
   font-size: 20px;
   font-weight: 700;
@@ -2861,12 +3046,8 @@ body {
   background-color: #F9FAFF;
   margin-top: 60px;
   padding-bottom: 60px;
-  padding-top: 61px;
+  padding-top: 1px;
   position: relative;
-}
-
-.bg-color.padding-top-none {
-  padding-top: 2px;
 }
 
 .bg-color::before,
@@ -2891,112 +3072,174 @@ body {
   transform: translateX(48%);
 }
 
-.best-moving-companies__title {
-  font-size: 44px;
-  font-weight: 700;
-  line-height: 57px;
-  margin-bottom: 12px !important;
-}
+.best-moving-companies {
+  /*
+  &__title {
+     font-size: 44px;
+     font-weight: 700;
+     line-height: 57px;
+     margin-bottom: 12px !important;
 
-.best-moving-companies__lists {
-  padding-top: 25px;
-}
+     @include media-max-575 {
+        font-size: 26px;
+        line-height: 34px;
+        margin-bottom: 4px !important;
+     }
+     @include media-max-480 {
+        max-width: 300px;
+     }
+  }
+  */
+  /*
+  &__lists {
+     padding-top: 25px;
 
-.best-moving-companies__lists li {
-  color: #0064D9;
-  list-style: none;
-}
+     @include media-min-721 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -12.5px;
+        margin-right: -12.5px;
+     }
 
-.best-moving-companies__list::before {
-  background-color: #6BCB77;
-  border-radius: 2px 2px 0 0;
-  content: "";
-  display: block;
-  height: 5px;
-  margin-bottom: 10px;
-  width: 100%;
-}
+     li {
+        color: #0064D9;
+        list-style: none;
+     }
+  }
 
-.best-moving-companies__listItem.dropdown {
-  cursor: pointer;
-}
+  &__list {
 
-.best-moving-companies__listItem.dropdown.open {
-  color: #063FAF;
-  font-weight: 700;
-}
+     @include media-min-721 {
+        margin-left: 12.5px;
+        margin-right: 12.5px;
+        width: calc(33.3333% - 25px);
+     }
+     @include media-max-720 {
 
-.best-moving-companies__listItem.dropdown::before {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.66666 6.66675L4.33332 4.00008L1.66666 1.33341' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
-  background-position: center;
-  background-repeat: no-repeat;
-  content: "";
-  display: inline-block;
-  height: 16px;
-  margin: 0 0 0 -1px;
-  position: relative;
-  transition: 0.3s ease 0s;
-  top: 2px;
-  width: 16px;
-}
+        &:not(:last-child) {
+           margin-bottom: 29px;
+        }
+     }
 
-.best-moving-companies__listItem:not(:last-child) {
-  margin-bottom: 10px;
-}
+     &::before {
+        background-color: #6BCB77;
+        border-radius: 2px 2px 0 0;
+        content: '';
+        display: block;
+        height: 5px;
+        margin-bottom: 10px;
+        width: 100%;
 
-.best-moving-companies__listItem.dropdown.open::before {
-  transform: rotate(-90deg);
-}
+        @include media-max-575 {
+           margin-bottom: 11px;
+        }
+     }
 
-.best-moving-companies__sublist {
-  cursor: default;
-  height: 0;
-  padding-left: 36px;
-  overflow: hidden;
-  transition: 0.5s ease 0s;
-}
+     &Item {
 
-.best-moving-companies__sublist li {
-  cursor: default;
-  font-weight: 400;
-}
+        &.dropdown {
+           cursor: pointer;
 
-.best-moving-companies__sublist li:first-child {
-  margin-top: 10px;
-}
+           &.open {
+              color: #063FAF;
+              font-weight: 700;
+           }
 
-.best-moving-companies__sublist li:not(:last-child) {
-  margin-bottom: 4px;
-}
+           &::before {
+              background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.66666 6.66675L4.33332 4.00008L1.66666 1.33341' stroke='%230064D9' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+              background-position: center;
+              background-repeat: no-repeat;
+              content: '';
+              display: inline-block;
+              height: 16px;
+              margin: 0 0 0 -1px;
+              position: relative;
+              transition: 0.3s ease 0s;
+              top: 2px;
+              width: 16px;
+           }
+        }
 
-.best-moving-companies__blockText {
-  padding-top: 40px;
-}
+        &:not(:last-child) {
+           margin-bottom: 10px;
+        }
+     }
+  }
 
-.best-moving-companies__blockText p a {
-  color: #0064D9;
-  font-weight: 700;
-}
+  &__listItem.dropdown.open::before {
+     transform: rotate(-90deg);
+  }
 
-.best-moving-companies__button {
-  background-color: #0064D9;
-  color: #fff;
-  border-radius: 5px;
-  height: 55px;
-  display: block;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 56px;
-  text-align: center;
-  margin-top: 40px;
-  padding: 0 15px;
-  text-decoration: none;
-  width: 274px;
-  max-width: 100%;
-}
+  &__sublist {
+     cursor: default;
+     height: 0;
+     padding-left: 36px;
+     overflow: hidden;
+     transition: 0.5s ease 0s;
 
-.best-moving-companies__button.another-color {
-  background-color: #4D96FF;
+     li {
+        cursor: default;
+        font-weight: 400;
+
+        &:first-child {
+           margin-top: 10px;
+        }
+        &:not(:last-child) {
+           margin-bottom: 4px;
+        }
+     }
+  }
+
+  &__blockText {
+     padding-top: 40px;
+
+     @include media-max-575 {
+        padding-top: 30px;
+     }
+
+     p {
+
+        a {
+           color: #0064D9;
+           font-weight: 700;
+        }
+     }
+  }
+  */
+  /*
+  &__button {
+     background-color: #0064D9;
+     color: #fff;
+     border-radius: 5px;
+     height: 55px;
+     display: block;
+     font-size: 18px;
+     font-weight: 700;
+     line-height: 56px;
+     text-align: center;
+     margin-top: 40px;
+     padding: 0 15px;
+     text-decoration: none;
+     width: 274px;
+     max-width: 100%;
+
+     @include media-max-575 {
+        margin: 29px auto 0;
+     }
+
+     &.another-color {
+        background-color: #4D96FF;
+
+     }
+
+     @media (any-hover: hover) {
+        transition: 0.3s ease 0s;
+
+        &:hover {
+           background-color: #00499E;
+        }
+     }
+  }*/
 }
 
 .block-text.br {
@@ -3011,6 +3254,7 @@ body {
 }
 
 .block-text__title {
+  display: block;
   font-size: 20px;
   font-weight: 700;
   line-height: 26px;
@@ -3134,6 +3378,7 @@ body {
 }
 
 .block-text.two .block-text__contentTwoTitle {
+  display: block;
   font-size: 24px;
   font-weight: 700;
   line-height: 31px;
@@ -3158,6 +3403,7 @@ body {
 }
 
 .block-text.two.two-three .block-text__contentTwoTitle {
+  display: block;
   font-size: 44px;
   font-weight: 700;
   line-height: 57px;
@@ -3179,6 +3425,7 @@ body {
 .block-text.two.two-three.new-page h4:not(.block-text__contentTwoTitle),
 .block-text.two.two-three.new-page h5:not(.block-text__contentTwoTitle),
 .block-text.two.two-three.new-page h6:not(.block-text__contentTwoTitle) {
+  display: block;
   font-size: 24px;
   font-weight: 700;
   line-height: 31px;
@@ -3742,6 +3989,7 @@ body {
   font-size: 22px;
   font-weight: 700;
   line-height: 34px;
+  margin: 0 0 20px 0 !important;
 }
 
 .best-transportation-companies__blockItem .first-block-content__blockItemBlockRating {
@@ -3762,6 +4010,7 @@ body {
   margin-left: auto;
   position: relative;
   top: -4px;
+  z-index: 0;
 }
 
 .best-transportation-companies__blockItemList {
@@ -4074,9 +4323,9 @@ body {
 
 .faq.no-bg-color {
   background-color: inherit;
-  margin-top: 0;
+  margin-top: 50px;
   padding-bottom: 0;
-  padding-top: 50px;
+  padding-top: 0;
 }
 
 .faq.no-bg-color::before,
@@ -4193,6 +4442,7 @@ body {
 }
 
 .moving-resources__title {
+  display: block;
   font-size: 44px;
   font-weight: 700;
   line-height: 57px;
@@ -4212,6 +4462,7 @@ body {
 }
 
 .moving-resources__columnTitle {
+  display: block;
   font-size: 24px;
   font-weight: 700;
   line-height: 31px;
@@ -4285,7 +4536,12 @@ body {
   padding: 39px 37px 17px;
 }
 
+.resources-that-you-need.no-block-text .resources-that-you-need__blockText {
+  display: none;
+}
+
 .resources-that-you-need__title {
+  display: block;
   font-size: 44px;
   font-weight: 700;
   line-height: 57px;
@@ -4293,7 +4549,6 @@ body {
 }
 
 .resources-that-you-need__blockText {
-  display: none;
   padding-top: 38px;
 }
 
@@ -4307,6 +4562,7 @@ body {
 }
 
 .resources-that-you-need__itemTitle {
+  display: block;
   font-size: 24px;
   font-weight: 700;
   line-height: 31px;
@@ -4376,43 +4632,40 @@ body {
   text-align: left;
 }
 
+.about {
+  margin-top: 60px;
+}
+
 .about__title {
+  display: block;
   font-size: 44px;
   font-weight: 700;
   line-height: 57px;
   margin: 0 0 0 0 !important;
 }
 
-.about__subtitle {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 31px;
-  margin-bottom: -20px;
-  margin-top: 38px;
+.about__columns {
+  margin-top: 39px;
 }
 
-.about .first-block-content__blockItemBlockRating .block-info-here {
+.about__columns .first-block-content__blockItemBlockRating .block-info-here {
   top: -5px;
 }
 
-.about .first-block-content__blockItemBlockRating .block-info-here .block-info {
+.about__columns .first-block-content__blockItemBlockRating .block-info-here .block-info {
   border-left: 0 solid transparent;
   border-right: 30px solid transparent;
   transform: translate(30px, -11px);
 }
 
-.about .first-block-content__blockItemBlockRating .block-info-here .block-info::before {
+.about__columns .first-block-content__blockItemBlockRating .block-info-here .block-info::before {
   left: auto;
   right: -9px;
 }
 
-.about__columns {
-  margin-top: 39px;
-}
-
 .about__column .about__blockText {
   margin-bottom: 0;
-  padding-top: 0;
+  margin-top: 0;
 }
 
 .about__blockLogo {
@@ -4426,25 +4679,21 @@ body {
 }
 
 .about__blockText {
-  margin-bottom: 39px;
-  padding-top: 19px;
+  margin-top: 19px;
 }
 
-.about__blockText .about__subtitle {
+.about__blockText .section-subtitle {
   margin-bottom: 19px;
-  margin-top: 19px;
+  margin-top: 39px;
 }
 
 .about__block {
   background-color: #fff;
   border: 2px solid rgb(231, 230, 230);
   border-radius: 10px;
+  margin-top: 40px;
   padding: 38px;
   position: relative;
-}
-
-.about__block:not(:last-child) {
-  margin-bottom: 40px;
 }
 
 .about__block.positive::after,
@@ -4519,6 +4768,7 @@ body {
 }
 
 .what-you-need__title {
+  display: block;
   font-size: 44px;
   font-weight: 700;
   line-height: 57px;
@@ -4527,7 +4777,7 @@ body {
 }
 
 .what-you-need__blockText {
-  padding-top: 39px;
+  margin-top: 39px;
 }
 
 .what-you-need__blockText p a {
@@ -4535,7 +4785,6 @@ body {
 }
 
 .what-you-need__blocks {
-  background-color: #fff;
   margin-top: 40px;
 }
 
@@ -4571,6 +4820,7 @@ body {
 }
 
 .what-you-need__blocksBlocks {
+  background-color: #fff;
   border: 2px solid #E7E6E6;
   border-radius: 10px;
   height: 100%;
@@ -4656,9 +4906,11 @@ body {
 }
 
 .what-you-need__blockTitle {
+  display: block;
   font-size: 20px;
   font-weight: 700;
   line-height: 26px;
+  margin: 0 !important;
 }
 
 /* Footer */
@@ -4676,6 +4928,7 @@ body {
 }
 
 .footer__headText {
+  display: block;
   color: #fff;
   font-size: 24px;
   font-weight: 700;
@@ -4712,7 +4965,9 @@ body {
 }
 
 .footer__columnTitle {
+  display: block;
   font-size: 18px;
+  font-weight: 700;
   line-height: 28px;
 }
 
@@ -4883,20 +5138,8 @@ body {
     justify-content: space-between;
   }
 
-  .first-block-content__blockTop .column:first-child {
-    padding-right: 25px;
-  }
-
-  .first-block-content__blockTop .column:last-child {
-    padding-left: 25px;
-  }
-
   .first-block-content__blockTop .column:nth-child(3) {
     text-align: right;
-  }
-
-  .aside__blockBestCarrier-btn.tel.mobile {
-    display: none;
   }
 
   .block-text__content {
@@ -4935,6 +5178,19 @@ body {
     margin-left: 4px;
     margin-right: 4px;
     position: relative;
+  }
+
+  .info__lists {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12.5px;
+    margin-right: -12.5px;
+  }
+
+  .info__list {
+    margin-left: 12.5px;
+    margin-right: 12.5px;
+    width: calc(33.3333% - 25px);
   }
 
   .first-block-content__blocks .first-block-content__blockItem:nth-child(1) {
@@ -4989,27 +5245,18 @@ body {
     display: none;
   }
 
-  .best-moving-companies__lists {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -12.5px;
-    margin-right: -12.5px;
-  }
-
-  .best-moving-companies__list {
-    margin-left: 12.5px;
-    margin-right: 12.5px;
-    width: calc(33.3333% - 25px);
-  }
-
-  .about .first-block-content__blockItemBlockRating {
-    justify-content: flex-end;
-    margin-top: 38px;
-  }
-
   .about__columns {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .about__columns.no-subtitle-before-columns .about__blockLogo {
+    margin-top: 9px;
+  }
+
+  .about__columns .first-block-content__blockItemBlockRating {
+    justify-content: flex-end;
+    margin-top: 38px;
   }
 
   .about__column:nth-child(1) {
@@ -5142,6 +5389,10 @@ body {
 
   .block-info-for-link {
     z-index: 5;
+  }
+
+  .aside__blockBestCarrier-btn.tel.mobile {
+    display: none;
   }
 
   .resources-that-you-need__items {
@@ -5334,7 +5585,7 @@ body {
     content: "";
     height: 12px;
     display: block;
-    left: calc(50% + 3px);
+    left: 50%;
     pointer-events: none;
     position: absolute;
     transform: translateX(-50%);
@@ -5352,14 +5603,13 @@ body {
   }
 
   body._touch .big-submenu > a::before {
-    bottom: -12px;
+    bottom: -24px;
     border: 2px solid transparent;
     border-radius: 50px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     content: "";
     height: 12px;
     display: block;
-    left: calc(50% + 3px);
+    left: 50%;
     pointer-events: none;
     position: absolute;
     transition: 0.4s ease;
@@ -5370,6 +5620,11 @@ body {
 
   body._touch .big-submenu._active a::before {
     border-color: #0064D9;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  .header .menu__arrow {
+    display: none;
   }
 
   .header .menu__icon {
@@ -5562,7 +5817,7 @@ body {
   .header .big-submenu__list li a:hover,
   .header .big-submenu__list li.current-menu-item a,
   .header .big-submenu__list li.current_page_item a {
-    font-weight: 700;
+    transition: 0s;
     text-decoration: underline;
   }
 }
@@ -5612,6 +5867,10 @@ body {
     pointer-events: all;
     transform: translate(0, 0);
     visibility: visible;
+  }
+
+  .n_btn.show-desktop {
+    display: block;
   }
 }
 
@@ -6152,6 +6411,8 @@ body {
 
   .aside__blockBestCarrier {
     bottom: 0;
+    display: block;
+    padding: 18px 17px 7px;
     position: fixed;
     top: auto;
     transition: transform 0.5s;
@@ -6161,6 +6422,18 @@ body {
 
   .aside__blockBestCarrier.hidden {
     transform: translateY(120%);
+  }
+
+  .aside__blockBestCarrier-title {
+    display: none;
+  }
+
+  .aside__blockBestCarrier-text {
+    display: none;
+  }
+
+  .aside__blockBestCarrier-btn.tel.desktop {
+    display: none;
   }
 }
 
@@ -6232,16 +6505,33 @@ body {
 
 @media screen and (max-width: 720.98px) {
   main.main {
-    padding-top: 80px;
+    padding-top: 78px;
+  }
+
+  body._lock .header__wrapper {
+    top: 0;
   }
 
   .first-screen__wrap-breadcrumbsLink {
-    display: none;
+    display: table;
+    margin: 5px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
   }
 
   .n_container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .header.n_scroll .header__wrapper {
+    top: 0;
+  }
+
+  .header__wrapper {
+    transition: top 0.2s;
+    top: 30px;
   }
 
   .header-container {
@@ -6300,6 +6590,15 @@ body {
     margin-top: 10px;
   }
 
+  .section-subtitle {
+    margin-bottom: 11px;
+    margin-top: 18px;
+  }
+
+  .info__list:not(:last-child) {
+    margin-bottom: 29px;
+  }
+
   .first-block-content__blocks .first-block-content__blockItemBlockRating {
     margin-bottom: 16px;
     margin-top: 3px;
@@ -6356,14 +6655,6 @@ body {
     width: 100%;
   }
 
-  .aside__blockBestCarrier {
-    width: calc(100% - 40px);
-  }
-
-  .best-moving-companies__list:not(:last-child) {
-    margin-bottom: 29px;
-  }
-
   .wrap-table {
     margin-right: -20px;
     padding-right: 20px;
@@ -6373,40 +6664,35 @@ body {
     margin-right: -20px;
   }
 
-  .about__subtitle {
-    margin-bottom: 11px;
-    margin-top: 18px;
+  .about__columns {
+    margin-top: 15px;
   }
 
-  .about .first-block-content__blockItemBlockRating {
+  .about__columns .first-block-content__blockItemBlockRating {
     margin-bottom: 18px;
     margin-top: 39px;
   }
 
-  .about .first-block-content__blockItemBlockRating .wrap-stars {
+  .about__columns .first-block-content__blockItemBlockRating .wrap-stars {
     margin-left: 4px;
     margin-right: -3px;
   }
 
-  .about .first-block-content__blockItemBlockRating p {
+  .about__columns .first-block-content__blockItemBlockRating p {
     order: 0;
   }
 
-  .about .first-block-content__blockItemBlockRating .block-info-here {
+  .about__columns .first-block-content__blockItemBlockRating .block-info-here {
     top: -2px;
   }
 
-  .about .first-block-content__blockItemBlockRating .block-info-here .block-info {
+  .about__columns .first-block-content__blockItemBlockRating .block-info-here .block-info {
     transform: translate(55px, -1px);
   }
 
-  .about .first-block-content__blockItemBlockRating .block-info-here .block-info::before {
+  .about__columns .first-block-content__blockItemBlockRating .block-info-here .block-info::before {
     right: 4px;
     top: -15px;
-  }
-
-  .about__columns {
-    margin-top: 15px;
   }
 
   .about__blockLogo {
@@ -6414,9 +6700,9 @@ body {
     margin-top: 47px;
   }
 
-  .about__blockText .about__subtitle {
+  .about__blockText .section-subtitle {
     margin-bottom: 11px;
-    margin-top: 9px;
+    margin-top: 20px;
   }
 
   .about__block.positive::after,
@@ -6510,6 +6796,48 @@ body {
     margin: 40px 0 0;
   }
 
+  .section-title {
+    font-size: 26px;
+    line-height: 34px;
+    margin: 40px 0 0 !important;
+  }
+
+  .section-title.center-mobile {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .section-subtitle {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .info__lists {
+    margin-top: 29px;
+  }
+
+  .info__list::before {
+    margin-bottom: 11px;
+  }
+
+  .info__blockText {
+    margin-top: 30px;
+  }
+
+  .n_btn {
+    margin: 29px 0 0;
+  }
+
+  .n_btn.center-mobile {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .n_btn.show-mobile {
+    display: block;
+  }
+
   .written-column .block-info-for-link {
     transform: translateX(85%);
   }
@@ -6567,7 +6895,7 @@ body {
   .first-block-content__blockItemName {
     font-size: 18px;
     line-height: 28px;
-    margin-top: 10px;
+    margin-top: 10px !important;
   }
 
   .first-block-content__blockItemButton {
@@ -6602,7 +6930,7 @@ body {
     max-width: 100%;
   }
 
-  .first-block-content__blockText.minus-margin-top {
+  .first-block-content__blockText {
     margin-top: -9px;
   }
 
@@ -6621,43 +6949,12 @@ body {
   }
 
   .aside__blockBestCarrier {
-    padding: 18px 17px 7px;
-  }
-
-  .aside__blockBestCarrier-title {
-    display: none;
-  }
-
-  .aside__blockBestCarrier-text {
-    display: none;
-  }
-
-  .aside__blockBestCarrier-btn.tel.desktop {
-    display: none;
+    width: calc(100% - 40px);
   }
 
   .bg-color {
     margin-top: 40px;
     padding-bottom: 40px;
-    padding-top: 41px;
-  }
-
-  .best-moving-companies__title {
-    font-size: 26px;
-    line-height: 34px;
-    margin-bottom: 4px !important;
-  }
-
-  .best-moving-companies__list::before {
-    margin-bottom: 11px;
-  }
-
-  .best-moving-companies__blockText {
-    padding-top: 30px;
-  }
-
-  .best-moving-companies__button {
-    margin: 29px auto 0;
   }
 
   .block-text {
@@ -6738,7 +7035,7 @@ body {
     left: -2px;
   }
 
-  .block-text .best-moving-companies__button {
+  .block-text .n_btn {
     margin-bottom: 30px;
     margin-top: 19px;
   }
@@ -7006,8 +7303,9 @@ body {
   }
 
   .faq.no-bg-color {
+    margin-top: 30px;
     padding-bottom: 0;
-    padding-top: 30px;
+    padding-top: 0;
   }
 
   .faq__title {
@@ -7090,7 +7388,7 @@ body {
   .resources-that-you-need__title {
     font-size: 26px;
     line-height: 34px;
-    margin-bottom: 20px !important;
+    margin: 0 auto 20px !important;
     text-align: center;
   }
 
@@ -7142,28 +7440,26 @@ body {
     margin-top: 6px;
   }
 
+  .about {
+    margin-top: 40px;
+  }
+
   .about__title {
     font-size: 26px;
     line-height: 34px;
   }
 
-  .about__subtitle {
-    font-size: 22px;
-    line-height: 28px;
-  }
-
-  .about .first-block-content__blockItemBlockRating .block-info-here .block-info {
+  .about__columns .first-block-content__blockItemBlockRating .block-info-here .block-info {
     transform: translate(55px, -5px);
   }
 
-  .about .first-block-content__blockItemBlockRating .block-info-here .block-info::before {
+  .about__columns .first-block-content__blockItemBlockRating .block-info-here .block-info::before {
     right: 4px;
     top: -15px;
   }
 
   .about__blockText {
-    margin-bottom: 29px;
-    padding-top: 10px;
+    margin-top: 10px;
   }
 
   .about__blockText a {
@@ -7171,11 +7467,8 @@ body {
   }
 
   .about__block {
+    margin-top: 20px;
     padding: 29px 18px 27px;
-  }
-
-  .about__block:not(:last-child) {
-    margin-bottom: 20px;
   }
 
   .about__blockTitle {
@@ -7194,7 +7487,7 @@ body {
   }
 
   .what-you-need__blockText {
-    padding-top: 20px;
+    margin-top: 20px;
   }
 
   .what-you-need__blocksBlocks {
@@ -7284,10 +7577,6 @@ body {
   .block__item:not(:last-child) {
     margin-bottom: 12px;
   }
-
-  .best-moving-companies__title {
-    max-width: 300px;
-  }
 }
 
 @media screen and (max-width: 400.98px) {
@@ -7306,6 +7595,12 @@ body {
     right: auto;
     transform: translateX(-50%);
     top: -13px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 1099px) {
+  .n_btn.show-tablet {
+    display: block;
   }
 }
 
@@ -7359,6 +7654,54 @@ body {
     box-shadow: 0 8px 34px 0 rgba(0, 0, 0, 0.07);
   }
 
+  .info__listItem {
+    display: block;
+  }
+
+  .info__listItem:hover {
+    font-weight: 700;
+  }
+
+  .info__listItem a:hover {
+    color: #063FAF;
+  }
+
+  .info__sublist li {
+    display: block;
+  }
+
+  .info__sublist li:hover {
+    font-weight: 700;
+  }
+
+  .info__sublist li a:hover {
+    color: #063FAF;
+  }
+
+  .n_btn.bg-mostly-pure-blue:hover {
+    background-color: #00499E;
+  }
+
+  .n_btn.bg-light-blue:hover {
+    background-color: #2A69E3;
+  }
+
+  .n_btn.bg-light-blue-two:hover {
+    background-color: #2A69E3;
+  }
+
+  .n_btn.bg-white:hover {
+    color: #191919;
+  }
+
+  .n_btn.bg-none-border:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .n_btn {
+    transition: 0.3s ease 0s;
+  }
+
   .first-block-content__blockItemButton {
     transition: 0.3s ease 0s;
   }
@@ -7367,7 +7710,11 @@ body {
     background-color: #2A69E3;
   }
 
-  .aside__blockContent .best-moving-companies__list li a:hover {
+  .aside__blockContent .info__list li.dropdown > a:hover {
+    color: #0064D9 !important;
+  }
+
+  .aside__blockContent .info__list li a:hover {
     color: #0064D9;
   }
 
@@ -7386,14 +7733,6 @@ body {
   .aside__blockBestCarrier-btn.tel:hover {
     background-color: rgba(255, 255, 255, 0.25);
     color: #fff;
-  }
-
-  .best-moving-companies__button {
-    transition: 0.3s ease 0s;
-  }
-
-  .best-moving-companies__button:hover {
-    background-color: #00499E;
   }
 
   .table.just-text-with-button tr td .table__button {
