@@ -2368,6 +2368,47 @@ body {
   margin-top: 40px;
 }
 
+.info__blockText h1,
+.info__blockText h2,
+.info__blockText h3,
+.info__blockText h4,
+.info__blockText h5,
+.info__blockText h6 {
+  margin-bottom: 22px;
+  margin-top: 38px;
+}
+
+.info__blockText ul,
+.info__blockText ol {
+  margin-bottom: 18px;
+}
+
+.info__blockText ol {
+  padding-left: 25px;
+}
+
+.info__blockText ul {
+  padding-left: 9px;
+}
+
+.info__blockText ul li {
+  list-style: none;
+  padding-left: 16px;
+  position: relative;
+}
+
+.info__blockText ul li::before {
+  background-color: #191919;
+  border-radius: 50px;
+  content: "";
+  display: block;
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 11px;
+  width: 6px;
+}
+
 .info__blockText p a {
   color: #0064D9;
   font-weight: 700;
@@ -2848,6 +2889,47 @@ body {
   margin-top: -15px;
 }
 
+.first-block-content__blockText h1,
+.first-block-content__blockText h2,
+.first-block-content__blockText h3,
+.first-block-content__blockText h4,
+.first-block-content__blockText h5,
+.first-block-content__blockText h6 {
+  margin-bottom: 22px;
+  margin-top: 38px;
+}
+
+.first-block-content__blockText ul,
+.first-block-content__blockText ol {
+  margin-bottom: 18px;
+}
+
+.first-block-content__blockText ol {
+  padding-left: 25px;
+}
+
+.first-block-content__blockText ul {
+  padding-left: 9px;
+}
+
+.first-block-content__blockText ul li {
+  list-style: none;
+  padding-left: 16px;
+  position: relative;
+}
+
+.first-block-content__blockText ul li::before {
+  background-color: #191919;
+  border-radius: 50px;
+  content: "";
+  display: block;
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 11px;
+  width: 6px;
+}
+
 .first-block-content__blockText p a {
   color: #0064D9;
 }
@@ -3275,13 +3357,13 @@ body {
   padding-top: 23px;
 }
 
-.block-text__content.list-with-links ul li a,
-.block-text__content.list-with-links ol li a {
+.block-text__content ul li a,
+.block-text__content ol li a {
   color: #0064D9;
   font-weight: 700;
 }
 
-.block-text__content.list-with-links ul li::before {
+.block-text__content ul.list-with-links li::before {
   background-color: #0064D9;
 }
 
@@ -3290,9 +3372,19 @@ body {
   font-weight: 700;
 }
 
-.block-text__content ul:not(:last-child),
-.block-text__content ol:not(:last-child) {
-  margin-bottom: 30px;
+.block-text__content h1,
+.block-text__content h2,
+.block-text__content h3,
+.block-text__content h4,
+.block-text__content h5,
+.block-text__content h6 {
+  margin-bottom: 22px;
+  margin-top: 38px;
+}
+
+.block-text__content ul,
+.block-text__content ol {
+  margin-bottom: 18px;
 }
 
 .block-text__content ol {
@@ -3300,7 +3392,6 @@ body {
 }
 
 .block-text__content ul {
-  margin-top: -9px;
   padding-left: 9px;
 }
 
@@ -4071,6 +4162,47 @@ body {
   padding-top: 40px;
 }
 
+.best-transportation-companies__blockText h1,
+.best-transportation-companies__blockText h2,
+.best-transportation-companies__blockText h3,
+.best-transportation-companies__blockText h4,
+.best-transportation-companies__blockText h5,
+.best-transportation-companies__blockText h6 {
+  margin-bottom: 22px;
+  margin-top: 38px;
+}
+
+.best-transportation-companies__blockText ul,
+.best-transportation-companies__blockText ol {
+  margin-bottom: 18px;
+}
+
+.best-transportation-companies__blockText ol {
+  padding-left: 25px;
+}
+
+.best-transportation-companies__blockText ul {
+  padding-left: 9px;
+}
+
+.best-transportation-companies__blockText ul li {
+  list-style: none;
+  padding-left: 16px;
+  position: relative;
+}
+
+.best-transportation-companies__blockText ul li::before {
+  background-color: #191919;
+  border-radius: 50px;
+  content: "";
+  display: block;
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 11px;
+  width: 6px;
+}
+
 .best-transportation-companies__blockText a {
   color: #0064D9;
   font-weight: 700;
@@ -4177,6 +4309,16 @@ body {
   position: absolute;
   top: 11px;
   width: 6px;
+}
+
+.best-transportation-companies__accordion._init .block__content h1,
+.best-transportation-companies__accordion._init .block__content h2,
+.best-transportation-companies__accordion._init .block__content h3,
+.best-transportation-companies__accordion._init .block__content h4,
+.best-transportation-companies__accordion._init .block__content h5,
+.best-transportation-companies__accordion._init .block__content h6 {
+  margin-bottom: 22px;
+  margin-top: 38px;
 }
 
 .best-transportation-companies__accordion._init .block__columnBlock {
@@ -4552,6 +4694,47 @@ body {
   padding-top: 38px;
 }
 
+.resources-that-you-need__blockText h1,
+.resources-that-you-need__blockText h2,
+.resources-that-you-need__blockText h3,
+.resources-that-you-need__blockText h4,
+.resources-that-you-need__blockText h5,
+.resources-that-you-need__blockText h6 {
+  margin-bottom: 22px;
+  margin-top: 38px;
+}
+
+.resources-that-you-need__blockText ul,
+.resources-that-you-need__blockText ol {
+  margin-bottom: 18px;
+}
+
+.resources-that-you-need__blockText ol {
+  padding-left: 25px;
+}
+
+.resources-that-you-need__blockText ul {
+  padding-left: 9px;
+}
+
+.resources-that-you-need__blockText ul li {
+  list-style: none;
+  padding-left: 16px;
+  position: relative;
+}
+
+.resources-that-you-need__blockText ul li::before {
+  background-color: #191919;
+  border-radius: 50px;
+  content: "";
+  display: block;
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 11px;
+  width: 6px;
+}
+
 .resources-that-you-need__blockText p a {
   color: #0064d9;
   font-weight: 700;
@@ -4687,6 +4870,51 @@ body {
   margin-top: 39px;
 }
 
+.about__blockText h1,
+.about__blockText h2,
+.about__blockText h3,
+.about__blockText h4,
+.about__blockText h5,
+.about__blockText h6 {
+  margin-bottom: 22px;
+  margin-top: 38px;
+}
+
+.about__blockText ul,
+.about__blockText ol {
+  margin-bottom: 18px;
+}
+
+.about__blockText ol {
+  padding-left: 25px;
+}
+
+.about__blockText ul {
+  padding-left: 9px;
+}
+
+.about__blockText ul li {
+  list-style: none;
+  padding-left: 16px;
+  position: relative;
+}
+
+.about__blockText ul li::before {
+  background-color: #191919;
+  border-radius: 50px;
+  content: "";
+  display: block;
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 11px;
+  width: 6px;
+}
+
+.about__blockText a {
+  font-weight: 700;
+}
+
 .about__block {
   background-color: #fff;
   border: 2px solid rgb(231, 230, 230);
@@ -4778,6 +5006,47 @@ body {
 
 .what-you-need__blockText {
   margin-top: 39px;
+}
+
+.what-you-need__blockText h1,
+.what-you-need__blockText h2,
+.what-you-need__blockText h3,
+.what-you-need__blockText h4,
+.what-you-need__blockText h5,
+.what-you-need__blockText h6 {
+  margin-bottom: 22px;
+  margin-top: 38px;
+}
+
+.what-you-need__blockText ul,
+.what-you-need__blockText ol {
+  margin-bottom: 18px;
+}
+
+.what-you-need__blockText ol {
+  padding-left: 25px;
+}
+
+.what-you-need__blockText ul {
+  padding-left: 9px;
+}
+
+.what-you-need__blockText ul li {
+  list-style: none;
+  padding-left: 16px;
+  position: relative;
+}
+
+.what-you-need__blockText ul li::before {
+  background-color: #191919;
+  border-radius: 50px;
+  content: "";
+  display: block;
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 11px;
+  width: 6px;
 }
 
 .what-you-need__blockText p a {
@@ -4911,6 +5180,47 @@ body {
   font-weight: 700;
   line-height: 26px;
   margin: 0 !important;
+}
+
+.what-you-need__blocksBlockText h1,
+.what-you-need__blocksBlockText h2,
+.what-you-need__blocksBlockText h3,
+.what-you-need__blocksBlockText h4,
+.what-you-need__blocksBlockText h5,
+.what-you-need__blocksBlockText h6 {
+  margin-bottom: 13px;
+  margin-top: 18px;
+}
+
+.what-you-need__blocksBlockText ul,
+.what-you-need__blocksBlockText ol {
+  margin-bottom: 18px;
+}
+
+.what-you-need__blocksBlockText ol {
+  padding-left: 25px;
+}
+
+.what-you-need__blocksBlockText ul {
+  padding-left: 9px;
+}
+
+.what-you-need__blocksBlockText ul li {
+  list-style: none;
+  padding-left: 16px;
+  position: relative;
+}
+
+.what-you-need__blocksBlockText ul li::before {
+  background-color: #191919;
+  border-radius: 50px;
+  content: "";
+  display: block;
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 11px;
+  width: 6px;
 }
 
 /* Footer */
@@ -5145,10 +5455,6 @@ body {
   .block-text__content {
     padding-left: 74px;
     padding-top: 19px;
-  }
-
-  .about__blockText a {
-    font-weight: 700;
   }
 }
 
@@ -5490,7 +5796,7 @@ body {
   }
 
   .what-you-need__blocksBlocks.more-text::after {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.58) 20%, #fff 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 20%, #fff 100%);
     bottom: 0;
     content: "";
     display: block;
@@ -6825,6 +7131,22 @@ body {
     margin-top: 30px;
   }
 
+  .info__blockText h1,
+  .info__blockText h2,
+  .info__blockText h3,
+  .info__blockText h4,
+  .info__blockText h5,
+  .info__blockText h6 {
+    margin-bottom: 15px;
+  }
+
+  .info__blockText ul li::before {
+    height: 4px;
+    left: 3px;
+    top: 10px;
+    width: 4px;
+  }
+
   .n_btn {
     margin: 29px 0 0;
   }
@@ -6934,6 +7256,22 @@ body {
     margin-top: -9px;
   }
 
+  .first-block-content__blockText h1,
+  .first-block-content__blockText h2,
+  .first-block-content__blockText h3,
+  .first-block-content__blockText h4,
+  .first-block-content__blockText h5,
+  .first-block-content__blockText h6 {
+    margin-bottom: 15px;
+  }
+
+  .first-block-content__blockText ul li::before {
+    height: 4px;
+    left: 3px;
+    top: 10px;
+    width: 4px;
+  }
+
   .aside__blockContentWrapTitle {
     height: 54px;
     padding: 15px 20px;
@@ -6972,17 +7310,20 @@ body {
     left: -1px;
   }
 
-  .block-text__content ul:not(:last-child),
-  .block-text__content ol:not(:last-child) {
-    margin-bottom: 25px;
-  }
-
-  .block-text__content ul {
-    margin-top: -8px;
+  .block-text__content h1,
+  .block-text__content h2,
+  .block-text__content h3,
+  .block-text__content h4,
+  .block-text__content h5,
+  .block-text__content h6 {
+    margin-bottom: 15px;
   }
 
   .block-text__content ul li::before {
-    top: 9px;
+    height: 4px;
+    left: 3px;
+    top: 10px;
+    width: 4px;
   }
 
   .block-text__content blockquote {
@@ -7221,6 +7562,22 @@ body {
     padding-top: 21px;
   }
 
+  .best-transportation-companies__blockText h1,
+  .best-transportation-companies__blockText h2,
+  .best-transportation-companies__blockText h3,
+  .best-transportation-companies__blockText h4,
+  .best-transportation-companies__blockText h5,
+  .best-transportation-companies__blockText h6 {
+    margin-bottom: 15px;
+  }
+
+  .best-transportation-companies__blockText ul li::before {
+    height: 4px;
+    left: 3px;
+    top: 10px;
+    width: 4px;
+  }
+
   .best-transportation-companies__accordion._init .block__title {
     font-size: 22px;
     line-height: 28px;
@@ -7245,6 +7602,15 @@ body {
 
   .best-transportation-companies__accordion._init .block__content ul:not(.block__columnList) li::before {
     top: 9px;
+  }
+
+  .best-transportation-companies__accordion._init .block__content h1,
+  .best-transportation-companies__accordion._init .block__content h2,
+  .best-transportation-companies__accordion._init .block__content h3,
+  .best-transportation-companies__accordion._init .block__content h4,
+  .best-transportation-companies__accordion._init .block__content h5,
+  .best-transportation-companies__accordion._init .block__content h6 {
+    margin-bottom: 15px;
   }
 
   .best-transportation-companies__accordion._init .block__columnBlock {
@@ -7397,6 +7763,22 @@ body {
     padding-top: 0;
   }
 
+  .resources-that-you-need__blockText h1,
+  .resources-that-you-need__blockText h2,
+  .resources-that-you-need__blockText h3,
+  .resources-that-you-need__blockText h4,
+  .resources-that-you-need__blockText h5,
+  .resources-that-you-need__blockText h6 {
+    margin-bottom: 15px;
+  }
+
+  .resources-that-you-need__blockText ul li::before {
+    height: 4px;
+    left: 3px;
+    top: 10px;
+    width: 4px;
+  }
+
   .resources-that-you-need__items.mobile-hide-headings {
     margin-top: 30px;
   }
@@ -7462,8 +7844,20 @@ body {
     margin-top: 10px;
   }
 
-  .about__blockText a {
-    text-decoration: none;
+  .about__blockText h1,
+  .about__blockText h2,
+  .about__blockText h3,
+  .about__blockText h4,
+  .about__blockText h5,
+  .about__blockText h6 {
+    margin-bottom: 15px;
+  }
+
+  .about__blockText ul li::before {
+    height: 4px;
+    left: 3px;
+    top: 10px;
+    width: 4px;
   }
 
   .about__block {
@@ -7490,6 +7884,22 @@ body {
     margin-top: 20px;
   }
 
+  .what-you-need__blockText h1,
+  .what-you-need__blockText h2,
+  .what-you-need__blockText h3,
+  .what-you-need__blockText h4,
+  .what-you-need__blockText h5,
+  .what-you-need__blockText h6 {
+    margin-bottom: 15px;
+  }
+
+  .what-you-need__blockText ul li::before {
+    height: 4px;
+    left: 3px;
+    top: 10px;
+    width: 4px;
+  }
+
   .what-you-need__blocksBlocks {
     margin-top: 20px;
     padding: 27px 18px 10px;
@@ -7511,6 +7921,13 @@ body {
   .what-you-need__blockTitle {
     font-size: 18px;
     line-height: 23px;
+  }
+
+  .what-you-need__blocksBlockText ul li::before {
+    height: 4px;
+    left: 3px;
+    top: 10px;
+    width: 4px;
   }
 
   .footer__head {
