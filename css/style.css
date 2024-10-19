@@ -6624,6 +6624,10 @@ body {
     width: 100%;
   }
 
+  .what-you-need__blocksBlock {
+    padding-bottom: 15px;
+  }
+
   .footer__bottom {
     padding-top: 36px;
   }
@@ -7922,10 +7926,6 @@ body {
   .what-you-need__blocksBlocks {
     margin-top: 20px;
     padding: 27px 18px 10px;
-  }
-
-  .what-you-need__blocksBlock {
-    padding-bottom: 17px;
   }
 
   .what-you-need__blocksBlock ul li::before {
