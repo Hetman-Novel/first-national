@@ -6028,7 +6028,7 @@ body {
     margin: 0;
     padding: 7px 20px;
     min-width: 200px;
-    box-shadow: 0 40px 32px -8px rgba(17, 16, 19, 0.08), 0 0 1px rgba(17, 16, 19, 0.05);
+    box-shadow: 0 40px 32px -8px rgba(17, 16, 19, 0.08);
   }
 
   .header .menu__sub-list li:hover a {
