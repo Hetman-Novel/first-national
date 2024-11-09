@@ -1,4 +1,4 @@
-// Форма в первом блоке
+// Form in the first block
 const fsForm = document.getElementById('fs-form');
 if (fsForm) {
 	const wizardWrapper = document.getElementById('fs-wrapper-steps');
@@ -249,7 +249,7 @@ if (fsForm) {
 	});
 }
 
-// Вторая форма где-то в середине странице
+// The second form is somewhere in the middle of the page.
 const getMatchedForm = document.getElementById('get-matched-form');
 if (getMatchedForm) {
 	const wizardWrapper2 = document.getElementById('fs-wrapper-steps2');
@@ -503,18 +503,17 @@ if (getMatchedForm) {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-	// Обработчик для формы с ID fs-form
-	//document.getElementById('fs-form')
+	// Handler for form with ID fs-form
 	if (fsForm) {
 		fsForm.addEventListener('submit', function(event) {
-			event.preventDefault(); // Предотвращаем стандартное поведение формы
+			event.preventDefault();
 
 			const form = this;
 
-			// Используем Fetch API для отправки формы на текущий URL
+			// Use the Fetch API to submit the form to the current URL
 			fetch(window.location.href, {
 				method: 'POST',
-				body: new FormData(form) // Отправляем данные формы
+				body: new FormData(form) // Submitting form data
 			})
 			.then(response => response.text())
 			.then(html => {
@@ -524,20 +523,40 @@ document.addEventListener('DOMContentLoaded', function() {
 				console.error('An error occurred:', error);
 			});
 		});
+
+		/* for drop down calendar -> */
+		const fDate = document.getElementById('f-date');
+		const stepDate = document.querySelector('.step-date');
+		
+		if (fDate && stepDate) {
+			fDate.addEventListener('focus', function() {
+				stepDate.classList.add('date-field-in-focus');
+			});
+			fDate.addEventListener('blur', function(e) {
+				if (!e.relatedTarget || !e.relatedTarget.closest('.fc-header-toolbar')) {
+					stepDate.classList.remove('date-field-in-focus');
+				}
+			});
+			document.addEventListener('click', function(e) {
+				if (!e.target.closest('#f-date') && !e.target.closest('.fc-header-toolbar')) {
+					stepDate.classList.remove('date-field-in-focus');
+				}
+			});
+		}
+		/* <- for drop down calendar */
 	}
 	
-	// Обработчик для формы с ID get-matched-form
-	//document.getElementById('get-matched-form')
+	// Handler for form with ID get-matched-form
 	if (getMatchedForm) {
 		getMatchedForm.addEventListener('submit', function(event) {
 			event.preventDefault(); // Предотвращаем стандартное поведение формы
 
 			const form = this;
 
-			// Используем Fetch API для отправки формы на текущий URL
+			// Use the Fetch API to submit the form to the current URL
 			fetch(window.location.href, {
 				method: 'POST',
-				body: new FormData(form) // Отправляем данные формы
+				body: new FormData(form) // Submitting form data
 			})
 			.then(response => response.text())
 			.then(html => {
@@ -547,5 +566,26 @@ document.addEventListener('DOMContentLoaded', function() {
 				console.error('An error occurred:', error);
 			});
 		});
+
+		/* for drop down calendar -> */
+		const getMatchedDate = document.getElementById('get-matched-date');
+		const step2Date = document.querySelector('.step2-date');
+		
+		if (getMatchedDate && step2Date) {
+			getMatchedDate.addEventListener('focus', function() {
+				step2Date.classList.add('date-field-in-focus');
+			});
+			getMatchedDate.addEventListener('blur', function(e) {
+				if (!e.relatedTarget || !e.relatedTarget.closest('.fc-header-toolbar')) {
+					step2Date.classList.remove('date-field-in-focus');
+				}
+			});
+			document.addEventListener('click', function(e) {
+				if (!e.target.closest('#get-matched-date') && !e.target.closest('.fc-header-toolbar')) {
+					step2Date.classList.remove('date-field-in-focus');
+				}
+			});
+		}
+		/* <- for drop down calendar */
 	}
 });
