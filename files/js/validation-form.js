@@ -1,591 +1,489 @@
-// Form in the first block
-const fsForm = document.getElementById('fs-form');
-if (fsForm) {
-	const wizardWrapper = document.getElementById('fs-wrapper-steps');
-	let currentStepIndex = 1;
-	const totalStepsCount = 7; // Общее количество шагов
-
-	// Функция для валидации текущего шага
-	function validateCurrentStep(stepElement) {
-		if (!stepElement) return false; // Если stepElement не существует, возвращаем false
-
-		let isValid = true;
-		const fields = stepElement.querySelectorAll('input, select');
-
-		fields.forEach((field) => {
-			if (field.tagName === 'SELECT') {
-				if (!field.value) {
-					isValid = false;
-				}
-			} else if (!field.value.trim()) { // Проверка на пустое значение
-				isValid = false;
-			}
-
-			// Дополнительная валидация для специфических полей
-			if (field.id === 'f-email' && !isValidEmail(field.value)) {
-				isValid = false;
-			}
-
-			if (field.id === 'f-phone' && !isValidPhone(field.value)) {
-				isValid = false;
-			}
-		});
-
-		return isValid;
-	}
-
-	// Функция для проверки валидности email
-	function isValidEmail(email) {
-		//const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)$/; // Добавьте другие домены при необходимости
-		const emailRegex = /^[a-zA-Z0-9._%+-]+@/; // Добавьте другие домены при необходимости
-		return emailRegex.test(email);
-	}
-
-	// Функция для проверки валидности телефона
-	function isValidPhone(phone) {
-		const phoneRegex = /^\+?\d{4,}$/;
-		return phoneRegex.test(phone);
-	}
-
-	// Функция для перехода на следующий шаг с проверкой валидации
-	function goToNextStep(nextStepIndex, stepElement) {
-		const isValid = validateCurrentStep(stepElement); // Проверка валидации текущего блока
-
-		if (isValid) {
-			// Если шаг валиден и следующий шаг в пределах допустимого диапазона
-			if (nextStepIndex === currentStepIndex + 1 && currentStepIndex < totalStepsCount) {
-				wizardWrapper.classList.remove(`step-${currentStepIndex}`);
-				currentStepIndex = nextStepIndex;
-				wizardWrapper.classList.add(`step-${currentStepIndex}`);
-			}
-		} else {
-			if (stepElement) {
-				stepElement.classList.add('no-valid'); // Добавляем класс no-valid, если не валидно
-			}
-		}
-	}
-
-	// Функция для перехода на предыдущий шаг
-	function goToPreviousStep(previousStepIndex) {
-		if (previousStepIndex < currentStepIndex && previousStepIndex >= 1) {
-			wizardWrapper.classList.remove(`step-${currentStepIndex}`);
-			currentStepIndex = previousStepIndex;
-			wizardWrapper.classList.add(`step-${currentStepIndex}`);
-		}
-	}
-
-	// Обработчики кликов на кнопки "вперед"
-	document.getElementById('fs-btn-next-2').addEventListener('click', () => {
-		const stepElement = document.querySelector('.step.step-2');
-		goToNextStep(2, stepElement);
-	});
-	document.getElementById('fs-btn-next-3').addEventListener('click', () => {
-		const stepElement = document.querySelector('.step.step-3');
-		goToNextStep(3, stepElement);
-	});
-	document.getElementById('fs-btn-next-4').addEventListener('click', () => {
-		const stepElement = document.querySelector('.step.step-4');
-		goToNextStep(4, stepElement);
-	});
-	document.getElementById('fs-btn-next-5').addEventListener('click', () => {
-		const stepElement = document.querySelector('.step.step-5');
-		goToNextStep(5, stepElement);
-	});
-	document.getElementById('fs-btn-next-6').addEventListener('click', () => {
-		const stepElement = document.querySelector('.step.step-6');
-		goToNextStep(6, stepElement);
-	});
-
-	// Обработчики кликов на кнопки "назад"
-	document.getElementById('fs-btn-back-1').addEventListener('click', () => goToPreviousStep(1));
-	document.getElementById('fs-btn-back-2').addEventListener('click', () => goToPreviousStep(2));
-	document.getElementById('fs-btn-back-3').addEventListener('click', () => goToPreviousStep(3));
-	document.getElementById('fs-btn-back-4').addEventListener('click', () => goToPreviousStep(4));
-	document.getElementById('fs-btn-back-5').addEventListener('click', () => goToPreviousStep(5));
-	document.getElementById('fs-btn-back-6').addEventListener('click', () => goToPreviousStep(6));
-
-	// Изначально блокируем кнопку отправки
-	const submitBtn = document.getElementById('fs-btn-submit');
-	submitBtn.disabled = true; // Блокируем кнопку
-
-	// Обработчик отправки формы
-	submitBtn.addEventListener('click', (event) => {
-		const phoneField = document.getElementById('f-phone');
-		const stepElement = document.querySelector('.step.step-7');
-
-		// Проверка валидности телефона
-		if (!phoneField.value.trim() || !isValidPhone(phoneField.value)) {
-			event.preventDefault(); // Предотвращаем отправку формы, если телефон не валиден
-			phoneField.closest('.step').classList.add('no-valid'); // Добавляем класс no-valid, если не валидно
-		} else {
-			phoneField.closest('.step').classList.remove('no-valid'); // Удаляем класс no-valid, если валидно
-			phoneField.closest('.step').classList.add('valid'); // Добавляем класс valid при успешной валидации
-			console.log('Форма успешно отправлена!'); // Замените это своей логикой отправки формы
-
-			// Здесь можно добавить логику для отправки формы
-			// Например, getMatchedForm.submit(); // Если вы хотите отправить форму
-			
-			// показ уведомления
-			document.querySelector('.first-screen__blockWrapForm').classList.add('sent-successfully');
-			setTimeout(function() {
-				document.querySelector('.first-screen__blockWrapForm').classList.remove('sent-successfully');
-			}, 3000);
-			
-			
-			setTimeout(function() {
-				
-				// Сброс всех input в форме
-				$('#fs-form').find('input[type="text"], input[type="email"]').val('');
-				
-				// Сброс Select2
-				$('#fs-form').find('select').val(null).trigger('change').trigger('select2:unselect');
-			
-				// удаление всех классов valid и no-valid если есть
-				const fsSteps = document.querySelectorAll('#fs-form .step')
-				fsSteps.forEach((fsStep) => {
-					if (fsStep.classList.contains('valid')) {
-						fsStep.classList.remove('valid');
+document.addEventListener('DOMContentLoaded', () => {
+	// Получаем все формы на странице
+	const forms = document.querySelectorAll('form');
+	
+	// Основная логика валидации форм
+	forms.forEach((form) => {
+		 // Валидация при клике на кнопку
+		 form.addEventListener('click', (event) => {
+			  const button = event.target.closest('.js-validity-check');
+			  if (button) {
+					const parentStep = button.closest('.js-step');
+					if (parentStep) {
+						 validateStep(parentStep, form);
 					}
-					if (fsStep.classList.contains('no-valid')) {
-						fsStep.classList.remove('no-valid');
-					}
-				});
-				
-			}, 600);
-			
-			// вызов логики валидации и пошагового перехода
-			currentStepIndex = 0; // Сбрасываем индекс текущего шага
-			
-			// возврат шагов на исходную
-			$('#fs-wrapper-steps').removeClass('step-2');
-			$('#fs-wrapper-steps').removeClass('step-7');
-			$('#fs-wrapper-steps').addClass('step-1');
-		}
-	});
-
-	// Обработчик событий DOMContentLoaded
-	document.addEventListener('DOMContentLoaded', function () {
-		const validationElements = document.querySelectorAll('.step');
-
-		validationElements.forEach((stepElement) => {
-			const fields = stepElement.querySelectorAll('input, select');
-
-			fields.forEach((field) => {
-				field.addEventListener('input', validateInputField);
-
-				// Для поля телефона, чтобы исключить ввод всего, кроме цифр и символа +
-				if (field.id === 'f-phone') {
-					field.addEventListener('input', function () {
-						this.value = this.value.replace(/[^0-9+]/g, '');
+			  }
+		 });
+	
+		 // Валидация в реальном времени
+		 form.querySelectorAll('input, select, textarea').forEach((field) => {
+			  field.addEventListener('input', () => validateField(field, form));
+	
+			  // Для телефонов: удаляем недопустимые символы
+			  if (field.classList.contains('js-phone')) {
+					field.addEventListener('input', () => {
+						 field.value = field.value.replace(/[^0-9+]/g, '');
 					});
-				}
-
-				if (field.value.trim() !== '') {
-					stepElement.classList.add('valid'); // Добавляем класс valid, если поле не пустое
-				}
-			});
-
-			// Select2 integration for change event
-			if ($(stepElement).find('select').length) {
-				$(stepElement).find('select').select2().on('change', function () {
-					validateInputField.call(this);
-				});
-			}
-
-			const validationButton = stepElement.querySelector('.used-for-validation');
-			validationButton.addEventListener('click', function () {
-				goToNextStep(currentStepIndex + 1, stepElement); // Переход к следующему шагу
-			});
-		});
-
-		// Функция для валидации полей
-		function validateInputField() {
-			const stepElement = this.closest('.step');
-			const parentElement = stepElement;
-			const isValid = validateCurrentStep(stepElement);
-
-			// Проверка email
-			if (this.id === 'f-email') {
-				if (!isValidEmail(this.value)) {
-					parentElement.classList.remove('valid');
-					parentElement.classList.add('no-valid');
-				} else {
-					parentElement.classList.remove('no-valid');
-					parentElement.classList.add('valid');
-				}
-				return;
-			}
-
-			// Проверка телефона
-			if (this.id === 'f-phone') {
-				if (!this.value.trim()) {
-					// Если поле пустое, удаляем класс valid и добавляем no-valid
-					parentElement.classList.remove('valid');
-					parentElement.classList.add('no-valid');
-				} else if (!isValidPhone(this.value)) {
-					// Если номер телефона не валиден, удаляем класс valid и добавляем no-valid
-					parentElement.classList.remove('valid');
-					parentElement.classList.add('no-valid');
-				} else {
-					// Если номер телефона валиден
-					parentElement.classList.remove('no-valid');
-					parentElement.classList.add('valid');
-				}
-				return;
-			}
-
-			// Проверка пустых значений для всех других полей
-			if (!this.value.trim() && this.value.trim() === '') {
-				parentElement.classList.remove('valid');
-				parentElement.classList.add('no-valid');
-			} else {
-				parentElement.classList.remove('no-valid');
-				parentElement.classList.add('valid');
-			}
-
-			// Проверка состояния кнопки отправки
-			submitBtn.disabled = [...document.querySelectorAll('.step')].some(step => step.classList.contains('no-valid'));
-		}
-	});
-}
-
-// The second form is somewhere in the middle of the page.
-const getMatchedForm = document.getElementById('get-matched-form');
-if (getMatchedForm) {
-	const wizardWrapper2 = document.getElementById('fs-wrapper-steps2');
-	let currentStepIndex2 = 1;
-	const totalStepsCount2 = 7; // Общее количество шагов
-
-	// Функция для валидации текущего шага
-	function validateCurrentStep2(stepElement2) {
-		if (!stepElement2) return false; // Если stepElement не существует, возвращаем false
-
-		let isValid2 = true;
-		const fields2 = stepElement2.querySelectorAll('input, select');
-
-		fields2.forEach((field2) => {
-			if (field2.tagName === 'SELECT') {
-				if (!field2.value) {
-					isValid2 = false;
-				}
-			} else if (!field2.value.trim()) { // Проверка на пустое значение
-				isValid2 = false;
-			}
-
-			// Дополнительная валидация для специфических полей
-			if (field2.id === 'get-matched-email' && !isValidEmail2(field2.value)) {
-				isValid2 = false;
-			}
-
-			if (field2.id === 'get-matched-phone' && !isValidPhone2(field2.value)) {
-				isValid2 = false;
-			}
-		});
-
-		return isValid2;
-	}
-
-	// Функция для проверки валидности email
-	function isValidEmail2(email2) {
-		const emailRegex2 = /^[a-zA-Z0-9._%+-]+@/; // Добавьте другие домены при необходимости
-		//const emailRegex2 = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com)$/; // Добавьте другие домены при необходимости
-		return emailRegex2.test(email2);
-	}
-
-	// Функция для проверки валидности телефона
-	function isValidPhone2(phone2) {
-		const phoneRegex2 = /^\+?\d{4,}$/;
-		return phoneRegex2.test(phone2);
-	}
-
-	// Функция для перехода на следующий шаг с проверкой валидации
-	function goToNextStep2(nextStepIndex2, stepElement2) {
-		const isValid2 = validateCurrentStep2(stepElement2); // Проверка валидации текущего блока
-
-		if (isValid2) {
-			// Если шаг валиден и следующий шаг в пределах допустимого диапазона
-			if (nextStepIndex2 === currentStepIndex2 + 1 && currentStepIndex2 < totalStepsCount2) {
-				wizardWrapper2.classList.remove(`step2-${currentStepIndex2}`);
-				currentStepIndex2 = nextStepIndex2;
-				wizardWrapper2.classList.add(`step2-${currentStepIndex2}`);
-			}
-		} else {
-			if (stepElement2) {
-				stepElement2.classList.add('no-valid'); // Добавляем класс no-valid, если не валидно
-			}
-		}
-	}
-
-	// Функция для перехода на предыдущий шаг
-	function goToPreviousStep2(previousStepIndex2) {
-		if (previousStepIndex2 < currentStepIndex2 && previousStepIndex2 >= 1) {
-			wizardWrapper2.classList.remove(`step2-${currentStepIndex2}`);
-			currentStepIndex2 = previousStepIndex2;
-			wizardWrapper2.classList.add(`step2-${currentStepIndex2}`);
-		}
-	}
-
-	// Обработчики кликов на кнопки "вперед"
-	document.getElementById('get-matched-btn-next-2').addEventListener('click', () => {
-		const stepElement2 = document.querySelector('.step2.step2-2');
-		goToNextStep2(2, stepElement2);
-	});
-	document.getElementById('get-matched-btn-next-3').addEventListener('click', () => {
-		const stepElement2 = document.querySelector('.step2.step2-3');
-		goToNextStep2(3, stepElement2);
-	});
-	document.getElementById('get-matched-btn-next-4').addEventListener('click', () => {
-		const stepElement2 = document.querySelector('.step2.step2-4');
-		goToNextStep2(4, stepElement2);
-	});
-	document.getElementById('get-matched-btn-next-5').addEventListener('click', () => {
-		const stepElement2 = document.querySelector('.step2.step2-5');
-		goToNextStep2(5, stepElement2);
-	});
-	document.getElementById('get-matched-btn-next-6').addEventListener('click', () => {
-		const stepElement2 = document.querySelector('.step2.step2-6');
-		goToNextStep2(6, stepElement2);
-	});
-
-	// Обработчики кликов на кнопки "назад"
-	document.getElementById('get-matched-btn-back-1').addEventListener('click', () => goToPreviousStep2(1));
-	document.getElementById('get-matched-btn-back-2').addEventListener('click', () => goToPreviousStep2(2));
-	document.getElementById('get-matched-btn-back-3').addEventListener('click', () => goToPreviousStep2(3));
-	document.getElementById('get-matched-btn-back-4').addEventListener('click', () => goToPreviousStep2(4));
-	document.getElementById('get-matched-btn-back-5').addEventListener('click', () => goToPreviousStep2(5));
-	document.getElementById('get-matched-btn-back-6').addEventListener('click', () => goToPreviousStep2(6));
-
-	// Изначально блокируем кнопку отправки
-	const submitBtn2 = document.getElementById('get-matched-btn-submit');
-	submitBtn2.disabled = true; // Блокируем кнопку
-
-	// Обработчик отправки формы
-	submitBtn2.addEventListener('click', (event) => {
-		const phoneField2 = document.getElementById('get-matched-phone');
-		const stepElement2 = document.querySelector('.step2.step2-7');
-
-		// Проверка валидности телефона
-		if (!phoneField2.value.trim() || !isValidPhone2(phoneField2.value)) {
-			event.preventDefault(); // Предотвращаем отправку формы, если телефон не валиден
-			phoneField2.closest('.step2').classList.add('no-valid'); // Добавляем класс no-valid, если не валидно
-		} else {
-			phoneField2.closest('.step2').classList.remove('no-valid'); // Удаляем класс no-valid, если валидно
-			phoneField2.closest('.step2').classList.add('valid'); // Добавляем класс valid при успешной валидации
-			console.log('Форма успешно отправлена!'); // Замените это своей логикой отправки формы
-
-			// Здесь можно добавить логику для отправки формы
-			// Например, getMatchedForm.submit(); // Если вы хотите отправить форму
-			
-			// показ уведомления
-			document.querySelector('.get-matched__blockWrapForm').classList.add('sent-successfully');
-			setTimeout(function() {
-				document.querySelector('.get-matched__blockWrapForm').classList.remove('sent-successfully');
-			}, 3000);
-			
-			setTimeout(function() {
-				
-				// Сброс всех input в форме
-				$('#get-matched-form').find('input[type="text"], input[type="email"]').val('');
-			
-				// Сброс Select2
-				$('#get-matched-form').find('select').val(null).trigger('change').trigger('select2:unselect');
-				
-				// удаление всех классов valid и no-valid если есть
-				const fsSteps2 = document.querySelectorAll('#get-matched-form .step2')
-				fsSteps2.forEach((fsStep2) => {
-					if (fsStep2.classList.contains('valid')) {
-						fsStep2.classList.remove('valid');
-					}
-					if (fsStep2.classList.contains('no-valid')) {
-						fsStep2.classList.remove('no-valid');
-					}
-				});
-				
-			}, 400);
-				
-			// вызов логики валидации и пошагового перехода
-			currentStepIndex2 = 0; // Сбрасываем индекс текущего шага
-		
-			// возврат шагов на исходную
-			$('#fs-wrapper-steps2').removeClass('step2-2');
-			$('#fs-wrapper-steps2').removeClass('step2-7');
-			$('#fs-wrapper-steps2').addClass('step2-1');
-
-		}
-	});
-
-	// Обработчик событий DOMContentLoaded
-	document.addEventListener('DOMContentLoaded', function () {
-		const validationElements2 = document.querySelectorAll('.step2');
-
-		validationElements2.forEach((stepElement2) => {
-			const fields2 = stepElement2.querySelectorAll('input, select');
-
-			fields2.forEach((field2) => {
-				field2.addEventListener('input', validateInputField2);
-
-				// Для поля телефона, чтобы исключить ввод всего, кроме цифр и символа +
-				if (field2.id === 'get-matched-phone') {
-					field2.addEventListener('input', function () {
-						this.value = this.value.replace(/[^0-9+]/g, '');
+			  }
+	
+			  // Событие для select2
+			  if (field.tagName === 'SELECT') {
+					$(field).on('select2:select select2:unselect', () => {
+						 validateField(field, form);
 					});
-				}
-
-				if (field2.value.trim() !== '') {
-					stepElement2.classList.add('valid'); // Добавляем класс valid, если поле не пустое
-				}
-			});
-
-			// Select2 integration for change event
-			if ($(stepElement2).find('select').length) {
-				$(stepElement2).find('select').select2().on('change', function () {
-					validateInputField2.call(this);
-				});
-			}
-
-			const validationButton2 = stepElement2.querySelector('.used-for-validation');
-			validationButton2.addEventListener('click', function () {
-				goToNextStep2(currentStepIndex2 + 1, stepElement2); // Переход к следующему шагу
-			});
-		});
-
-		// Функция для валидации полей
-		function validateInputField2() {
-			const stepElement2 = this.closest('.step2');
-			const parentElement2 = stepElement2;
-			const isValid2 = validateCurrentStep2(stepElement2);
-
-			// Проверка email
-			if (this.id === 'get-matched-email') {
-				if (!isValidEmail2(this.value)) {
-					parentElement2.classList.remove('valid');
-					parentElement2.classList.add('no-valid');
-				} else {
-					parentElement2.classList.remove('no-valid');
-					parentElement2.classList.add('valid');
-				}
-				return;
-			}
-
-			// Проверка телефона
-			// Проверка телефона
-			if (this.id === 'get-matched-phone') {
-				if (!this.value.trim()) {
-					// Если поле пустое, удаляем класс valid и добавляем no-valid
-					parentElement2.classList.remove('valid');
-					parentElement2.classList.add('no-valid');
-				} else if (!isValidPhone2(this.value)) {
-					// Если номер телефона не валиден, удаляем класс valid и добавляем no-valid
-					parentElement2.classList.remove('valid');
-					parentElement2.classList.add('no-valid');
-				} else {
-					// Если номер телефона валиден
-					parentElement2.classList.remove('no-valid');
-					parentElement2.classList.add('valid');
-				}
-				return;
-			}
-
-			// Проверка пустых значений для всех других полей
-			if (!this.value.trim() && this.value.trim() === '') {
-				parentElement2.classList.remove('valid');
-				parentElement2.classList.add('no-valid');
-			} else {
-				parentElement2.classList.remove('no-valid');
-				parentElement2.classList.add('valid');
-			}
-
-			// Проверка состояния кнопки отправки
-			submitBtn2.disabled = [...document.querySelectorAll('.step2')].some(step => step.classList.contains('no-valid'));
-		}
+			  }
+	
+			  // Событие для js-date
+			  if (field.classList.contains('js-date')) {
+					field.addEventListener('focus', () => {
+						 field.parentNode.parentNode.classList.add('date-field-in-focus');
+					});
+	
+					field.addEventListener('blur', () => {
+						 field.parentNode.parentNode.classList.remove('date-field-in-focus');
+						 validateField(field, form); // Валидация после завершения ввода
+					});
+			  }
+		 });
 	});
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-
-	// Handler for form with ID fs-form
-	if (fsForm) {
-		fsForm.addEventListener('submit', function(event) {
-			event.preventDefault();
-
-			const form = this;
-
-			// Use the Fetch API to submit the form to the current URL
-			fetch(window.location.href, {
-				method: 'POST',
-				body: new FormData(form) // Submitting form data
-			})
-			.then(response => response.text())
-			.then(html => {
-				
-			})
-			.catch(error => {
-				console.error('An error occurred:', error);
-			});
-		});
-
-		/* for drop down calendar -> */
-		const fDate = document.getElementById('f-date');
-		const stepDate = document.querySelector('.step-date');
-		
-		if (fDate && stepDate) {
-			fDate.addEventListener('focus', function() {
-				stepDate.classList.add('date-field-in-focus');
-			});
-			fDate.addEventListener('blur', function(e) {
-				if (!e.relatedTarget || !e.relatedTarget.closest('.fc-header-toolbar')) {
-					stepDate.classList.remove('date-field-in-focus');
-				}
-			});
-			document.addEventListener('click', function(e) {
-				if (!e.target.closest('#f-date') && !e.target.closest('.fc-header-toolbar')) {
-					stepDate.classList.remove('date-field-in-focus');
-				}
-			});
-		}
-		/* <- for drop down calendar */
+	
+	/**
+	 * Валидация одного блока (шаг формы).
+	 * @param {HTMLElement} stepElement - Блок для проверки.
+	 * @param {HTMLFormElement} form - Текущая форма.
+	 */
+	function validateStep(stepElement, form) {
+		 let isStepValid = true;
+		 const fields = stepElement.querySelectorAll('input, select, textarea');
+		 fields.forEach((field) => {
+			  if (!validateField(field, form)) {
+					isStepValid = false;
+			  }
+		 });
+	
+		 // Обновляем состояние валидности шага
+		 stepElement.classList.toggle('step-valid', isStepValid);
 	}
 	
-	// Handler for form with ID get-matched-form
-	if (getMatchedForm) {
-		getMatchedForm.addEventListener('submit', function(event) {
-			event.preventDefault(); // Предотвращаем стандартное поведение формы
-
-			const form = this;
-
-			// Use the Fetch API to submit the form to the current URL
-			fetch(window.location.href, {
-				method: 'POST',
-				body: new FormData(form) // Submitting form data
-			})
-			.then(response => response.text())
-			.then(html => {
-				
-			})
-			.catch(error => {
-				console.error('An error occurred:', error);
+	/**
+	 * Валидация одного поля.
+	 * @param {HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement} field - Поле для проверки.
+	 * @param {HTMLFormElement} form - Текущая форма.
+	 * @returns {boolean} - Валидно ли поле.
+	 */
+	function validateField(field, form) {
+		 let isFieldValid = true;
+	
+		 // Проверка для select
+		 if (field.tagName === 'SELECT' && !field.value) {
+			  isFieldValid = false;
+		 }
+	
+		 // Проверка для input
+		 if (field.tagName === 'INPUT') {
+			  if (!field.value.trim()) {
+					isFieldValid = false;
+			  }
+	
+			  // Проверка для email
+			  if (field.classList.contains('js-email') && !isValidEmail(field.value)) {
+					isFieldValid = false;
+			  }
+	
+			  // Проверка для телефона
+			  if (field.classList.contains('js-phone') && !isValidPhone(field.value)) {
+					isFieldValid = false;
+			  }
+		 }
+	
+		 // Проверка для textarea
+		 if (field.tagName === 'TEXTAREA' && !field.value.trim()) {
+			  isFieldValid = false;
+		 }
+	
+		 // Обновляем классы valid и no-valid
+		 const parent = field.closest('.form-group') || field.parentNode; // Родительский элемент
+		 if (parent) {
+			  parent.classList.toggle('valid', isFieldValid);
+			  parent.classList.toggle('no-valid', !isFieldValid);
+		 }
+	
+		 return isFieldValid;
+	}
+	
+	/**
+	 * Проверка валидности email.
+	 * @param {string} email - Email для проверки.
+	 * @returns {boolean} - Валиден ли email.
+	 */
+	function isValidEmail(email) {
+		 return /^[a-zA-Z0-9._%+-]+@/.test(email);
+	}
+	
+	/**
+	 * Проверка валидности телефона.
+	 * @param {string} phone - Телефон для проверки.
+	 * @returns {boolean} - Валиден ли телефон.
+	 */
+	function isValidPhone(phone) {
+		 return /^\+?\d{4,}$/.test(phone);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		// Логика шагов формы (переключение шагов)
+		forms.forEach((form) => {
+			form.addEventListener('click', (event) => {
+				const nextButton = event.target.closest('[data-step-button]');
+				if (nextButton) {
+					const stepBlockValue = nextButton.getAttribute('data-step-button');
+					const parentStep = nextButton.closest('.js-step');
+	
+					// Если шаг валиден, переключаемся на следующий
+					if (parentStep && parentStep.classList.contains('step-valid')) {
+						handleStepChange(form, stepBlockValue, 'next');
+					}
+				}
+	
+				// Возврат на предыдущий шаг
+				const backButton = event.target.closest('[data-step-back-button]');
+				if (backButton) {
+					const stepBlockValue = backButton.getAttribute('data-step-back-button');
+					handleStepChange(form, stepBlockValue, 'back');
+				}
 			});
 		});
-
-		/* for drop down calendar -> */
-		const getMatchedDate = document.getElementById('get-matched-date');
-		const step2Date = document.querySelector('.step2-date');
-		
-		if (getMatchedDate && step2Date) {
-			getMatchedDate.addEventListener('focus', function() {
-				step2Date.classList.add('date-field-in-focus');
-			});
-			getMatchedDate.addEventListener('blur', function(e) {
-				if (!e.relatedTarget || !e.relatedTarget.closest('.fc-header-toolbar')) {
-					step2Date.classList.remove('date-field-in-focus');
-				}
-			});
-			document.addEventListener('click', function(e) {
-				if (!e.target.closest('#get-matched-date') && !e.target.closest('.fc-header-toolbar')) {
-					step2Date.classList.remove('date-field-in-focus');
-				}
-			});
+	
+		/**
+		 * Переключение между шагами формы.
+		 * @param {HTMLElement} form - Форма.
+		 * @param {string} stepBlockValue - Значение data-step-block.
+		 * @param {string} direction - Направление переключения (next/back).
+		 */
+		function handleStepChange(form, stepBlockValue, direction) {
+			const currentBlock = form.querySelector(`[data-step-block="${stepBlockValue}"]`);
+			if (!currentBlock) return;
+	
+			// Скрываем все шаги и показываем текущий
+			form.querySelectorAll('[data-step-block]').forEach((block) => block.classList.remove('step-active'));
+			currentBlock.classList.add('step-active');
 		}
-		/* <- for drop down calendar */
-	}
+	
+
+
+
+
+
+
+/* Логика календаря -> */
+const blocks = document.querySelectorAll('.js-block-date');
+	
+blocks.forEach((block) => {
+	const dateInput = block.querySelector('.js-date');
+	const calendarContainer = block.querySelector('.calendar-container');
+
+	if (!dateInput || !calendarContainer) return;
+
+	// Инициализация FullCalendar
+	const calendar = new FullCalendar.Calendar(calendarContainer, {
+		initialView: 'dayGridMonth',
+		selectable: true,
+		dateClick: (info) => {
+			const clickedDate = new Date(info.dateStr);
+			if (!isNaN(clickedDate)) {
+				dateInput.value = getFormattedDate(clickedDate);
+
+				// Успешная валидация при выборе даты
+				block.classList.add('valid');
+				block.classList.remove('no-valid');
+			} else {
+				console.error('Некорректная дата:', info.dateStr);
+			}
+			dateInput.blur(); // Снятие фокуса с поля
+		},
+	});
+
+	calendar.render();
+
+		/**
+		 * Форматирование даты.
+		 * @param {Date} date - Дата.
+		 * @returns {string} - Форматированная дата.
+		 */
+		function getFormattedDate(date) {
+			const day = String(date.getDate()).padStart(2, '0');
+			const month = String(date.getMonth() + 1).padStart(2, '0');
+			const year = date.getFullYear(4, '0');
+			return `${day}/${month}/${year}`;
+		}
 });
+
+/* <- Логика календаря */
+
+
+
+
+
+
+
+		/* Валидация блока .js-step -> */
+   // Получаем все блоки с классом .js-step
+	const steps = document.querySelectorAll('.js-step');
+
+	// Обрабатываем клик по кнопке внутри блока .js-step
+	steps.forEach(step => {
+		 const button = step.querySelector('button');  // Ищем кнопку в блоке
+
+		 if (button) {
+			  // Слушаем клик по кнопке
+			  button.addEventListener('click', () => {
+					validateStep(step);  // Проверяем валидность шага при клике на кнопку
+			  });
+		 }
+
+		 // Слушаем изменение полей внутри блока .js-step
+		 step.querySelectorAll('input, select, textarea').forEach(field => {
+			  field.addEventListener('input', () => {
+					validateStep(step);  // Проверка валидности при вводе
+			  });
+
+			  // Для select2 (если используется)
+			  if (field.tagName === 'SELECT') {
+					$(field).on('select2:select select2:unselect', () => {
+						 validateStep(step);  // Проверка при изменении выбора
+					});
+			  }
+		 });
+	});
+
+	/**
+	 * Валидация всего шага.
+	 * Проверяет все поля в шаге и обновляет классы на основе их валидности.
+	 * @param {HTMLElement} stepElement - Шаг, который нужно проверить.
+	 */
+	function validateStep(stepElement) {
+		 let isStepValid = true;
+		 
+		 // Получаем все поля в шаге для проверки
+		 const fields = stepElement.querySelectorAll('input, select, textarea');
+		 fields.forEach(field => {
+			  if (!validateField(field)) {
+					isStepValid = false;  // Если хотя бы одно поле не валидно
+			  }
+		 });
+
+		 // Обновляем классы для шага
+		 if (isStepValid) {
+			  stepElement.classList.add('step-valid');
+			  stepElement.classList.remove('step-no-valid');
+		 } else {
+			  stepElement.classList.add('step-no-valid');
+			  stepElement.classList.remove('step-valid');
+		 }
+	}
+
+	/**
+	 * Валидация одного поля.
+	 * Проверяет, является ли поле валидным.
+	 * @param {HTMLElement} field - Поле для проверки.
+	 * @returns {boolean} - Валиден ли элемент.
+	 */
+	function validateField(field) {
+		 let isValid = true;
+
+		 // Для текстовых полей и textarea проверяем, что они не пустые
+		 if (field.tagName === 'INPUT' || field.tagName === 'TEXTAREA') {
+			  if (!field.value.trim()) {
+					isValid = false;
+			  }
+		 }
+
+		 // Для select проверяем, что значение выбрано
+		 if (field.tagName === 'SELECT' && !field.value) {
+			  isValid = false;
+		 }
+
+		 // Дополнительные проверки для специфических классов
+		 if (field.classList.contains('js-email') && !isValidEmail(field.value)) {
+			  isValid = false;
+		 }
+
+		 if (field.classList.contains('js-phone') && !isValidPhone(field.value)) {
+			  isValid = false;
+		 }
+
+		 // Добавляем классы для поля
+		 const parent = field.closest('.form-group') || field.parentNode;  // Родительский элемент поля
+		 if (parent) {
+			  parent.classList.toggle('valid', isValid);
+			  parent.classList.toggle('no-valid', !isValid);
+		 }
+
+		 return isValid;
+	}
+
+	/**
+	 * Проверка валидности email.
+	 * @param {string} email - Email для проверки.
+	 * @returns {boolean} - Валиден ли email.
+	 */
+	function isValidEmail(email) {
+		 return /^[a-zA-Z0-9._%+-]+@/.test(email);
+	}
+
+	/**
+	 * Проверка валидности телефона.
+	 * @param {string} phone - Телефон для проверки.
+	 * @returns {boolean} - Валиден ли телефон.
+	 */
+	function isValidPhone(phone) {
+		 return /^\+?\d{4,}$/.test(phone);
+	}
+
+		/* <- Валидация блока .js-step */
+
+
+
+
+
+
+
+
+
+
+
+		/* Подсветить номер шага .js-step-number */
+    // Получаем все блоки с классом js-steps-numbers на странице
+   /* const stepsNumberBlocks = document.querySelectorAll('.js-steps-numbers');
+
+    // Обрабатываем клик по кнопкам внутри каждого блока
+    stepsNumberBlocks.forEach(block => {
+        const stepButtons = block.querySelectorAll('[data-step-button]');
+        
+        stepButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Получаем номер шага из атрибута data-step-button
+                const stepNumber = button.getAttribute('data-step-button').replace('step-', '');
+
+                // Находим родительский блок с классом js-step, где происходит обработка
+                const formBlock = block.closest('.js-form-step-container'); // Найдем контейнер с шагами
+
+                // Обновляем классы для текущего шага в блоке js-steps-numbers
+                updateStepNumbers(formBlock, stepNumber);
+
+                // Проверяем состояние полей и обновляем классы active-number для шагов
+                validateStepNumbers(formBlock);
+            });
+        });
+    });
+
+    /**
+     * Обновление классов для js-step-number в блоке js-steps-numbers.
+     * Добавляем класс active-number к элементу с номером шага.
+     * @param {Element} formBlock - Родительский блок формы.
+     * @param {string} stepNumber - Номер текущего шага.
+     */
+    /*function updateStepNumbers(formBlock, stepNumber) {
+        // Получаем блок с классом js-steps-numbers в родительском блоке формы
+        const stepsNumbers = formBlock.querySelector('.js-steps-numbers');
+
+        if (stepsNumbers) {
+            // Получаем все элементы с классом js-step-number в блоке
+            const stepItems = stepsNumbers.querySelectorAll('.js-step-number');
+
+            // Для каждого элемента js-step-number проверяем, нужно ли добавить класс active-number
+            stepItems.forEach((stepItem, index) => {
+                // Индекс элемента + 1, так как индексация начинается с 0, а шаги начинаются с 1
+                if (index + 1 === parseInt(stepNumber)) {
+                    stepItem.classList.add('active-number');
+                } else {
+                    stepItem.classList.remove('active-number');
+                }
+            });
+        }
+    }
+
+    /**
+     * Проверка валидности полей формы и обновление классов active-number для шагов.
+     * @param {Element} formBlock - Родительский блок формы.
+     */
+   /* function validateStepNumbers(formBlock) {
+        // Получаем все поля формы внутри блока
+        const formFields = formBlock.querySelectorAll('select, select2, input, textarea');
+        
+        // Флаг для проверки всех полей
+        let allValid = true;
+
+        // Проходим по всем полям формы
+        formFields.forEach(field => {
+            if (!isFieldValid(field)) {
+                allValid = false;
+            }
+        });
+
+        // Получаем блок с классом js-steps-numbers в родительском блоке
+        const stepsNumbers = formBlock.querySelector('.js-steps-numbers');
+        if (stepsNumbers) {
+            // Получаем все элементы с классом js-step-number в блоке
+            const stepItems = stepsNumbers.querySelectorAll('.js-step-number');
+
+            // Проверяем, нужно ли добавлять или удалять класс active-number для каждого шага
+            stepItems.forEach((stepItem, index) => {
+                if (allValid && index + 1 === parseInt(stepItems.length)) {
+                    // Если все поля валидны, добавляем класс active-number
+                    stepItem.classList.add('active-number');
+                } else {
+                    // Если хотя бы одно поле невалидно, удаляем класс active-number
+                    stepItem.classList.remove('active-number');
+                }
+            });
+        }
+    }
+
+    /**
+     * Проверка состояния одного поля (валидность).
+     * @param {Element} field - Поле формы.
+     * @returns {boolean} - True, если поле валидно, иначе false.
+     */
+    /*function isFieldValid(field) {
+        if (field.tagName === 'SELECT' || field.classList.contains('select2')) {
+            return field.value !== ''; // Проверка для select и select2
+        } else if (field.tagName === 'TEXTAREA' || field.tagName === 'INPUT') {
+            return field.value.trim() !== ''; // Проверка для input и textarea
+        }
+        return true;
+    }
+	 */
+		/* <- Подсветить номер шага .js-step-number */
+	
+
+
+
+
+
+
+
+
+
+
+
+
+		// Отключение отправки форм, если шаг не валиден
+		forms.forEach((form) => {
+			form.addEventListener('submit', (event) => {
+				event.preventDefault();
+				console.log('Форма отправлена');
+			});
+		});
+	});
