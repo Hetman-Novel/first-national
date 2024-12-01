@@ -107,3 +107,145 @@ window.addEventListener('resize', toggleSliders);
 window.addEventListener('orientationchange', toggleSliders);
 
 /* <- Links to projects */
+
+/* Gallery -> */
+let galleryBigSlider = document.querySelector('.gallery-big-slider')
+if (galleryBigSlider) {
+   var swiper = new Swiper(".gallery-small-slider", {
+      loop: true,
+      spaceBetween: 24,
+      slidesPerView: 3,
+      watchSlidesProgress: true,
+      direction: 'vertical',
+      breakpoints: {
+         0: {
+            spaceBetween: 12,
+         },
+         721: {
+            spaceBetween: 24,
+         }
+      },
+   });
+   var swiper2 = new Swiper(galleryBigSlider, {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 1,
+      initialSlide: 1,
+      effect: 'fade',
+      fadeEffect: {
+         crossFade: true
+      },
+      autoplay: {
+         delay: 6000,
+         stopOnLastSlide: true,
+         disableOnInteraction: false,
+      },
+      thumbs: {
+         swiper: swiper,
+      },
+      pagination: {
+         el: '.gallery-big-slider__pagination',
+         clickable: true,
+      }
+   });
+}
+/* <- Gallery */
+
+/* Reviews -> */
+
+let swiperInstances2 = []; // Array to store all Swiper instances
+
+// Function for initializing sliders
+function initSliders2() {
+   const reviewsSlider = document.querySelectorAll('.reviews-slider');
+
+   reviewsSlider.forEach(slider => {
+      const wrapper2 = slider.querySelector('.say-about__reviews');
+      const slides2 = slider.querySelectorAll('.say-about__review');
+
+      // Add classes for Swiper
+      if (wrapper2 && !wrapper2.classList.contains('swiper-wrapper')) {
+         wrapper2.classList.add('swiper-wrapper');
+      }
+
+      slides2.forEach(slide => {
+         if (!slide.classList.contains('swiper-slide')) {
+            slide.classList.add('swiper-slide');
+         }
+      });
+
+      // Check if the instance already exists
+      const existingInstance = swiperInstances2.find(instance => instance.el === slider);
+      if (!existingInstance) {
+         const newSwiper2 = new Swiper(slider, {
+            pagination: {
+               el: '.reviews-slider-pagination',
+               clickable: true,
+            },
+            watchOverflow: true,
+            spaceBetween: 40,
+            loop: true,
+            speed: 800,
+            autoHeight: true,
+            effect: 'fade',
+            slidesPerView: 1,
+            autoplay: {
+               delay: 8000,
+               stopOnLastSlide: false,
+               disableOnInteraction: false,
+            },
+         });
+
+         swiperInstances2.push(newSwiper2);
+      }
+   });
+}
+
+// Function to destroy sliders and remove classes
+function destroySliders2() {
+   swiperInstances2.forEach(swiper => {
+      swiper.destroy(true, true);
+   });
+   swiperInstances2 = []; // Clear the sliders array
+
+   const reviewsSlider = document.querySelectorAll('.reviews-slider');
+
+   reviewsSlider.forEach(slider => {
+      const wrapper2 = slider.querySelector('.say-about__reviews');
+      const slides2 = slider.querySelectorAll('.say-about__review');
+
+      // Remove Swiper classes
+      if (wrapper2 && wrapper2.classList.contains('swiper-wrapper')) {
+         wrapper2.classList.remove('swiper-wrapper');
+      }
+
+      slides2.forEach(slide => {
+         if (slide.classList.contains('swiper-slide')) {
+            slide.classList.remove('swiper-slide');
+         }
+      });
+   });
+}
+
+// Function to control sliders depending on screen width
+function toggleSliders2() {
+   if (window.innerWidth <= 575) {
+      initSliders2();
+   } else {
+      destroySliders2();
+   }
+}
+
+// Launch on page load
+toggleSliders2();
+
+// Unified event handling
+function handleResizeAndOrientation() {
+   toggleSliders();
+   toggleSliders2();
+}
+
+window.addEventListener('resize', handleResizeAndOrientation);
+window.addEventListener('orientationchange', handleResizeAndOrientation);
+
+/* <- Reviews */
