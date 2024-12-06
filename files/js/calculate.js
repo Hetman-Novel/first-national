@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
    let calculatorForm = document.getElementById('calculator-form');
    if (calculatorForm) {
 
-      // При переходе на другой этап
+      // When moving to another stage
       document.addEventListener('click', (event) => {
          const button = event.target.closest('.step-valid button[data-step-button="step-2"]');
          if (button) {

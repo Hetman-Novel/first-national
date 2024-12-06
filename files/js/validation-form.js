@@ -2,202 +2,188 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Get all forms on the page
 	const forms = document.querySelectorAll('form');
 	
-	// Основная логика валидации форм
+	// Basic form validation logic
 	forms.forEach((form) => {
 		const submitButton = form.querySelector('[type="submit"]');
 		const calculatorCheckbox = form.querySelector('#calculator-checkbox');
 		
-		// Состояние для каждого поля, чтобы валидация не происходила при загрузке страницы
+		// State for each field so that validation doesn't happen on page load
 		const isFieldTouched = new Set();
 	 
 		/**
-		 * Обновление состояния кнопки submit.
+		 * Update the state of the submit button.
 		 */
 		function updateSubmitButtonState() {
-		  const isFormValid = Array.from(form.querySelectorAll('.validation-field'))
-			 .every((validationBlock) => {
-				return Array.from(validationBlock.querySelectorAll('input, textarea'))
-				  .every((field) => validateField(field, validationBlock));
-			 });
+		   const isFormValid = Array.from(form.querySelectorAll('.validation-field')).every((validationBlock) => {
+				return Array.from(validationBlock.querySelectorAll('input, textarea')).every((field) => validateField(field, validationBlock));
+			});
 	 
-		  const isCheckboxChecked = calculatorCheckbox ? calculatorCheckbox.checked : true;
-		  submitButton.disabled = !(isFormValid && isCheckboxChecked);
+		  	const isCheckboxChecked = calculatorCheckbox ? calculatorCheckbox.checked : true;
+		  	submitButton.disabled = !(isFormValid && isCheckboxChecked);
 		}
 	 
-		// Валидация полей в блоках validation-field
+		// Validation of fields in validation-field blocks
 		form.querySelectorAll('.validation-field').forEach((validationBlock) => {
-		  validationBlock.querySelectorAll('input, textarea').forEach((field) => {
-			 /**
-			  * Проверяет и обновляет классы поля и его блока, если произошло изменение.
-			  */
-			 const validateAndUpdate = () => {
-				if (isFieldTouched.has(field)) {
-				  // Проверяем поле, если оно уже было изменено
-				  validateField(field, validationBlock);
-				  updateSubmitButtonState();
-				}
-			 };
-	 
-			 // Обработчик фокуса для поля
-			 field.addEventListener('focus', () => {
-				isFieldTouched.add(field);  // Помечаем поле как изменённое
-			 });
-	 
-			 // Обработчик ввода в поле
-			 field.addEventListener('input', () => {
-				isFieldTouched.add(field);  // Помечаем поле как изменённое
-				validateAndUpdate();
-			 });
-	 
-			 // Обработчик изменения значения поля
-			 field.addEventListener('change', () => {
-				isFieldTouched.add(field);  // Помечаем поле как изменённое
-				validateAndUpdate();
-			 });
-	 
-			 // Обработчик потери фокуса
-			 field.addEventListener('blur', () => {
-				validateAndUpdate();
-			 });
-	 
-			 // Для телефонов: удаляем недопустимые символы
-			 if (field.classList.contains('js-phone')) {
-				field.addEventListener('input', () => {
-				  field.value = field.value.replace(/[^0-9+]/g, '');
+			validationBlock.querySelectorAll('input, textarea').forEach((field) => {
+				/**
+				 * Checks and updates the classes of the field and its block if a change has occurred.
+				 */
+				const validateAndUpdate = () => {
+					if (isFieldTouched.has(field)) {
+						// Check the field if it has already been changed
+						validateField(field, validationBlock);
+						updateSubmitButtonState();
+					}
+				};
+		
+				// Focus handler for the field
+				field.addEventListener('focus', () => {
+					isFieldTouched.add(field); // Mark the field as changed
 				});
-			 }
-	 
-			 // Добавляем MutationObserver для отслеживания изменений атрибута value
-			 const observer = new MutationObserver(() => {
-				if (field.value.trim() !== "") {  // Проверяем, что поле не пустое
-				  isFieldTouched.add(field);  // Помечаем поле как изменённое
-				  validateAndUpdate();
+		
+				// Обработчик ввода в поле
+				field.addEventListener('input', () => {
+					isFieldTouched.add(field); // Mark the field as changed
+					validateAndUpdate();
+				});
+		
+				// Field value change handler
+				field.addEventListener('change', () => {
+					isFieldTouched.add(field); // Mark the field as changed
+					validateAndUpdate();
+				});
+		
+				// Focus loss handler
+				field.addEventListener('blur', () => {
+					validateAndUpdate();
+				});
+		
+				// For phones: remove invalid characters
+				if (field.classList.contains('js-phone')) {
+					field.addEventListener('input', () => {
+						field.value = field.value.replace(/[^0-9+]/g, '');
+					});
 				}
-			 });
-	 
-			 // Настройка наблюдателя за атрибутом value
-			 observer.observe(field, {
-				attributes: true,
-				attributeFilter: ['value'],
-			 });
-		  });
+		
+				// Add a MutationObserver to track changes to the value attribute
+				const observer = new MutationObserver(() => {
+					if (field.value.trim() !== "") { // Check that the field is not empty
+						isFieldTouched.add(field); // Mark the field as changed
+						validateAndUpdate();
+					}
+				});
+		
+				// Setting up an observer for the value attribute
+				observer.observe(field, {
+					attributes: true,
+					attributeFilter: ['value'],
+				});
+			});
 		});
 	 
-		// Валидация чекбокса
+		// Checkbox validation
 		if (calculatorCheckbox) {
-		  calculatorCheckbox.addEventListener('change', updateSubmitButtonState);
+		  	calculatorCheckbox.addEventListener('change', updateSubmitButtonState);
 		}
 	 
-		// Обработка отправки формы
+		// Handle form submission
 		form.addEventListener('submit', (event) => {
-		  event.preventDefault();
-	 
-		  if (!submitButton.disabled) {
-			 const form = event.target;
-	 
-			 fetch(window.location.href, {
-				method: 'POST',
-				body: new FormData(form),
-			 })
-				.then((response) => {
-				  if (response.ok) {
-					 return response.text();
-				  } else {
-					 throw new Error('Ошибка при отправке формы');
-				  }
-				})
-				.then((html) => {
-				  console.log('Форма успешно отправлена');
-				  form.reset();
-				  updateSubmitButtonState();
-				  console.log('Ответ сервера:', html);
-				})
-				.catch((error) => {
-				  console.error('Произошла ошибка:', error);
-				});
-		  }
+			event.preventDefault();
+		
+			if (!submitButton.disabled) {
+				const form = event.target;
+		
+				console.log('Sent successfully');
+				form.reset();
+				updateSubmitButtonState(); // Your additional code
+
+				// Add the active class to the last step
+				const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]');
+				if (stepNumbers.length > 0) {
+					const lastStep = stepNumbers[stepNumbers.length - 1]; // The last step
+					lastStep.classList.add('active'); // Add the active class
+				}
+
+				// Hide the calculator form and show another block after submission
+				let stepsCalculatorActive = document.querySelectorAll('.step-calculator-active');
+				if (stepsCalculatorActive) {
+					stepsCalculatorActive.forEach((stepCalculatorActive) => {
+						if (stepCalculatorActive.classList.contains('show')) {
+							stepCalculatorActive.classList.remove('show');
+						} else {
+							stepCalculatorActive.classList.add('show');
+						}
+					});
+				}
+			}
 		});
 	 
-		// Инициализация состояния кнопки submit
+		// Initialize the submit button state
 		updateSubmitButtonState();
-	 });
+	});
 	 
-	 /**
-	  * Валидация одного поля.
-	  * @param {HTMLInputElement|HTMLTextAreaElement} field - Поле для проверки.
-	  * @param {HTMLElement} validationBlock - Блок validation-field, содержащий поле.
-	  * @returns {boolean} - Валидно ли поле.
+	/**
+	  * Validation of one field.
+	  * @param {HTMLInputElement|HTMLTextAreaElement} field - Field for verification.
+	  * @param {HTMLElement} validationBlock - The validation-field block containing the field.
+	  * @returns {boolean} - Is the field valid?
 	  */
-	 function validateField(field, validationBlock) {
-		// Проверяем, если поле скрыто, пропускаем его валидацию, но если в нем есть значение, добавляем класс valid
+	function validateField(field, validationBlock) {
+		// Check if the field is hidden, skip its validation, but if it has a value, add the valid class
 		if (field.offsetParent === null) {
 			if (field.value.trim()) {
-			  validationBlock.classList.add('valid');
-			  validationBlock.classList.remove('no-valid');
+			  	validationBlock.classList.add('valid');
+			  	validationBlock.classList.remove('no-valid');
 			}
 			return true;
-		 }
+		}
 
 		let isFieldValid = true;
 	 
-		// Проверка заполненности
+		// Checking for fullness
 		if (!field.value.trim()) {
-		  isFieldValid = false;
+		  	isFieldValid = false;
 		}
 	 
-		// Дополнительные проверки для email и телефона
+		// Additional checks for email and phone
 		if (field.classList.contains('js-email') && !isValidEmail(field.value)) {
-		  isFieldValid = false;
+		  	isFieldValid = false;
 		}
-	 
 		if (field.classList.contains('js-phone') && !isValidPhone(field.value)) {
-		  isFieldValid = false;
+		  	isFieldValid = false;
 		}
 	 
-		// Обновление классов у блока validation-field
+		// Updating classes of the validation-field block
 		if (isFieldValid) {
-		  validationBlock.classList.add('valid');
-		  validationBlock.classList.remove('no-valid');
+		  	validationBlock.classList.add('valid');
+		  	validationBlock.classList.remove('no-valid');
 		} else {
-		  validationBlock.classList.add('no-valid');
-		  validationBlock.classList.remove('valid');
+		  	validationBlock.classList.add('no-valid');
+		  	validationBlock.classList.remove('valid');
 		}
 	 
 		return isFieldValid;
-	 }
+	}
 	 
-	 /**
-	  * Проверка валидности email.
-	  * @param {string} email - Email для проверки.
-	  * @returns {boolean} - Валиден ли email.
+	/**
+	  * Email validity check.
+	  * @param {string} email - Email for verification.
+	  * @returns {boolean} - Is the email valid?
 	  */
-	 function isValidEmail(email) {
+	function isValidEmail(email) {
 		return /^[a-zA-Z0-9._%+-]+@/.test(email);
-	 }
+	}
 	 
-	 /**
-	  * Проверка валидности телефона.
-	  * @param {string} phone - Телефон для проверки.
-	  * @returns {boolean} - Валиден ли телефон.
+	/**
+	  * Phone validity check.
+	  * @param {string} phone - Phone for verification.
+	  * @returns {boolean} - Is this a valid phone number?
 	  */
-	 function isValidPhone(phone) {
+	function isValidPhone(phone) {
 		return /^\+?\d{4,}$/.test(phone);
-	 }
+	}
   
-  
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	// Logic of form steps (step switching)
 	forms.forEach((form) => {
 		form.addEventListener('click', (event) => {
@@ -230,83 +216,76 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	});
-
 	/**
-	 * Переключение между шагами формы.
-	 * @param {HTMLElement} form - Форма.
-	 * @param {string} stepBlockValue - Значение data-step-block.
-	 * @param {string} direction - Направление переключения (next/back).
+	 * Switch between form steps.
+	 * @param {HTMLElement} form - Form.
+	 * @param {string} stepBlockValue - The meaning of data-step-block.
+	 * @param {string} direction - Switching direction (next/back).
 	 */
 	function handleStepChange(form, stepBlockValue, direction) {
 		const currentBlock = form.querySelector(`[data-step-block="${stepBlockValue}"]`);
 		if (!currentBlock) return;
 
-		// Скрываем все шаги и показываем текущий
+		// Hide all steps and show the current one
 		form.querySelectorAll('[data-step-block]').forEach((block) => block.classList.remove('step-active'));
 		currentBlock.classList.add('step-active');
 	}
 	
 
-
-
-
-
-
-	/* Логика календаря -> */
-
+	/* Calendar logic -> */
 	document.querySelectorAll('.js-block-date').forEach((block) => {
-		const dateInput = block.querySelector('.js-date'); // Поле для ввода даты
-		const calendarContainer = block.querySelector('.calendar-container'); // Контейнер календаря
+		const dateInput = block.querySelector('.js-date'); // Date input field
+		const calendarContainer = block.querySelector('.calendar-container'); // Calendar container
 
 		if (!dateInput || !calendarContainer) return;
 
-		// Инициализация FullCalendar
+		// Initialize FullCalendar
 		const calendar = new FullCalendar.Calendar(calendarContainer, {
 			initialView: 'dayGridMonth',
 			selectable: true,
 			dateClick: function (info) {
-				const clickedDate = new Date(info.dateStr); // Получаем дату из календаря
+				const clickedDate = new Date(info.dateStr); // Get date from calendar
 
 				if (!isNaN(clickedDate)) {
-						// Форматируем дату в формате dd/mm/yyyy
-						const formattedDate = getFormattedDate(clickedDate);
+					// Format the date in dd/mm/yyyy format
+					const formattedDate = getFormattedDate(clickedDate);
 
-						// Вставляем дату в поле и атрибут value
-						dateInput.value = formattedDate; // Обновляем текстовое значение
-						dateInput.setAttribute('value', formattedDate); // Обновляем атрибут value
+					// Insert the date into the field and the value attribute
+					dateInput.value = formattedDate; // Update the text value
+					dateInput.setAttribute('value', formattedDate); // Update the value attribute
 
-						// Валидация поля
-						validateField(dateInput, block); // Валидация после вставки даты
+					// Валидация поля
+					validateField(dateInput, block); // Validation after inserting date
 				}
 
-				// Снимаем фокус с поля после выбора даты
+				// Remove focus from the field after selecting a date
 				dateInput.blur();
 			},
 		});
 
 		calendar.render();
 
-		// Форматирование даты в формат dd/mm/yyyy
+		// Format date to dd/mm/yyyy format
 		function getFormattedDate(date) {
-			const day = String(date.getDate()).padStart(2, '0'); // Добавляем ведущий ноль к дню
-			const month = String(date.getMonth() + 1).padStart(2, '0'); // Добавляем ведущий ноль к месяцу
+			const day = String(date.getDate()).padStart(2, '0'); // Add a leading zero to the day
+			const month = String(date.getMonth() + 1).padStart(2, '0'); // Add a leading zero to the month
 			const year = date.getFullYear();
 			return `${day}/${month}/${year}`;
 		}
 
-		// События focus и blur для поля js-date
+		// Focus and blur events for js-date field
 		if (dateInput.classList.contains('js-date')) {
 			dateInput.addEventListener('focus', () => {
-					block.classList.add('date-field-in-focus');
+				block.classList.add('date-field-in-focus');
 			});
 
 			dateInput.addEventListener('blur', () => {
-					block.classList.remove('date-field-in-focus');
-					validateField(dateInput, block); // Вызываем валидацию
+				block.classList.remove('date-field-in-focus');
+				validateField(dateInput, block); // Call validation
 			});
 		}
 
-		// Валидация поля
+		// Field validation
 		function validateField(field, parentBlock) {
 			if (field.value.trim() === '') {
 				parentBlock.classList.add('no-valid');
@@ -317,41 +296,40 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		}
 	});
-
-	/* <- Логика календаря */
+	/* <- Calendar logic */
 
 	
-	/* Валидация блока .js-step -> */
+	/* Validating the .js-step block -> */
 	document.querySelectorAll('.js-step').forEach((step) => {
-		// Функция для обновления состояния текущего шага
+		// Function to update the state of the current step
 		const updateStepState = () => {
-			// Получаем все блоки с полями для валидации (validation-field и js-block-date)
+			// Get all blocks with fields for validation (validation-field and js-block-date)
 			const validationBlocks = step.querySelectorAll('.validation-field');
 			const dateBlocks = step.querySelectorAll('.js-block-date');
 			
-			// Проверяем, все ли блоки validation-field и js-block-date имеют класс valid
+			// Check if all validation-field and js-block-date blocks have the valid class
 			const allValidationValid = Array.from(validationBlocks).every(block => block.classList.contains('valid'));
 			const allDateValid = Array.from(dateBlocks).every(block => block.classList.contains('valid'));
 		
-			// Если все блоки valid, добавляем step-valid
+			// If all blocks are valid, add step-valid
 			if (allValidationValid && allDateValid) {
 				step.classList.add('step-valid');
 				step.classList.remove('step-no-valid');
 			} else {
-				// Если хотя бы один блок с классом validation-field или js-block-date имеет no-valid
+				// If at least one block with class validation-field or js-block-date has no-valid
 				if (isInteracted(validationBlocks, dateBlocks)) {
-				step.classList.add('step-no-valid');
+					step.classList.add('step-no-valid');
 				}
 				step.classList.remove('step-valid');
 			}
 		};
 		
-		// Функция для проверки, были ли изменения в блоках
+		// Function to check if there were changes in blocks
 		const isInteracted = (validationBlocks, dateBlocks) => {
 			return [...validationBlocks, ...dateBlocks].some(block => block.classList.contains('no-valid'));
 		};
 		
-		// Добавляем наблюдателей за изменениями классов в блоках validation-field и js-block-date
+		// Add observers for class changes in the validation-field and js-block-date blocks
 		const observeChanges = (block) => {
 			const observer = new MutationObserver(updateStepState);
 		
@@ -361,60 +339,56 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		};
 		
-		// Наблюдаем за всеми блоками validation-field и js-block-date в текущем шаге
+		// Watch all validation-field and js-block-date blocks in the current step
 		step.querySelectorAll('.validation-field, .js-block-date').forEach((block) => {
 			observeChanges(block);
 		});
 		
-		// Изначально обновляем состояние текущего шага при загрузке
+		// Initially update the current step state on load
 		updateStepState();
 	});	 
-	/* <- Валидация блока .js-step */
+	/* <- Validating the .js-step block */
 
 
-	/* Подсветить номер шага .js-step-numbers */
-	 document.querySelectorAll('[data-step-button]').forEach(button => {
+	/* Highlight step number .js-step-numbers */
+	document.querySelectorAll('[data-step-button]').forEach(button => {
 		button.addEventListener('click', () => {
-		  const stepBlock = button.closest('.step-valid'); // Находим ближайший родительский блок с классом step-valid
-		  if (!stepBlock) return; // Если клик не внутри блока с классом step-valid, ничего не делаем
-	 
-		  const stepNumber = button.getAttribute('data-step-button'); // Получаем текущий шаг из атрибута data-step-button
-		  const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]'); // Находим все элементы с data-step-number
-	 
-		  // Удаляем класс 'active' у всех шагов перед текущим шагом
-		  stepNumbers.forEach(step => {
-			 const currentStepNumber = step.getAttribute('data-step-number');
-			 
-			 // Если номер шага меньше текущего, добавляем класс active
-			 if (parseInt(currentStepNumber.replace('step-', '')) < parseInt(stepNumber.replace('step-', ''))) {
-				step.classList.add('active');
-			 } else {
-				step.classList.remove('active');
-			 }
-		  });
+			const stepBlock = button.closest('.step-valid'); // Find the closest parent block with the step-valid class
+			if (!stepBlock) return; // If the click is not inside a block with the step-valid class, do nothing
+		
+			const stepNumber = button.getAttribute('data-step-button'); // Get the current step from the data-step-button attribute
+			const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]'); // Find all elements with data-step-number
+		
+			// Remove the 'active' class from all steps before the current step
+			stepNumbers.forEach(step => {
+				const currentStepNumber = step.getAttribute('data-step-number');
+				
+				// If the step number is less than the current one, add the active class
+				if (parseInt(currentStepNumber.replace('step-', '')) < parseInt(stepNumber.replace('step-', ''))) {
+					step.classList.add('active');
+				} else {
+					step.classList.remove('active');
+				}
+			});
 		});
-	 });
-	 
-	 // Обработка кнопок для обратного перехода
-	 document.querySelectorAll('[data-step-back-button]').forEach(button => {
+	});
+	// Handling buttons for reverse transition
+	document.querySelectorAll('[data-step-back-button]').forEach(button => {
 		button.addEventListener('click', () => {
-		  const stepNumber = button.getAttribute('data-step-back-button'); // Получаем текущий шаг из атрибута data-step-back-button
-		  const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]'); // Находим все элементы с data-step-number
-	 
-		  // Удаляем класс 'active' у всех шагов, начиная с текущего
-		  stepNumbers.forEach(step => {
-			 const currentStepNumber = step.getAttribute('data-step-number');
-			 
-			 // Если номер шага больше или равен текущему, удаляем класс active
-			 if (parseInt(currentStepNumber.replace('step-', '')) >= parseInt(stepNumber.replace('step-', ''))) {
-				step.classList.remove('active');
-			 }
-		  });
+			const stepNumber = button.getAttribute('data-step-back-button'); // Get the current step from the data-step-back-button attribute
+			const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]'); // Find all elements with data-step-number
+		
+			// Remove the 'active' class from all steps, starting with the current one
+			stepNumbers.forEach(step => {
+				const currentStepNumber = step.getAttribute('data-step-number');
+				
+				// If the step number is greater than or equal to the current one, remove the active class
+				if (parseInt(currentStepNumber.replace('step-', '')) >= parseInt(stepNumber.replace('step-', ''))) {
+					step.classList.remove('active');
+				}
+			});
 		});
-	 });
-	 
-	 
-
-	/* <- Подсветить номер шага .js-step-numbers */
+	});
+	/* <- Highlight step number .js-step-numbers */
 
 });
