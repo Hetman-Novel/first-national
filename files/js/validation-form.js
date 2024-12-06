@@ -239,36 +239,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if (!dateInput || !calendarContainer) return;
 
+		let selectedDateEl = null; // To store the previously selected date
+
 		// Initialize FullCalendar
 		const calendar = new FullCalendar.Calendar(calendarContainer, {
 			initialView: 'dayGridMonth',
 			selectable: true,
 			dateClick: function (info) {
-				const clickedDate = new Date(info.dateStr); // Get date from calendar
-
-				if (!isNaN(clickedDate)) {
-					// Format the date in dd/mm/yyyy format
-					const formattedDate = getFormattedDate(clickedDate);
-
-					// Insert the date into the field and the value attribute
-					dateInput.value = formattedDate; // Update the text value
-					dateInput.setAttribute('value', formattedDate); // Update the value attribute
-
-					// Валидация поля
-					validateField(dateInput, block); // Validation after inserting date
+				if (selectedDateEl) {
+					selectedDateEl.classList.remove('selected-date');
 				}
+
+				const clickedDateEl = info.dayEl;
+				clickedDateEl.classList.add('selected-date');
+				selectedDateEl = clickedDateEl;
+
+				const clickedDate = new Date(info.dateStr);
+				if (!isNaN(clickedDate)) {
+					dateInput.value = getFormattedDate(clickedDate);
+					dateInput.setAttribute('value', getFormattedDate(clickedDate));
+				} else {
+					console.error("Incorrect date: " + info.dateStr);
+				}
+
+				// Remove the `date-field-in-focus` class after selecting a date
+				block.classList.remove('date-field-in-focus');
 
 				// Remove focus from the field after selecting a date
 				dateInput.blur();
+
+				// Field validation
+				validateField(dateInput, block);
 			},
 		});
 
 		calendar.render();
 
-		// Format date to dd/mm/yyyy format
+		// Format date in dd/mm/yyyy format
 		function getFormattedDate(date) {
-			const day = String(date.getDate()).padStart(2, '0'); // Add a leading zero to the day
-			const month = String(date.getMonth() + 1).padStart(2, '0'); // Add a leading zero to the month
+			const day = String(date.getDate()).padStart(2, '0');
+			const month = String(date.getMonth() + 1).padStart(2, '0');
 			const year = date.getFullYear();
 			return `${day}/${month}/${year}`;
 		}
@@ -279,9 +289,14 @@ document.addEventListener('DOMContentLoaded', () => {
 				block.classList.add('date-field-in-focus');
 			});
 
-			dateInput.addEventListener('blur', () => {
-				block.classList.remove('date-field-in-focus');
-				validateField(dateInput, block); // Call validation
+			// Remove `date-field-in-focus` only if the calendar is not in focus (e.g. arrows)
+			dateInput.addEventListener('blur', (event) => {
+				const calendarToolbar = calendarContainer.querySelector('.fc-header-toolbar');
+				if (!calendarToolbar.contains(event.relatedTarget)) {
+					block.classList.remove('date-field-in-focus');
+				}
+
+				validateField(dateInput, block);
 			});
 		}
 
