@@ -4,13 +4,13 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/style.min.css?_v=20241203012120">
+   <link rel="stylesheet" href="css/style.min.css?_v=20241206041948">
    <!--<link rel="icon" type="image/svg+xml" href="favicon.svg">-->
-   <link rel="stylesheet" href="files/swiper/css/swiper-bundle.min.css?_v=20241203012120">
-   <link rel="stylesheet" href="files/calendar/main.min.css?_v=20241203012120">
-   <link rel="stylesheet" href="files/calendar/custom.css?_v=20241203012120">
-   <link rel="stylesheet" href="files/select2/css/select2.min.css?_v=20241203012120">
-   <link rel="stylesheet" href="files/select2/css/select2-custom.css?_v=20241203012120">
+   <link rel="stylesheet" href="files/swiper/css/swiper-bundle.min.css?_v=20241206041948">
+   <link rel="stylesheet" href="files/calendar/main.min.css?_v=20241206041948">
+   <link rel="stylesheet" href="files/calendar/custom.css?_v=20241206041948">
+   <link rel="stylesheet" href="files/select2/css/select2.min.css?_v=20241206041948">
+   <link rel="stylesheet" href="files/select2/css/select2-custom.css?_v=20241206041948">
    <title>Calculator - First National Van Lines</title>
 </head>
 
@@ -534,23 +534,23 @@
 				</div>
 			</section>
 			<div class="n_container">
-				<div class="bg-color">
+				<div class="bg-color no-padding-bottom">
                <div class="calculator">
-                  <div class="calculator-head__items">
+                  <div class="calculator-head__items js-step-numbers">
                      <div class="calculator-head__item step-head-active">
-                        <div class="calculator-head__item-circle"><!-- active -->
+                        <div class="calculator-head__item-circle" data-step-number="step-1"><!-- active -->
                            <img src="images/svg/calculator-stap-active-icon.svg" alt="">
                         </div>
                         <p>Enter move details</p>
                      </div>
                      <div class="calculator-head__item">
-                        <div class="calculator-head__item-circle">
+                        <div class="calculator-head__item-circle" data-step-number="step-2">
                            <img src="images/svg/calculator-stap-active-icon.svg" alt="">
                         </div>
                         <p>Find your perfect movers</p>
                      </div>
                      <div class="calculator-head__item">
-                        <div class="calculator-head__item-circle">
+                        <div class="calculator-head__item-circle" data-step-number="step-3">
                            <img src="images/svg/calculator-stap-active-icon.svg" alt="">
                         </div>
                         <p>Get quotes</p>
@@ -559,17 +559,18 @@
                   <div class="calculator__items send-active">
                      <div class="calculator__item">
                         <div class="wrap-calculator-form">
-                           <form action="#" class="calculator-form">
+                           <form action="#" class="calculator-form" id="calculator-form">
                               <div class="calculator-form__steps">
-                                 <div class="calculator-form__step step js-step step-active" data-step-block="step-1">
+                                 <div class="calculator-form__step js-step step-active" data-step-block="step-1">
                                     <div class="calculator-form__stepBlock">
                                        <div class="calculator-form__stepBlockHead column-with-fields">
                                           <p>Enter move details:</p>
                                        </div>
                                        <label>Where are you moving from?</label>
-                                       <div class="calculator-form__stepWrapField select">
+                                       <div class="calculator-form__stepWrapField wrap-select-form select validation-field">
+                                          <input type="hidden" name="calculator-moving-from" id="calculator-moving-from">
                                           <!-- select2 applied file location in file/select2 -->
-                                          <select id="get-matched-where-are-you-moving-from2" name="">
+                                          <select id="calculator-where-are-you-moving-from">
                                              <option selected disabled></option>
                                              <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
                                              <option value="85001">85001, Phoenix, AZ</option>
@@ -626,9 +627,10 @@
                                           <p class="text-no-valid">Please tell us where you're moving from</p>
                                        </div>
                                        <label>Where are you moving to?</label>
-                                       <div class="calculator-form__stepWrapField select">
+                                       <div class="calculator-form__stepWrapField wrap-select-form select validation-field">
+                                          <input type="hidden" name="calculator-moving-to" id="calculator-moving-to">
                                           <!-- select2 applied file location in file/select2 -->
-                                          <select id="get-matched-where-are-you-moving-to2" name="">
+                                          <select id="calculator-where-are-you-moving-to">
                                              <option selected disabled></option>
                                              <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
                                              <option value="85001">85001, Phoenix, AZ</option>
@@ -698,7 +700,7 @@
                                                 <path d="M7.01316 16.729C6.87516 16.729 6.76316 16.841 6.76416 16.979C6.76416 17.117 6.87616 17.229 7.01416 17.229C7.15216 17.229 7.26416 17.117 7.26416 16.979C7.26416 16.841 7.15216 16.729 7.01316 16.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <path d="M12.0132 16.729C11.8752 16.729 11.7632 16.841 11.7642 16.979C11.7642 17.117 11.8762 17.229 12.0142 17.229C12.1522 17.229 12.2642 17.117 12.2642 16.979C12.2642 16.841 12.1522 16.729 12.0132 16.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                              </svg>
-                                             <input type="text" name="" class="js-date" placeholder="mm/dd/yyyy">
+                                             <input type="text" name="calculator-date" id="calculator-move-date" class="js-date" placeholder="dd/mm/yyyy">
                                              <p class="text-no-valid">Please select or enter a date</p>
                                              <div class="wrap-calendar">
                                                 <div class="calendar-container"></div>
@@ -706,9 +708,10 @@
                                           </div>
                                        </div>
                                        <label>How much needs to be moved?</label>
-                                       <div class="calculator-form__stepWrapField select size">
+                                       <div class="calculator-form__stepWrapField wrap-select-form select size validation-field">
+                                          <input type="hidden" name="calculator-move-size" id="calculator-move-size">
                                           <!-- select2 applied file location in file/select2 -->
-                                          <select id="how-much-needs-to-be-moved2" name="calculator-how-much-needs-to-be-moved">
+                                          <select id="calculator-how-much-needs-to-be-moved">
                                              <option selected disabled></option>
                                              <option value="Studio apartment">Studio apartment</option>
                                              <option value="1 bedroom residence">1 bedroom residence</option>
@@ -722,40 +725,40 @@
                                        <button type="button" class="calculator-form__stepButton js-validity-check bg-mostly-pure-blue" data-step-button="step-2">Submit Move Details</button>
                                     </div>
                                  </div>
-                                 <div class="calculator-form__step step js-step" data-step-block="step-2">
+                                 <div class="calculator-form__step js-step" data-step-block="step-2">
                                     <div class="calculator-form__stepBlock">
                                        <div class="calculator-form__stepBlockHead column-with-fields">
                                           <p>Please tell us about yourself, and where<br> your selected movers can send your quotes:</p>
                                        </div>
                                        <label>What's Your Name?</label>
-                                       <div class="calculator-form__stepWrapField name">
+                                       <div class="calculator-form__stepWrapField name validation-field">
                                           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                              <path d="M15.7633 16.91L15.4133 16.031C15.2363 15.585 14.9613 15.185 14.6093 14.859L14.5453 14.8C13.9913 14.286 13.2633 14 12.5073 14H7.49333C6.73733 14 6.00933 14.286 5.45433 14.799L5.39033 14.859C5.03833 15.185 4.76433 15.585 4.58633 16.031L4.23633 16.91" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                              <path d="M12.4749 5.44713C13.8417 6.81397 13.8417 9.03004 12.4749 10.3969C11.108 11.7637 8.89197 11.7637 7.52513 10.3969C6.15829 9.03004 6.15829 6.81397 7.52513 5.44713C8.89197 4.08029 11.108 4.08029 12.4749 5.44713" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                              <path d="M16.3639 3.63604C19.8787 7.15076 19.8787 12.8492 16.3639 16.3639C12.8492 19.8787 7.15074 19.8787 3.63604 16.3639C0.12132 12.8492 0.12132 7.15074 3.63604 3.63604C7.15076 0.12132 12.8492 0.12132 16.3639 3.63604" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                           </svg>
-                                          <input type="text" name="" placeholder="Your Name">
+                                          <input type="text" name="calculator-name" id="calculator-name" placeholder="Your Name">
                                           <p class="text-no-valid">Please tell us your name</p>
                                        </div>
                                        <label>What's Your Email Address?</label>
-                                       <div class="calculator-form__stepWrapField email">
+                                       <div class="calculator-form__stepWrapField email validation-field">
                                           <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                              <path fill-rule="evenodd" clip-rule="evenodd" d="M1 2.8V2.8C1 3.4 1.3 3.9 1.8 4.3L7.8 8.4C9.2 9.3 10.9 9.3 12.3 8.4L18.3 4.4C18.7 3.9 19 3.4 19 2.8V2.8C19 1.8 18.2 1 17.2 1H2.8C1.8 1 1 1.8 1 2.8Z" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                              <path d="M1 3V13C1 14.1 1.9 15 3 15H17C18.1 15 19 14.1 19 13V3" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                              <path d="M1.58801 14.412L7.68201 8.31799" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                              <path d="M12.3604 8.35999L18.4124 14.412" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                           </svg>
-                                          <input type="text" name="" class="js-email" placeholder="Email">
+                                          <input type="text" name="calculator-email" id="calculator-email" class="js-email" placeholder="Email">
                                           <p class="text-no-valid">Please tell us your email</p>
                                        </div>
                                        <label>What's Your Phone Number ?</label>
-                                       <div class="calculator-form__stepWrapField phone">
+                                       <div class="calculator-form__stepWrapField phone validation-field">
                                           <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                              <path d="M4 1V2.8C4 3.131 4.224 3.4 4.5 3.4H7.5C7.776 3.4 8 3.131 8 2.8V1" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                              <path d="M4.88 14.5H7.12" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                              <path fill-rule="evenodd" clip-rule="evenodd" d="M3 1H9C10.105 1 11 1.895 11 3V15C11 16.105 10.105 17 9 17H3C1.895 17 1 16.105 1 15V3C1 1.895 1.895 1 3 1Z" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                           </svg>
-                                          <input type="text" name="" class="js-phone" placeholder="Phone Number">
+                                          <input type="text" name="calculator-phone" id="calculator-phone" class="js-phone" placeholder="Phone Number">
                                           <p class="text-no-valid">Please tell us your phone number</p>
                                        </div>
                                        <button type="button" class="calculator-form__stepButton js-validity-check bg-mostly-pure-blue" data-step-button="step-3">Submit Your Details</button>
@@ -763,33 +766,32 @@
                                     <div class="calculator-form__step step-mobile">
                                        <div class="calculator-form__stepBlock">
                                           <div class="calculator-form__stepBlockHead">
-                                             <p>Your move details <button type="button" data-step-back-button="step-1">Edit</button></p>
+                                             <p>Your move details<button type="button" data-step-back-button="step-1">Edit</button></p>
                                           </div>
                                           <table>
                                              <tbody>
                                                 <tr>
                                                    <td>Moving from:</td>
-                                                   <td>38006, Bells, TN</td>
+                                                   <td class="calculator-moving-from"></td>
                                                 </tr>
                                                 <tr>
                                                    <td>Moving to:</td>
-                                                   <td>62411, Altamont, IL</td>
+                                                   <td class="calculator-moving-to"></td>
                                                 </tr>
                                                 <tr>
                                                    <td>Move size:</td>
-                                                   <td>2-3 Bedroom</td>
+                                                   <td class="calculator-move-size"></td>
                                                 </tr>
                                                 <tr>
                                                    <td>Move date:</td>
-                                                   <td>12/24/2024</td>
+                                                   <td class="calculator-move-date"></td>
                                                 </tr>
                                              </tbody>
                                           </table>
                                        </div>
-                                       <p class="calculator-form__stepBlockMiles">Moving Distance: <span>178 miles</span></p>
                                     </div>
                                  </div>
-                                 <div class="calculator-form__step step js-step" data-step-block="step-3">
+                                 <div class="calculator-form__step js-step" data-step-block="step-3">
                                     <div class="calculator-form__stepBlock">
                                        <div class="calculator-form__stepBlockHead column-with-fields">
                                           <div class="calculator-form__stepBlockHead">
@@ -800,15 +802,15 @@
                                           <tbody>
                                              <tr>
                                                 <td>Name:</td>
-                                                <td>Bella</td>
+                                                <td class="calculator-name">Bella</td>
                                              </tr>
                                              <tr>
                                                 <td>Email:</td>
-                                                <td>bella.t@gmail.com</td>
+                                                <td class="calculator-email">bella.t@gmail.com</td>
                                              </tr>
                                              <tr>
                                                 <td>Phone number:</td>
-                                                <td>123 456 7890</td>
+                                                <td class="calculator-phone">123 456 7890</td>
                                              </tr>
                                           </tbody>
                                        </table>
@@ -822,26 +824,26 @@
                                              <tbody>
                                                 <tr>
                                                    <td>Moving from:</td>
-                                                   <td>38006, Bells, TN</td>
+                                                   <td class="calculator-moving-from"></td>
                                                 </tr>
                                                 <tr>
                                                    <td>Moving to:</td>
-                                                   <td>62411, Altamont, IL</td>
+                                                   <td class="calculator-moving-to"></td>
                                                 </tr>
                                                 <tr>
                                                    <td>Move size:</td>
-                                                   <td>2-3 Bedroom</td>
+                                                   <td class="calculator-move-size"></td>
                                                 </tr>
                                                 <tr>
                                                    <td>Move date:</td>
-                                                   <td>12/24/2024</td>
+                                                   <td class="calculator-move-date"></td>
                                                 </tr>
                                              </tbody>
                                           </table>
                                        </div>
                                     </div>
                                     <label class="calculator__label-checkbox">
-                                       <input type="checkbox" name="" id="" checked>
+                                       <input type="checkbox" id="calculator-checkbox" class="checkbox-privacy-policy" checked>
                                        By clicking “Send Me My Quotes” I agree with <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-of-use.html">Terms of Use</a>
                                     </label>
                                     <button type="submit" class="calculator-form__stepButton submit js-validity-check bg-mostly-pure-blue" data-step-back-button="submit">Send Me My Quotes</button>
@@ -851,35 +853,35 @@
                         </div>
                      </div>
                      <div class="calculator__item">
-                        <div class="calculator-form__step">
-                           <div class="calculator-form__stepBlock">
+                        <div class="calculator-form__step" id="step-block-column-two">
+                           <div class="calculator-form__stepBlock step-dekstop">
                               <div class="calculator-form__stepBlockHead">
-                                 <p>Your move details <button type="button" data-step-back-button="step-1">Edit</button></p>
+                                 <p>Your move details<button type="button" data-step-back-button="step-1">Edit</button></p>
                               </div>
                               <table>
                                  <tbody>
                                     <tr>
                                        <td>Moving from:</td>
-                                       <td>38006, Bells, TN</td>
+                                       <td class="calculator-moving-from"></td>
                                     </tr>
                                     <tr>
                                        <td>Moving to:</td>
-                                       <td>62411, Altamont, IL</td>
+                                       <td class="calculator-moving-to"></td>
                                     </tr>
                                     <tr>
                                        <td>Move size:</td>
-                                       <td>2-3 Bedroom</td>
+                                       <td class="calculator-move-size"></td>
                                     </tr>
                                     <tr>
                                        <td>Move date:</td>
-                                       <td>12/24/2024</td>
+                                       <td class="calculator-move-date"></td>
                                     </tr>
                                  </tbody>
                               </table>
                            </div>
-                           <p class="calculator-form__stepBlockMiles">Moving Distance: <span>178 miles</span></p>
+                           <p class="calculator-form__stepBlockMiles">Moving Distance: <span id="number-miles">0</span></p>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d26644128.87277003!2d-109.81465139228771!3d35.39391788969888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x80c229d213a60943%3A0x3458deb43bf50b32!2sCalifornia%20City%2C%20CA%2C%20USA!3m2!1d35.125800999999996!2d-117.98590379999999!4m5!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!3m2!1d40.7127753!2d-74.0059728!5e0!3m2!1sen!2sde!4v1728315080170!5m2!1sen!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div id="calculator-form-map" class="calculator-form__wrap-map"></div>
                         <div class="notification-block border">
                            <div class="notification-block__wrapIcon">
                               <img src="images/svg/notification-block-icon-2.svg" alt="">
@@ -887,6 +889,105 @@
                            <p>Need Some Help? Call <a href="tel:8559304574">855-930-4574</a></p>
                         </div>
                      </div>
+                  </div>
+                  <div class="n_container-no-sidebar">
+                     <h2 class="section-title">MWhat moving services and features<br> are offered by International Van Lines?</h2>
+                     <section class="block-text two">
+								<div class="block-text__content">
+									<h3>Very Strongy Recomended to Read This Text Too</h3>
+									<p>Ned Stark screamed, clawing for his sword. Jaime was already cantering off down the street as he heard Wyl shout. Men closed from both sides. <strong><a href="#">Ned rode one down</a></strong>, cutting at phantoms in red cloaks who gave way before him. Jory Cassel put his heels into his mount and charged. A steel-shod hoof caught a Lannister guardsman in the face with a sickening crunch.</p>
+								</div>
+							</section>
+                     <div class="separator">separator</div>
+                     <section class="block-text two">
+								<div class="block-text__content">
+									<h2 class="block-text__contentTwoTitle">Very Strongy Recomended to Read This Text Too</h2>
+									<p>Ned Stark screamed, clawing for his sword. Jaime was already cantering off down the street as he heard Wyl shout. Men closed from both sides. <a href="#">Ned rode one down</a>, cutting at phantoms in red cloaks who gave way before him. Jory Cassel put his heels into his mount and charged. A steel-shod hoof caught a Lannister guardsman in the face with a sickening crunch.</p>
+									<blockquote>
+										<p>Bran had sort of liked the little man, yet the name Lannister sent cold fingers creeping up his spine. </p>
+									</blockquote>
+								</div>
+							</section>
+                     <section class="block-text br">
+								<h2 class="block-text__title">
+									<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.4527 26.0001H13.4948" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+										<path d="M26 12.4527V13.4948" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+										<path d="M16.4127 16.413L17.163 17.1634" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+										<path d="M29.489 32.0924H22.511" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M22.1817 31.7715C19.8234 30.1083 18.8138 27.1093 19.6862 24.3585C20.5586 21.6077 23.1121 19.7388 25.9979 19.7388C28.8837 19.7388 31.4372 21.6077 32.3096 24.3585C33.182 27.1093 32.1724 30.1083 29.8141 31.7715C29.5053 31.9775 29.3169 32.3216 29.3097 32.6927V35.7461C29.3097 36.4779 29.019 37.1798 28.5015 37.6973C27.984 38.2148 27.2821 38.5055 26.5502 38.5055H25.4456C24.7137 38.5055 24.0119 38.2148 23.4944 37.6973C22.9768 37.1798 22.6861 36.4779 22.6861 35.7461V32.699C22.681 32.3256 22.4923 31.9787 22.1817 31.7715V31.7715Z" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+										<circle cx="26" cy="26" r="18.7578" stroke="#0064D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></circle>
+										<path d="M38.5052 26.0001H39.5473" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+										<path d="M34.837 17.1634L35.5873 16.413" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+									</svg>
+									Very Stringy Recommended to Read This Text
+								</h2>
+								<div class="block-text__content">
+									<p>A second man reeled away and for an instant Jory was free. Wyl cursed as they pulled him off his dying horse, swords slashing in the rain:</p>
+									<ul class="list-with-links">
+										<li>Ned galloped to him</li>
+										<li>Bringing his longsword down</li>
+										<li>On Tregar’s helm</li>
+										<li>The jolt of impact made him grit his teeth</li>
+										<li>Tregar stumbled to his knees</li>
+										<li>His lion crest sheared in half</li>
+										<li>Blood running down</li>
+									</ul>
+								</div>
+							</section>
+                     <section class="faq">
+								<h2 class="faq__title">FAQ</h2>
+								<div data-spollers data-one-spoller class="best-transportation-companies__accordion block__faq block">
+									<div class="block__item">
+										<h4 data-spoller class="block__title">
+											Do I need to get a parking permit for movers in Philadelphia?
+											<span class="block__titleIcon">icon</span>
+										</h4>
+										<div class="block__text">
+											<div class="block__content">
+												<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias voluptas maxime, illum aliquam impedit est minus error distinctio ad dolorum ducimus vitae fugiat nulla laudantium officiis sed quam? Magnam placeat fugit voluptatibus rem neque dicta est illum deleniti architecto consectetur natus laudantium, nostrum maxime, cum amet voluptates possimus nisi nihil rerum. Ratione maiores vero tempora omnis, nostrum fugiat veniam aperiam nulla natus pariatur in.</p>
+											</div>
+										</div>
+									</div>
+									<div class="block__item _item-active">
+										<h4 data-spoller class="block__title _active">
+											How can I save money when hiring a Philadelphia moving company?
+											<span class="block__titleIcon">icon</span>
+										</h4>
+										<div class="block__text">
+											<div class="block__content">
+												<p>It’s almost always cheaper to hire a moving company in Philadelphia outside of their busy season. Moving during the week and between October and April allows for the greatest savings. Now that you know when moving companies in Philadelphia are less busy, you can use that to <a href="#">negotiate your moving costs.</a></p>
+											</div>
+										</div>
+									</div>
+									<div class="block__item">
+										<h4 data-spoller class="block__title">
+											Do Philadelphia movers offer storage?
+											<span class="block__titleIcon">icon</span>
+										</h4>
+										<div class="block__text">
+											<div class="block__content">
+												<p>Inventore asperiores repellendus <a href="#">voluptatem minus sequi</a>, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												<ul>
+													<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam?</li>
+													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, architecto! Illum laboriosam fuga voluptas consequatur dolorum excepturi quam aliquid.</li>
+													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus mollitia dolore blanditiis dignissimos excepturi.</li>
+												</ul>
+												<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												<ol>
+													<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam?</li>
+													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, architecto! Illum laboriosam fuga voluptas consequatur dolorum excepturi quam aliquid.</li>
+													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus mollitia dolore blanditiis dignissimos excepturi.</li>
+												</ol>
+												<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+												<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+												<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
                   </div>
                </div>
 					<div class="n_container-no-sidebar">
@@ -1064,17 +1165,21 @@
     </svg>
 </button>
    </div>
-   <script src="js/script.min.js?_v=20241203012120"></script>
+   <script src="js/script.min.js?_v=20241206041948"></script>
 
-   <script src="files/js/jquery-3.6.1.min.js?_v=20241203012120"></script>
-	<script src="files/select2/js/select2.min.js?_v=20241203012120"></script>
-   <script src="files/select2/js/init.js?_v=20241203012120"></script>
+   <script src="files/js/jquery-3.6.1.min.js?_v=20241206041948"></script>
+	<script src="files/select2/js/select2.min.js?_v=20241206041948"></script>
+   <script src="files/select2/js/init.js?_v=20241206041948"></script>
 
-	<script src="files/js/masked-input.js?_v=20241203012120"></script>
+	<script src="files/js/masked-input.js?_v=20241206041948"></script>
 
-	<script src="files/js/validation-form.js?_v=20241203012120"></script>
+	<script src="files/js/validation-form.js?_v=20241206041948"></script>
 
-	<script src="files/calendar/main.min.js?_v=20241203012120"></script>
-	<script src="files/calendar/init.js?_v=20241203012120"></script>
+	<script src="files/calendar/main.min.js?_v=20241206041948"></script>
+	<script src="files/calendar/init.js?_v=20241206041948"></script>
+
+  <script src="files/js/calculate.js?_v=20241206041948"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkUntpxgYywg_nlhREijLYWEUOHYan4dk&language=en&_v=20241206041948"></script>
+
 </body>
 </html>

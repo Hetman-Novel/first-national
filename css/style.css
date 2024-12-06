@@ -504,6 +504,13 @@ template {
 
 /* ui */
 
+button:focus,
+button:active {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: none !important;
+}
+
 html,
 body {
   height: 100%;
@@ -588,6 +595,7 @@ body strong {
 }
 
 .no-valid input,
+.js-block-date.no-valid .calculator-form__stepWrapField,
 .calculator-form__stepWrapField.no-valid,
 .contact-form__wrapField.no-valid,
 .no-valid .select2-container--where-are-you-moving-from {
@@ -595,17 +603,35 @@ body strong {
 }
 
 .valid input,
+.js-block-date.valid .calculator-form__stepWrapField,
 .calculator-form__stepWrapField.valid,
 .contact-form__wrapField.valid,
 .valid .select2-container--where-are-you-moving-from {
   border-color: #10c510 !important;
 }
 
+[type=submit]:disabled,
 .js-step.step-no-valid .js-validity-check {
   background-color: #b8b8b8 !important;
   color: #fff;
   cursor: no-drop;
 }
+
+/*
+.validation-field {
+
+	.select2 {
+		border: 1px solid #d9d9d9 !important;
+	}
+	&.valid .select2 {
+		border: 1px solid #10c510 !important;
+	}
+
+	.text-no-valid {
+		display: none;
+	}
+}
+*/
 
 .text-no-valid {
   color: #F43048;
@@ -1528,6 +1554,88 @@ a {
 .custom-checkbox__input:checked:disabled + .custom-checkbox__box {
 	opacity: 0.6;
 }*/
+
+/* Remove background, button shadow and border */
+
+.gmnoprint.gm-control-active {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom,
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom .gmnoprint,
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom .gmnoprint > div {
+  width: 74px !important;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom {
+  height: 32px !important;
+  gap: 0 !important;
+  bottom: 14px !important;
+  margin: 0 !important;
+  right: 14px !important;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom .gmnoprint {
+  display: flex !important;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom .gmnoprint > div {
+  background: transparent !important;
+  box-shadow: none !important;
+  display: flex !important;
+  /* Размещаем кнопки в ряд */
+  justify-content: space-between !important;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom .gmnoprint div div {
+  display: none !important;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom .gmnoprint button {
+  background-color: #fff !important;
+  border: none !important;
+  height: 32px !important;
+  display: flex !important;
+  flex: 0 0 32px !important;
+  width: 32px !important;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom .gmnoprint button img {
+  width: 10px !important;
+}
+
+/* Styles for zoom button container */
+
+.gm-bundled-control {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px;
+}
+
+/* Styles for the buttons themselves (- and +) */
+
+.gm-control-active {
+  background: none !important;
+  border: 1px solid #007BFF !important;
+  color: #007BFF !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  padding: 5px 10px !important;
+  border-radius: 50% !important;
+}
+
+.gm-control-active:hover {
+  background: #007BFF !important;
+  color: #fff !important;
+}
+
+.gm-style > div:nth-last-of-type(3),
+.gm-style > div:last-child {
+  display: none !important;
+}
 
 /* n Select */
 
@@ -6328,6 +6436,7 @@ body.error404 .info__blockText.text-center {
 }
 
 .calculator__items {
+  margin-bottom: 122px;
   margin-top: 126px;
   flex-wrap: wrap;
 }
@@ -6352,11 +6461,12 @@ body.error404 .info__blockText.text-center {
   padding-left: 30px;
 }
 
-.calculator__item iframe {
+.calculator__item .calculator-form__wrap-map {
   background-color: rgba(237, 239, 247, 0.4509803922);
   border: none;
   border-radius: 10px;
   height: 371px;
+  margin-bottom: 30px;
   width: 100%;
 }
 
@@ -8743,6 +8853,10 @@ body.error404 .info__blockText.text-center {
     margin-top: 30px;
   }
 
+  .calculator-form__stepBlock.step-dekstop {
+    display: none;
+  }
+
   .calculator-form__stepBlockHead {
     margin-bottom: 21px;
   }
@@ -10534,6 +10648,7 @@ body.error404 .info__blockText.text-center {
   }
 
   .calculator__items {
+    margin-bottom: -9px;
     margin-top: 75px;
   }
 
@@ -10553,8 +10668,9 @@ body.error404 .info__blockText.text-center {
     padding-left: 27px;
   }
 
-  .calculator__item iframe {
+  .calculator__item .calculator-form__wrap-map {
     height: 190px;
+    margin-bottom: 20px;
   }
 
   .calculator__item .notification-block {
@@ -10588,7 +10704,7 @@ body.error404 .info__blockText.text-center {
   }
 
   .calculator-form__stepBlockMiles {
-    margin: 18px 0 -11px;
+    margin: 0 0 10px;
   }
 
   .calculator-form__stepButton.submit {
