@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				updateSubmitButtonState(); // Your additional code
 
 				// Add the active class to the last step
-				const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]');
+				const stepNumbers = document.querySelectorAll('.js-calculator-form-step-numbers [data-step-number]');
 				if (stepNumbers.length > 0) {
 					const lastStep = stepNumbers[stepNumbers.length - 1]; // The last step
 					lastStep.classList.add('active'); // Add the active class
@@ -112,6 +112,82 @@ document.addEventListener('DOMContentLoaded', () => {
 							stepCalculatorActive.classList.remove('show');
 						} else {
 							stepCalculatorActive.classList.add('show');
+						}
+					});
+				}
+
+				// Показать уведомление и сбросить все на исходную
+				let firstScreenBlockWrapFormsSentSuccessfully = document.querySelectorAll('.first-screen__blockWrapForm-sent-successfully');
+
+				if (firstScreenBlockWrapFormsSentSuccessfully) {
+					firstScreenBlockWrapFormsSentSuccessfully.forEach((firstScreenBlockWrapFormSentSuccessfully) => {
+						if (!firstScreenBlockWrapFormSentSuccessfully.classList.contains('show')) {
+							// Add class 'show'
+							firstScreenBlockWrapFormSentSuccessfully.classList.add('show');
+
+							// Reset everything after 800 ms
+							setTimeout(() => {
+
+								// Reset all form fields
+								form.querySelectorAll('input, select, textarea, .js-block-date').forEach(field => {
+									// Remove the 'valid' class from the block with the js-block-date class
+									if (field.classList.contains('js-block-date')) {
+										field.classList.remove('valid');
+									} 
+									// Reset fields with class js-date (e.g. date fields)
+									if (field.classList.contains('js-date')) {
+										field.value = ''; // Reset the field value
+									} else if (field.type === 'text' || field.tagName === 'TEXTAREA') { // Reset regular text and textarea fields
+										field.value = '';
+									} else if (field.tagName === 'SELECT') { // For regular selects, reset the value
+										field.value = '';
+									} else if (field.type === 'hidden') { // For hidden fields, reset their value
+										field.value = '';
+									}
+								});
+
+								// Сброс Select2
+								// Iterate over each form with class form
+								document.querySelectorAll('.form').forEach((form) => {
+									// Reset Select2 inside each form
+									$(form).find('select').val(null).trigger('change').trigger('select2:unselect');
+								});
+
+								// Remove the 'valid' class from all blocks with the 'validation-field' class
+								form.querySelectorAll('.validation-field').forEach(validationBlock => {
+									validationBlock.classList.remove('valid');
+								});
+
+								// Remove the 'step-valid' class from all blocks with the 'js-step' class inside the form
+								form.querySelectorAll('.js-step').forEach(stepBlock => {
+									stepBlock.classList.remove('step-valid');
+								});
+			
+								// Move the 'step-active' class to the block with data-step-block="step-1"
+								const stepBlocks = document.querySelectorAll('[data-step-block]');
+								stepBlocks.forEach(stepBlock => {
+									if (stepBlock.getAttribute('data-step-block') === 'step-1') {
+										stepBlock.classList.add('step-active');
+									} else {
+										stepBlock.classList.remove('step-active');
+									}
+								});
+		
+								// Remove the 'active' class from all data-step-numbers except those with the value 'step-1'
+								const stepNumbers = document.querySelectorAll('[data-step-number]');
+								stepNumbers.forEach(stepNumber => {
+									if (stepNumber.getAttribute('data-step-number') === 'step-1') {
+										stepNumber.classList.add('active');
+									} else {
+										stepNumber.classList.remove('active');
+									}
+								});
+							}, 800);
+
+							// Remove class after 3 seconds
+							setTimeout(() => {
+								firstScreenBlockWrapFormSentSuccessfully.classList.remove('show');
+							}, 3000);
 						}
 					});
 				}
@@ -366,39 +442,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	/* Highlight step number .js-step-numbers */
+	let jsCalculatorFormStepNumbers = document.querySelectorAll('.js-calculator-form-step-numbers');
+	if (jsCalculatorFormStepNumbers) {
+		document.querySelectorAll('[data-step-button]').forEach(button => {
+			button.addEventListener('click', () => {
+				const stepBlock = button.closest('.step-valid'); // Find the closest parent block with the step-valid class
+				if (!stepBlock) return; // If the click is not inside a block with the step-valid class, do nothing
+			
+				const stepNumber = button.getAttribute('data-step-button'); // Get the current step from the data-step-button attribute
+				const stepNumbers = document.querySelectorAll('.js-calculator-form-step-numbers [data-step-number]'); // Find all elements with data-step-number
+			
+				// Remove the 'active' class from all steps before the current step
+				stepNumbers.forEach(step => {
+					const currentStepNumber = step.getAttribute('data-step-number');
+					
+					// If the step number is less than the current one, add the active class
+					if (parseInt(currentStepNumber.replace('step-', '')) < parseInt(stepNumber.replace('step-', ''))) {
+						step.classList.add('active');
+					} else {
+						step.classList.remove('active');
+					}
+				});
+			});
+		});
+		// Handling buttons for reverse transition
+		document.querySelectorAll('[data-step-back-button]').forEach(button => {
+			button.addEventListener('click', () => {
+				const stepNumber = button.getAttribute('data-step-back-button'); // Get the current step from the data-step-back-button attribute
+				const stepNumbers = document.querySelectorAll('.js-calculator-form-step-numbers [data-step-number]'); // Find all elements with data-step-number
+			
+				// Remove the 'active' class from all steps, starting with the current one
+				stepNumbers.forEach(step => {
+					const currentStepNumber = step.getAttribute('data-step-number');
+					
+					// If the step number is greater than or equal to the current one, remove the active class
+					if (parseInt(currentStepNumber.replace('step-', '')) >= parseInt(stepNumber.replace('step-', ''))) {
+						step.classList.remove('active');
+					}
+				});
+			});
+		});
+	}
 	document.querySelectorAll('[data-step-button]').forEach(button => {
 		button.addEventListener('click', () => {
-			const stepBlock = button.closest('.step-valid'); // Find the closest parent block with the step-valid class
-			if (!stepBlock) return; // If the click is not inside a block with the step-valid class, do nothing
-		
-			const stepNumber = button.getAttribute('data-step-button'); // Get the current step from the data-step-button attribute
-			const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]'); // Find all elements with data-step-number
-		
-			// Remove the 'active' class from all steps before the current step
+			const stepBlock = button.closest('.step-valid');// Find the closest parent with class step-valid
+			if (!stepBlock) return; // If the click is not inside a block with step-valid, do nothing
+
+			const stepNumber = button.getAttribute('data-step-button'); // Get the current step from the attribute
+			const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]'); // All elements with data-step-number
+
+			// Add or remove the 'active' class depending on the offset step
 			stepNumbers.forEach(step => {
 				const currentStepNumber = step.getAttribute('data-step-number');
 				
-				// If the step number is less than the current one, add the active class
-				if (parseInt(currentStepNumber.replace('step-', '')) < parseInt(stepNumber.replace('step-', ''))) {
+				// Shift forward by 1: if the step number is less than or equal to the current step +1, add the active class
+				if (parseInt(currentStepNumber.replace('step-', '')) <= parseInt(stepNumber.replace('step-', '')) + 0) {
 					step.classList.add('active');
 				} else {
 					step.classList.remove('active');
 				}
 			});
 		});
-	});
-	// Handling buttons for reverse transition
+   });
+  
+	// Handling buttons for going back
 	document.querySelectorAll('[data-step-back-button]').forEach(button => {
 		button.addEventListener('click', () => {
-			const stepNumber = button.getAttribute('data-step-back-button'); // Get the current step from the data-step-back-button attribute
-			const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]'); // Find all elements with data-step-number
-		
-			// Remove the 'active' class from all steps, starting with the current one
+			const stepNumber = button.getAttribute('data-step-back-button'); // Get the current step from the attribute
+			const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]'); // All elements with data-step-number
+
+			// Add or remove the 'active' class to navigate back
 			stepNumbers.forEach(step => {
 				const currentStepNumber = step.getAttribute('data-step-number');
 				
-				// If the step number is greater than or equal to the current one, remove the active class
-				if (parseInt(currentStepNumber.replace('step-', '')) >= parseInt(stepNumber.replace('step-', ''))) {
+				// Shift by 1: if the step number is less than the current one, add the active class
+				if (parseInt(currentStepNumber.replace('step-', '')) < parseInt(stepNumber.replace('step-', '')) + 1) {
+					step.classList.add('active');
+				} else {
 					step.classList.remove('active');
 				}
 			});
