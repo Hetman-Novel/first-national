@@ -4,13 +4,13 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/style.min.css?_v=20241206130015">
+   <link rel="stylesheet" href="css/style.min.css?_v=20241206182534">
    <!--<link rel="icon" type="image/svg+xml" href="favicon.svg">-->
-   <link rel="stylesheet" href="files/swiper/css/swiper-bundle.min.css?_v=20241206130015">
-   <link rel="stylesheet" href="files/calendar/main.min.css?_v=20241206130015">
-   <link rel="stylesheet" href="files/calendar/custom.css?_v=20241206130015">
-   <link rel="stylesheet" href="files/select2/css/select2.min.css?_v=20241206130015">
-   <link rel="stylesheet" href="files/select2/css/select2-custom.css?_v=20241206130015">
+   <link rel="stylesheet" href="files/swiper/css/swiper-bundle.min.css?_v=20241206182534">
+   <link rel="stylesheet" href="files/calendar/main.min.css?_v=20241206182534">
+   <link rel="stylesheet" href="files/calendar/custom.css?_v=20241206182534">
+   <link rel="stylesheet" href="files/select2/css/select2.min.css?_v=20241206182534">
+   <link rel="stylesheet" href="files/select2/css/select2-custom.css?_v=20241206182534">
    <title>Calculator - First National Van Lines</title>
 </head>
 
@@ -681,9 +681,9 @@
                                              </svg>
                                              <input type="text" name="calculator-date" id="calculator-move-date" class="js-date" placeholder="dd/mm/yyyy">
                                              <p class="text-no-valid">Please select or enter a date</p>
-                                             <div class="wrap-calendar">
-                                                <div class="calendar-container"></div>
-                                             </div>
+                                          </div>
+                                          <div class="wrap-calendar">
+                                             <div class="calendar-container"></div>
                                           </div>
                                        </div>
                                        <label>How much needs to be moved?</label>
@@ -747,7 +747,7 @@
                                           <div class="calculator-form__stepBlockHead">
                                              <p>Your move details<button type="button" data-step-back-button="step-1">Edit</button></p>
                                           </div>
-                                          <table>
+                                          <table class="calculator__table">
                                              <tbody>
                                                 <tr>
                                                    <td>Moving from:</td>
@@ -777,7 +777,7 @@
                                              <p>Your personal information <button type="button" data-step-back-button="step-2">Edit</button></p>
                                           </div>
                                        </div>
-                                       <table>
+                                       <table class="calculator__table">
                                           <tbody>
                                              <tr>
                                                 <td>Name:</td>
@@ -837,7 +837,7 @@
                               <div class="calculator-form__stepBlockHead">
                                  <p>Your move details<button type="button" data-step-back-button="step-1">Edit</button></p>
                               </div>
-                              <table>
+                              <table class="calculator__table">
                                  <tbody>
                                     <tr>
                                        <td>Moving from:</td>
@@ -869,105 +869,6 @@
                         </div>
                      </div>
                   </div>
-                  <div class="n_container-no-sidebar step-calculator-active show">
-                     <h2 class="section-title">MWhat moving services and features<br> are offered by International Van Lines?</h2>
-                     <section class="block-text two">
-								<div class="block-text__content">
-									<h3>Very Strongy Recomended to Read This Text Too</h3>
-									<p>Ned Stark screamed, clawing for his sword. Jaime was already cantering off down the street as he heard Wyl shout. Men closed from both sides. <strong><a href="#">Ned rode one down</a></strong>, cutting at phantoms in red cloaks who gave way before him. Jory Cassel put his heels into his mount and charged. A steel-shod hoof caught a Lannister guardsman in the face with a sickening crunch.</p>
-								</div>
-							</section>
-                     <div class="separator">separator</div>
-                     <section class="block-text two">
-								<div class="block-text__content">
-									<h2 class="block-text__contentTwoTitle">Very Strongy Recomended to Read This Text Too</h2>
-									<p>Ned Stark screamed, clawing for his sword. Jaime was already cantering off down the street as he heard Wyl shout. Men closed from both sides. <a href="#">Ned rode one down</a>, cutting at phantoms in red cloaks who gave way before him. Jory Cassel put his heels into his mount and charged. A steel-shod hoof caught a Lannister guardsman in the face with a sickening crunch.</p>
-									<blockquote>
-										<p>Bran had sort of liked the little man, yet the name Lannister sent cold fingers creeping up his spine. </p>
-									</blockquote>
-								</div>
-							</section>
-                     <section class="block-text br">
-								<h2 class="block-text__title">
-									<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M12.4527 26.0001H13.4948" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-										<path d="M26 12.4527V13.4948" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-										<path d="M16.4127 16.413L17.163 17.1634" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-										<path d="M29.489 32.0924H22.511" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M22.1817 31.7715C19.8234 30.1083 18.8138 27.1093 19.6862 24.3585C20.5586 21.6077 23.1121 19.7388 25.9979 19.7388C28.8837 19.7388 31.4372 21.6077 32.3096 24.3585C33.182 27.1093 32.1724 30.1083 29.8141 31.7715C29.5053 31.9775 29.3169 32.3216 29.3097 32.6927V35.7461C29.3097 36.4779 29.019 37.1798 28.5015 37.6973C27.984 38.2148 27.2821 38.5055 26.5502 38.5055H25.4456C24.7137 38.5055 24.0119 38.2148 23.4944 37.6973C22.9768 37.1798 22.6861 36.4779 22.6861 35.7461V32.699C22.681 32.3256 22.4923 31.9787 22.1817 31.7715V31.7715Z" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-										<circle cx="26" cy="26" r="18.7578" stroke="#0064D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></circle>
-										<path d="M38.5052 26.0001H39.5473" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-										<path d="M34.837 17.1634L35.5873 16.413" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-									</svg>
-									Very Stringy Recommended to Read This Text
-								</h2>
-								<div class="block-text__content">
-									<p>A second man reeled away and for an instant Jory was free. Wyl cursed as they pulled him off his dying horse, swords slashing in the rain:</p>
-									<ul class="list-with-links">
-										<li>Ned galloped to him</li>
-										<li>Bringing his longsword down</li>
-										<li>On Tregar’s helm</li>
-										<li>The jolt of impact made him grit his teeth</li>
-										<li>Tregar stumbled to his knees</li>
-										<li>His lion crest sheared in half</li>
-										<li>Blood running down</li>
-									</ul>
-								</div>
-							</section>
-                     <section class="faq">
-								<h2 class="faq__title">FAQ</h2>
-								<div data-spollers data-one-spoller class="best-transportation-companies__accordion block__faq block">
-									<div class="block__item">
-										<h4 data-spoller class="block__title">
-											Do I need to get a parking permit for movers in Philadelphia?
-											<span class="block__titleIcon">icon</span>
-										</h4>
-										<div class="block__text">
-											<div class="block__content">
-												<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias voluptas maxime, illum aliquam impedit est minus error distinctio ad dolorum ducimus vitae fugiat nulla laudantium officiis sed quam? Magnam placeat fugit voluptatibus rem neque dicta est illum deleniti architecto consectetur natus laudantium, nostrum maxime, cum amet voluptates possimus nisi nihil rerum. Ratione maiores vero tempora omnis, nostrum fugiat veniam aperiam nulla natus pariatur in.</p>
-											</div>
-										</div>
-									</div>
-									<div class="block__item _item-active">
-										<h4 data-spoller class="block__title _active">
-											How can I save money when hiring a Philadelphia moving company?
-											<span class="block__titleIcon">icon</span>
-										</h4>
-										<div class="block__text">
-											<div class="block__content">
-												<p>It’s almost always cheaper to hire a moving company in Philadelphia outside of their busy season. Moving during the week and between October and April allows for the greatest savings. Now that you know when moving companies in Philadelphia are less busy, you can use that to <a href="#">negotiate your moving costs.</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="block__item">
-										<h4 data-spoller class="block__title">
-											Do Philadelphia movers offer storage?
-											<span class="block__titleIcon">icon</span>
-										</h4>
-										<div class="block__text">
-											<div class="block__content">
-												<p>Inventore asperiores repellendus <a href="#">voluptatem minus sequi</a>, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
-												<ul>
-													<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam?</li>
-													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, architecto! Illum laboriosam fuga voluptas consequatur dolorum excepturi quam aliquid.</li>
-													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus mollitia dolore blanditiis dignissimos excepturi.</li>
-												</ul>
-												<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
-												<ol>
-													<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam?</li>
-													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, architecto! Illum laboriosam fuga voluptas consequatur dolorum excepturi quam aliquid.</li>
-													<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus mollitia dolore blanditiis dignissimos excepturi.</li>
-												</ol>
-												<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
-												<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
-												<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-												<p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</section>
-                  </div>
                </div>
 					<div class="n_container-no-sidebar">
                   <div class="calculator__sent-successfully step-calculator-active">
@@ -978,6 +879,103 @@
                      <img src="images/svg/calculator-image.svg" alt="" class="calculator-image">
                      <a href="/" class="go-back-to-homepage">Go back to homepage</a>
                   </div>
+                  <h2 class="section-title">MWhat moving services and features<br> are offered by International Van Lines?</h2>
+                  <section class="block-text two">
+                     <div class="block-text__content">
+                        <h3>Very Strongy Recomended to Read This Text Too</h3>
+                        <p>Ned Stark screamed, clawing for his sword. Jaime was already cantering off down the street as he heard Wyl shout. Men closed from both sides. <strong><a href="#">Ned rode one down</a></strong>, cutting at phantoms in red cloaks who gave way before him. Jory Cassel put his heels into his mount and charged. A steel-shod hoof caught a Lannister guardsman in the face with a sickening crunch.</p>
+                     </div>
+                  </section>
+                  <div class="separator">separator</div>
+                  <section class="block-text two">
+                     <div class="block-text__content">
+                        <h2 class="block-text__contentTwoTitle">Very Strongy Recomended to Read This Text Too</h2>
+                        <p>Ned Stark screamed, clawing for his sword. Jaime was already cantering off down the street as he heard Wyl shout. Men closed from both sides. <a href="#">Ned rode one down</a>, cutting at phantoms in red cloaks who gave way before him. Jory Cassel put his heels into his mount and charged. A steel-shod hoof caught a Lannister guardsman in the face with a sickening crunch.</p>
+                        <blockquote>
+                           <p>Bran had sort of liked the little man, yet the name Lannister sent cold fingers creeping up his spine. </p>
+                        </blockquote>
+                     </div>
+                  </section>
+                  <section class="block-text br">
+                     <h2 class="block-text__title">
+                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12.4527 26.0001H13.4948" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="M26 12.4527V13.4948" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="M16.4127 16.413L17.163 17.1634" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="M29.489 32.0924H22.511" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M22.1817 31.7715C19.8234 30.1083 18.8138 27.1093 19.6862 24.3585C20.5586 21.6077 23.1121 19.7388 25.9979 19.7388C28.8837 19.7388 31.4372 21.6077 32.3096 24.3585C33.182 27.1093 32.1724 30.1083 29.8141 31.7715C29.5053 31.9775 29.3169 32.3216 29.3097 32.6927V35.7461C29.3097 36.4779 29.019 37.1798 28.5015 37.6973C27.984 38.2148 27.2821 38.5055 26.5502 38.5055H25.4456C24.7137 38.5055 24.0119 38.2148 23.4944 37.6973C22.9768 37.1798 22.6861 36.4779 22.6861 35.7461V32.699C22.681 32.3256 22.4923 31.9787 22.1817 31.7715V31.7715Z" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <circle cx="26" cy="26" r="18.7578" stroke="#0064D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></circle>
+                           <path d="M38.5052 26.0001H39.5473" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="M34.837 17.1634L35.5873 16.413" stroke="#FFD93D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        Very Stringy Recommended to Read This Text
+                     </h2>
+                     <div class="block-text__content">
+                        <p>A second man reeled away and for an instant Jory was free. Wyl cursed as they pulled him off his dying horse, swords slashing in the rain:</p>
+                        <ul class="list-with-links">
+                           <li>Ned galloped to him</li>
+                           <li>Bringing his longsword down</li>
+                           <li>On Tregar’s helm</li>
+                           <li>The jolt of impact made him grit his teeth</li>
+                           <li>Tregar stumbled to his knees</li>
+                           <li>His lion crest sheared in half</li>
+                           <li>Blood running down</li>
+                        </ul>
+                     </div>
+                  </section>
+                  <section class="faq">
+                     <h2 class="faq__title">FAQ</h2>
+                     <div data-spollers data-one-spoller class="best-transportation-companies__accordion block__faq block">
+                        <div class="block__item">
+                           <h4 data-spoller class="block__title">
+                              Do I need to get a parking permit for movers in Philadelphia?
+                              <span class="block__titleIcon">icon</span>
+                           </h4>
+                           <div class="block__text">
+                              <div class="block__content">
+                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias voluptas maxime, illum aliquam impedit est minus error distinctio ad dolorum ducimus vitae fugiat nulla laudantium officiis sed quam? Magnam placeat fugit voluptatibus rem neque dicta est illum deleniti architecto consectetur natus laudantium, nostrum maxime, cum amet voluptates possimus nisi nihil rerum. Ratione maiores vero tempora omnis, nostrum fugiat veniam aperiam nulla natus pariatur in.</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="block__item _item-active">
+                           <h4 data-spoller class="block__title _active">
+                              How can I save money when hiring a Philadelphia moving company?
+                              <span class="block__titleIcon">icon</span>
+                           </h4>
+                           <div class="block__text">
+                              <div class="block__content">
+                                 <p>It’s almost always cheaper to hire a moving company in Philadelphia outside of their busy season. Moving during the week and between October and April allows for the greatest savings. Now that you know when moving companies in Philadelphia are less busy, you can use that to <a href="#">negotiate your moving costs.</a></p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="block__item">
+                           <h4 data-spoller class="block__title">
+                              Do Philadelphia movers offer storage?
+                              <span class="block__titleIcon">icon</span>
+                           </h4>
+                           <div class="block__text">
+                              <div class="block__content">
+                                 <p>Inventore asperiores repellendus <a href="#">voluptatem minus sequi</a>, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+                                 <ul>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam?</li>
+                                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, architecto! Illum laboriosam fuga voluptas consequatur dolorum excepturi quam aliquid.</li>
+                                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus mollitia dolore blanditiis dignissimos excepturi.</li>
+                                 </ul>
+                                 <p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+                                 <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam?</li>
+                                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, architecto! Illum laboriosam fuga voluptas consequatur dolorum excepturi quam aliquid.</li>
+                                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus mollitia dolore blanditiis dignissimos excepturi.</li>
+                                 </ol>
+                                 <p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+                                 <p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+                                 <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+                                 <p>Inventore asperiores <strong>repellendus</strong> voluptatem minus sequi, in pariatur omnis quis delectus culpa velit eum. Eos, voluptatum. Molestias itaque eveniet quas dicta non deserunt? Error accusantium optio amet dolore officia?</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
                </div>
             </div>
          </div>
@@ -1144,21 +1142,21 @@
     </svg>
 </button>
    </div>
-   <script src="js/script.min.js?_v=20241206130015"></script>
+   <script src="js/script.min.js?_v=20241206182534"></script>
 
-   <script src="files/js/jquery-3.6.1.min.js?_v=20241206130015"></script>
-	<script src="files/select2/js/select2.min.js?_v=20241206130015"></script>
-   <script src="files/select2/js/init.js?_v=20241206130015"></script>
+   <script src="files/js/jquery-3.6.1.min.js?_v=20241206182534"></script>
+	<script src="files/select2/js/select2.min.js?_v=20241206182534"></script>
+   <script src="files/select2/js/init.js?_v=20241206182534"></script>
 
-	<script src="files/js/masked-input.js?_v=20241206130015"></script>
+	<script src="files/js/masked-input.js?_v=20241206182534"></script>
 
-	<script src="files/js/validation-form.js?_v=20241206130015"></script>
+	<script src="files/js/validation-form.js?_v=20241206182534"></script>
 
-	<script src="files/calendar/main.min.js?_v=20241206130015"></script>
-	<script src="files/calendar/init.js?_v=20241206130015"></script>
+	<script src="files/calendar/main.min.js?_v=20241206182534"></script>
+	<script src="files/calendar/init.js?_v=20241206182534"></script>
 
-  <script src="files/js/calculate.js?_v=20241206130015"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkUntpxgYywg_nlhREijLYWEUOHYan4dk&language=en&_v=20241206130015"></script>
+  <script src="files/js/calculate.js?_v=20241206182534"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkUntpxgYywg_nlhREijLYWEUOHYan4dk&language=en&_v=20241206182534"></script>
 
 </body>
 </html>
