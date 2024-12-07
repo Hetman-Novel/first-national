@@ -13,13 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		/**
 		 * Update the state of the submit button.
 		 */
+		let isInteracted = false; // Flag for tracking interactions
+		
 		function updateSubmitButtonState() {
-		   const isFormValid = Array.from(form.querySelectorAll('.validation-field')).every((validationBlock) => {
+			if (!isInteracted) return; // Do not execute logic if there was no interaction
+			const isFormValid = Array.from(form.querySelectorAll('.validation-field')).every((validationBlock) => {
 				return Array.from(validationBlock.querySelectorAll('input, textarea')).every((field) => validateField(field, validationBlock));
 			});
-	 
-		  	const isCheckboxChecked = calculatorCheckbox ? calculatorCheckbox.checked : true;
-		  	submitButton.disabled = !(isFormValid && isCheckboxChecked);
+
+			const isCheckboxChecked = calculatorCheckbox ? calculatorCheckbox.checked : true;
+			submitButton.disabled = !(isFormValid && isCheckboxChecked);
 		}
 	 
 		// Validation of fields in validation-field blocks
@@ -89,11 +92,87 @@ document.addEventListener('DOMContentLoaded', () => {
 		// Handle form submission
 		form.addEventListener('submit', (event) => {
 			event.preventDefault();
+
+			// Final validation check before sending
+			const isFormValid = Array.from(form.querySelectorAll('.validation-field')).every((validationBlock) => {
+				return Array.from(validationBlock.querySelectorAll('input, textarea')).every((field) => {
+					const isValid = validateField(field, validationBlock); // Check the field
+
+					// Add class no-valid or valid
+					if (isValid) {
+						validationBlock.classList.add('valid');
+						validationBlock.classList.remove('no-valid');
+					} else {
+						validationBlock.classList.add('no-valid');
+						validationBlock.classList.remove('valid');
+					}
+
+					return isValid;
+				});
+			});
+
+			// Example function for phone number validation
+			function validatePhone(phoneField) {
+				const phoneValue = phoneField.value.trim();
+
+				// Example: Check that a phone number has at least 10 digits
+				const phoneRegex = /^[0-9]{10,15}$/; // Regular expression for phone (can be adapted to the required format)
+				
+				return phoneRegex.test(phoneValue);
+			}
+
+			// Additional check for the field with class js-phone
+			const phoneField = form.querySelector('.js-phone');
+			if (phoneField && !validatePhone(phoneField)) {
+				phoneField.classList.add('no-valid');
+				phoneField.classList.remove('valid');
+			} else {
+				phoneField.classList.add('valid');
+				phoneField.classList.remove('no-valid');
+			}
+
+			// Get the checkbox with id calculator-checkbox
+			const calculatorCheckbox = form.querySelector('#calculator-checkbox');
+
+			// Function to update the state of the parent element with class js-step
+			function updateStepValidationState() {
+				// We are looking for a parent block with the js-step class, closest to the checkbox
+				const stepBlock = calculatorCheckbox.closest('.js-step'); 
+
+				// If the element is found, update the classes
+				if (stepBlock) {
+					// If the checkbox is not active (not checked), add the step-no-valid class
+					if (!calculatorCheckbox.checked) {
+						stepBlock.classList.add('step-no-valid');
+						stepBlock.classList.remove('step-valid');
+					} else {
+						// If the checkbox is active (checked), add the step-valid class
+						stepBlock.classList.add('step-valid');
+						stepBlock.classList.remove('step-no-valid');
+					}
+				}
+			}
+
+			// Checking the state of the checkbox at the time of page loading
+			if (calculatorCheckbox) {
+				updateStepValidationState(); // Check when loading the page
+
+				// Add a change event handler to update the class when the checkbox state changes
+				calculatorCheckbox.addEventListener('change', updateStepValidationState);
+			}
+
+			const isCheckboxChecked = calculatorCheckbox ? calculatorCheckbox.checked : true;
+
+			if (!isFormValid || !isCheckboxChecked) {
+				console.warn('The form did not pass validation.');
+				return; // Abort submission if form is not valid
+			}
 		
 			if (!submitButton.disabled) {
 				const form = event.target;
 		
 				console.log('Sent successfully');
+
 				form.reset();
 				updateSubmitButtonState(); // Your additional code
 
@@ -116,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					});
 				}
 
-				// Показать уведомление и сбросить все на исходную
+				// Show notification and reset everything to default
 				let firstScreenBlockWrapFormsSentSuccessfully = document.querySelectorAll('.first-screen__blockWrapForm-sent-successfully');
 
 				if (firstScreenBlockWrapFormsSentSuccessfully) {
@@ -125,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 							// Add class 'show'
 							firstScreenBlockWrapFormSentSuccessfully.classList.add('show');
 
-							// Reset everything after 800 ms
+							// Reset everything after 2000 ms
 							setTimeout(() => {
 
 								// Reset all form fields
@@ -146,11 +225,13 @@ document.addEventListener('DOMContentLoaded', () => {
 									}
 								});
 
-								// Сброс Select2
-								// Iterate over each form with class form
+								// Reset Select2 for each form
 								document.querySelectorAll('.form').forEach((form) => {
-									// Reset Select2 inside each form
-									$(form).find('select').val(null).trigger('change').trigger('select2:unselect');
+									// Find all selects inside the form initialized with Select2
+									$(form).find('select').each(function () {
+										// Reset the value and call events to update the UI correctly
+										$(this).val(null).trigger('change').trigger('select2:unselect');
+									});
 								});
 
 								// Remove the 'valid' class from all blocks with the 'validation-field' class
@@ -181,8 +262,9 @@ document.addEventListener('DOMContentLoaded', () => {
 									} else {
 										stepNumber.classList.remove('active');
 									}
-								});
-							}, 800);
+								});		
+
+							}, 2000);
 
 							// Remove class after 3 seconds
 							setTimeout(() => {
@@ -434,14 +516,58 @@ document.addEventListener('DOMContentLoaded', () => {
 		step.querySelectorAll('.validation-field, .js-block-date').forEach((block) => {
 			observeChanges(block);
 		});
-		
-		// Initially update the current step state on load
-		updateStepState();
-	});	 
+		updateStepState(); // Initially update the current step state on load
+
+		// Logic for js-validity-check button
+		document.querySelectorAll('.js-validity-check').forEach((button) => {
+			button.addEventListener('click', () => {
+				const step = button.closest('.js-step'); // Get the current step block
+				if (!step) return; // If the button is not inside a step block, do nothing
+
+				const validationBlocks = step.querySelectorAll('.validation-field');
+				const dateBlocks = step.querySelectorAll('.js-block-date');
+
+				// Add 'no-valid' or 'valid' class to each field
+				validationBlocks.forEach((block) => {
+					if (block.classList.contains('valid')) {
+						block.classList.remove('no-valid');
+						block.classList.add('valid');
+					} else {
+						block.classList.remove('valid');
+						block.classList.add('no-valid');
+					}
+				});
+
+				dateBlocks.forEach((block) => {
+					if (block.classList.contains('valid')) {
+						block.classList.remove('no-valid');
+						block.classList.add('valid');
+					} else {
+						block.classList.remove('valid');
+						block.classList.add('no-valid');
+					}
+				});
+
+				// Determine the overall state of the step
+				const allValidationValid = Array.from(validationBlocks).every(block => block.classList.contains('valid'));
+				const allDateValid = Array.from(dateBlocks).every(block => block.classList.contains('valid'));
+
+				if (!allValidationValid || !allDateValid) {
+					step.classList.add('step-no-valid');
+					step.classList.remove('step-valid');
+				} else {
+					step.classList.add('step-valid');
+					step.classList.remove('step-no-valid');
+				}
+			});
+		});
+
+	});
 	/* <- Validating the .js-step block */
 
 
-	/* Highlight step number .js-step-numbers */
+
+	/* Highlight step number .js-step-numbers -> */
 	let jsCalculatorFormStepNumbers = document.querySelectorAll('.js-calculator-form-step-numbers');
 	if (jsCalculatorFormStepNumbers) {
 		document.querySelectorAll('[data-step-button]').forEach(button => {
@@ -483,46 +609,58 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	}
-	document.querySelectorAll('[data-step-button]').forEach(button => {
-		button.addEventListener('click', () => {
-			const stepBlock = button.closest('.step-valid');// Find the closest parent with class step-valid
-			if (!stepBlock) return; // If the click is not inside a block with step-valid, do nothing
+	// Process each form with class js-block-form separately
+	document.querySelectorAll('.js-block-form').forEach(formBlock => {
+		const stepNumbers = formBlock.querySelectorAll('.js-step-numbers [data-step-number]'); // Numbering elements inside the form
 
-			const stepNumber = button.getAttribute('data-step-button'); // Get the current step from the attribute
-			const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]'); // All elements with data-step-number
+		// Handling forward buttons
+		formBlock.querySelectorAll('[data-step-button]').forEach(button => {
+			button.addEventListener('click', () => {
+				const stepBlock = button.closest('.step-valid'); // Check the step-valid class
+				if (!stepBlock) return; // If there is no step-valid class, do nothing
 
-			// Add or remove the 'active' class depending on the offset step
-			stepNumbers.forEach(step => {
-				const currentStepNumber = step.getAttribute('data-step-number');
-				
-				// Shift forward by 1: if the step number is less than or equal to the current step +1, add the active class
-				if (parseInt(currentStepNumber.replace('step-', '')) <= parseInt(stepNumber.replace('step-', '')) + 0) {
-					step.classList.add('active');
-				} else {
-					step.classList.remove('active');
+				const stepNumber = button.getAttribute('data-step-button');
+
+				// Check if the stepNumber value starts with "step-"
+				if (!stepNumber.startsWith('step-')) {
+					return; // If not, do nothing
 				}
+
+				// Add or remove the active class only for elements inside the current form
+				stepNumbers.forEach(step => {
+					const currentStepNumber = step.getAttribute('data-step-number');
+
+					if (
+						parseInt(currentStepNumber.replace('step-', '')) <= parseInt(stepNumber.replace('step-', ''))
+					) {
+						step.classList.add('active');
+					} else {
+						step.classList.remove('active');
+					}
+				});
 			});
 		});
-   });
-  
-	// Handling buttons for going back
-	document.querySelectorAll('[data-step-back-button]').forEach(button => {
-		button.addEventListener('click', () => {
-			const stepNumber = button.getAttribute('data-step-back-button'); // Get the current step from the attribute
-			const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]'); // All elements with data-step-number
 
-			// Add or remove the 'active' class to navigate back
-			stepNumbers.forEach(step => {
-				const currentStepNumber = step.getAttribute('data-step-number');
-				
-				// Shift by 1: if the step number is less than the current one, add the active class
-				if (parseInt(currentStepNumber.replace('step-', '')) < parseInt(stepNumber.replace('step-', '')) + 1) {
-					step.classList.add('active');
-				} else {
-					step.classList.remove('active');
-				}
+		// Handling buttons for going back
+		document.querySelectorAll('[data-step-back-button]').forEach(button => {
+			button.addEventListener('click', () => {
+				const stepNumber = button.getAttribute('data-step-back-button'); // Get the current step from the attribute
+				const stepNumbers = document.querySelectorAll('.js-step-numbers [data-step-number]'); // All elements with data-step-number
+
+				// Add or remove the 'active' class to navigate back
+				stepNumbers.forEach(step => {
+					const currentStepNumber = step.getAttribute('data-step-number');
+					
+					// Shift by 1: if the step number is less than the current one, add the active class
+					if (parseInt(currentStepNumber.replace('step-', '')) < parseInt(stepNumber.replace('step-', '')) + 1) {
+						step.classList.add('active');
+					} else {
+						step.classList.remove('active');
+					}
+				});
 			});
 		});
+
 	});
 	/* <- Highlight step number .js-step-numbers */
 
