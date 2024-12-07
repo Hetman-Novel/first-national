@@ -4,13 +4,13 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/style.min.css?_v=20241207002904">
+   <link rel="stylesheet" href="css/style.min.css?_v=20241207214424">
    <!--<link rel="icon" type="image/svg+xml" href="favicon.svg">-->
-   <link rel="stylesheet" href="files/swiper/css/swiper-bundle.min.css?_v=20241207002904">
-   <link rel="stylesheet" href="files/calendar/main.min.css?_v=20241207002904">
-   <link rel="stylesheet" href="files/calendar/custom.css?_v=20241207002904">
-   <link rel="stylesheet" href="files/select2/css/select2.min.css?_v=20241207002904">
-   <link rel="stylesheet" href="files/select2/css/select2-custom.css?_v=20241207002904">
+   <link rel="stylesheet" href="files/swiper/css/swiper-bundle.min.css?_v=20241207214424">
+   <link rel="stylesheet" href="files/calendar/main.min.css?_v=20241207214424">
+   <link rel="stylesheet" href="files/calendar/custom.css?_v=20241207214424">
+   <link rel="stylesheet" href="files/select2/css/select2.min.css?_v=20241207214424">
+   <link rel="stylesheet" href="files/select2/css/select2-custom.css?_v=20241207214424">
    <title>Movers from City to City - First National Van Lines</title>
 </head>
 
@@ -426,7 +426,7 @@
 								</div>
 							</li>
 							<li class="menu-item menu-item-has-children big-submenu six-columns">
-								<a href="#">About Us</a>
+								<a href="about-us.html">About Us</a>
 								<span class="menu__arrow">
 									<svg width="10" height="10" viewBox="0 0 24 24">
 										<path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" fill="currentColor" />
@@ -440,13 +440,13 @@
 													<a href="#">Our Team</a>
 												</li>
 												<li class="menu-item">
-													<a href="#">About Us</a>
+													<a href="about-us.html">About Us</a>
 												</li>
 												<li class="menu-item">
 													<a href="#">Partnership</a>
 												</li>
 												<li class="menu-item">
-													<a href="#">Contact</a>
+													<a href="contact-us.html">Contact</a>
 												</li>
 											</ul>
 										</div>
@@ -514,27 +514,27 @@
 								</div>
 							</div>
 							<div class="first-screen__item">
-								<div class="first-screen__blockWrapForm hidden"> <!-- sent-successfully -->
+								<div class="first-screen__blockWrapForm hidden">
    <p class="first-screen__blockWrapFormTitle">How much will my move cost?</p>
    <p class="first-screen__blockWrapFormText">Let us help match you</p>
-   <div id="fs-wrapper-steps" class="first-screen__blockWrapFormWrapper step-1"><!-- step-1 step-2 step-3 step-4 step-5 step-6 step-7 -->
-      <div class="first-screen__blockWrapFormWrapRadioButtons">
-         <div class="fs-form__btn-step">step 1</div>
-         <div class="fs-form__btn-step">step 2</div>
-         <div class="fs-form__btn-step">step 3</div>
-         <div class="fs-form__btn-step">step 4</div>
-         <div class="fs-form__btn-step">step 5</div>
-         <div class="fs-form__btn-step">step 6</div>
-         <div class="fs-form__btn-step">step 7</div>
+   <div class="first-screen__blockWrapFormWrapper js-block-form">
+      <div class="first-screen__blockWrapFormWrapRadioButtons js-step-numbers">
+         <div class="fs-form__btn-step active" data-step-number="step-1">step 1</div>
+         <div class="fs-form__btn-step" data-step-number="step-2">step 2</div>
+         <div class="fs-form__btn-step" data-step-number="step-3">step 3</div>
+         <div class="fs-form__btn-step" data-step-number="step-4">step 4</div>
+         <div class="fs-form__btn-step" data-step-number="step-5">step 5</div>
+         <div class="fs-form__btn-step" data-step-number="step-6">step 6</div>
+         <div class="fs-form__btn-step" data-step-number="step-7">step 7</div>
       </div>
-      <form action="" class="first-screen__form" id="fs-form" method="POST">
-         <div class="step">
+      <form action="#" class="first-screen__form form">
+         <div class="first-screen__step js-step step-active" data-step-block="step-1">
             <label>Where are you moving from?</label>
-            <div class="first-screen__formWrapSelect">
+            <div class="first-screen__formWrapSelect wrap-select-form validation-field">
+               <input type="hidden">
                <!-- select2 applied file location in file/select2 -->
-               <select id="where-are-you-moving-from" name="f-where-are-you-moving-from" required>
+               <select id="where-are-you-moving-from">
                   <option selected disabled></option>
-                  <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
                   <option value="85001">85001, Phoenix, AZ</option>
                   <option value="99501">99501, Anchorage, AK</option>
                   <option value="72201">72201, Little Rock, AR</option>
@@ -588,15 +588,15 @@
                </select>
                <p class="text-no-valid">Please tell us where you're moving from</p>
             </div>
-            <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-2">Next Step</button>
+            <button type="button" class="first-screen__formButton js-validity-check" data-step-button="step-2">Next Step</button>
          </div>
-         <div class="step">
+         <div class="first-screen__step js-step" data-step-block="step-2">
             <label>Where are you moving to?</label>
-            <div class="first-screen__formWrapSelect">
+            <div class="first-screen__formWrapSelect wrap-select-form validation-field">
+               <input type="hidden">
                <!-- select2 applied file location in file/select2 -->
-               <select id="where-are-you-moving-to" name="f-where-are-you-moving-to" required>
+               <select id="where-are-you-moving-to">
                   <option selected disabled></option>
-                  <option value="85001">demo - Lorem ipsum dolor, sit amet consectetur adipisicing elit.</option>
                   <option value="85001">85001, Phoenix, AZ</option>
                   <option value="99501">99501, Anchorage, AK</option>
                   <option value="72201">72201, Little Rock, AR</option>
@@ -651,99 +651,105 @@
                <p class="text-no-valid">Please tell us where you're moving to</p>
             </div>
             <div class="first-screen__formButtons">
-               <button type="button" class="first-screen__formButton back" id="fs-btn-back-1">Back</button>
-               <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-3">Next Step</button>
+               <button type="button" class="first-screen__formButton back" data-step-back-button="step-1">Back</button>
+               <button type="button" class="first-screen__formButton js-validity-check" data-step-button="step-3">Next Step</button>
             </div>
          </div>
-         <div class="step step-date"> <!-- date-field-in-focus -->
-            <label>When do you want to move?</label>
-            <div class="first-screen__formWrapField date">
-               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 2V6" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M8 2V6" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M3 9H21" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M19 4H5C3.895 4 3 4.895 3 6V19C3 20.105 3.895 21 5 21H19C20.105 21 21 20.105 21 19V6C21 4.895 20.105 4 19 4Z" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.01316 12.729C6.87516 12.729 6.76316 12.841 6.76416 12.979C6.76416 13.117 6.87616 13.229 7.01416 13.229C7.15216 13.229 7.26416 13.117 7.26416 12.979C7.26416 12.841 7.15216 12.729 7.01316 12.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12.0132 12.729C11.8752 12.729 11.7632 12.841 11.7642 12.979C11.7642 13.117 11.8762 13.229 12.0142 13.229C12.1522 13.229 12.2642 13.117 12.2642 12.979C12.2642 12.841 12.1522 12.729 12.0132 12.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M17.0132 12.729C16.8752 12.729 16.7632 12.841 16.7642 12.979C16.7642 13.117 16.8762 13.229 17.0142 13.229C17.1522 13.229 17.2642 13.117 17.2642 12.979C17.2642 12.841 17.1522 12.729 17.0132 12.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.01316 16.729C6.87516 16.729 6.76316 16.841 6.76416 16.979C6.76416 17.117 6.87616 17.229 7.01416 17.229C7.15216 17.229 7.26416 17.117 7.26416 16.979C7.26416 16.841 7.15216 16.729 7.01316 16.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12.0132 16.729C11.8752 16.729 11.7632 16.841 11.7642 16.979C11.7642 17.117 11.8762 17.229 12.0142 17.229C12.1522 17.229 12.2642 17.117 12.2642 16.979C12.2642 16.841 12.1522 16.729 12.0132 16.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-               </svg>
-               <input type="text" name="f-date" class="input-date" id="f-date" placeholder="mm/dd/yyyy">
-            </div>
-            <div class="wrap-calendar">
-               <div id="calendar"></div>
-            </div>
-            <div class="first-screen__formButtons">
-               <button type="button" class="first-screen__formButton back" id="fs-btn-back-2">Back</button>
-               <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-4">Next Step</button>
+         <div class="first-screen__step js-step" data-step-block="step-3">
+            <div class="js-block-date">
+               <label>When do you want to move?</label>
+               <div class="first-screen__formWrapField date">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M16 2V6" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                     <path d="M8 2V6" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                     <path d="M3 9H21" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M19 4H5C3.895 4 3 4.895 3 6V19C3 20.105 3.895 21 5 21H19C20.105 21 21 20.105 21 19V6C21 4.895 20.105 4 19 4Z" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                     <path d="M7.01316 12.729C6.87516 12.729 6.76316 12.841 6.76416 12.979C6.76416 13.117 6.87616 13.229 7.01416 13.229C7.15216 13.229 7.26416 13.117 7.26416 12.979C7.26416 12.841 7.15216 12.729 7.01316 12.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                     <path d="M12.0132 12.729C11.8752 12.729 11.7632 12.841 11.7642 12.979C11.7642 13.117 11.8762 13.229 12.0142 13.229C12.1522 13.229 12.2642 13.117 12.2642 12.979C12.2642 12.841 12.1522 12.729 12.0132 12.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                     <path d="M17.0132 12.729C16.8752 12.729 16.7632 12.841 16.7642 12.979C16.7642 13.117 16.8762 13.229 17.0142 13.229C17.1522 13.229 17.2642 13.117 17.2642 12.979C17.2642 12.841 17.1522 12.729 17.0132 12.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                     <path d="M7.01316 16.729C6.87516 16.729 6.76316 16.841 6.76416 16.979C6.76416 17.117 6.87616 17.229 7.01416 17.229C7.15216 17.229 7.26416 17.117 7.26416 16.979C7.26416 16.841 7.15216 16.729 7.01316 16.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                     <path d="M12.0132 16.729C11.8752 16.729 11.7632 16.841 11.7642 16.979C11.7642 17.117 11.8762 17.229 12.0142 17.229C12.1522 17.229 12.2642 17.117 12.2642 16.979C12.2642 16.841 12.1522 16.729 12.0132 16.729" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <input type="text" class="js-date" placeholder="mm/dd/yyyy">
+                  <p class="text-no-valid">Please select or enter a date</p>
+               </div>
+               <div class="wrap-calendar">
+                  <div class="calendar-container"></div>
+               </div>
+               <div class="first-screen__formButtons">
+                  <button type="button" class="first-screen__formButton back" data-step-back-button="step-2">Back</button>
+                  <button type="button" class="first-screen__formButton js-validity-check" data-step-button="step-4">Next Step</button>
+               </div>
             </div>
          </div>
-         <div class="step step-four">
+         <div class="first-screen__step js-step" data-step-block="step-4">
             <label>How much needs to be moved?</label>
-            <!-- select2 applied file location in file/select2 -->
-            <select id="how-much-needs-to-be-moved" name="f-how-much-needs-to-be-moved" required>
-               <option selected disabled></option>
-               <option value="Studio apartment">Studio apartment</option>
-               <option value="1 bedroom residence">1 bedroom residence</option>
-               <option value="2 bedroom residence">2 bedroom residence</option>
-               <option value="3 bedroom residence">3 bedroom residence</option>
-               <option value="4 bedroom residence">4 bedroom residence</option>
-               <option value="5+ bedroom residence">5+ bedroom residence</option>
-            </select>
-            <p class="text-no-valid">Please tell us how much stuff you have</p>
+            <div class="first-screen__formWrapSelect wrap-select-form validation-field">
+               <input type="hidden">
+               <!-- select2 applied file location in file/select2 -->
+               <select id="how-much-needs-to-be-moved">
+                  <option selected disabled></option>
+                  <option value="Studio apartment">Studio apartment</option>
+                  <option value="1 bedroom residence">1 bedroom residence</option>
+                  <option value="2 bedroom residence">2 bedroom residence</option>
+                  <option value="3 bedroom residence">3 bedroom residence</option>
+                  <option value="4 bedroom residence">4 bedroom residence</option>
+                  <option value="5+ bedroom residence">5+ bedroom residence</option>
+               </select>
+               <p class="text-no-valid">Please tell us how much stuff you have</p>
+            </div>
             <div class="first-screen__formButtons">
-               <button type="button" class="first-screen__formButton back" id="fs-btn-back-3">Back</button>
-               <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-5">Next Step</button>
+               <button type="button" class="first-screen__formButton back" data-step-back-button="step-3">Back</button>
+               <button type="button" class="first-screen__formButton js-validity-check" data-step-button="step-5">Next Step</button>
             </div>
          </div>
-         <div class="step">
+         <div class="first-screen__step js-step" data-step-block="step-5">
             <label>What's Your Name?</label>
-            <div class="first-screen__formWrapField name">
+            <div class="first-screen__formWrapField name validation-field">
                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15.7633 16.91L15.4133 16.031C15.2363 15.585 14.9613 15.185 14.6093 14.859L14.5453 14.8C13.9913 14.286 13.2633 14 12.5073 14H7.49333C6.73733 14 6.00933 14.286 5.45433 14.799L5.39033 14.859C5.03833 15.185 4.76433 15.585 4.58633 16.031L4.23633 16.91" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M12.4749 5.44713C13.8417 6.81397 13.8417 9.03004 12.4749 10.3969C11.108 11.7637 8.89197 11.7637 7.52513 10.3969C6.15829 9.03004 6.15829 6.81397 7.52513 5.44713C8.89197 4.08029 11.108 4.08029 12.4749 5.44713" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M16.3639 3.63604C19.8787 7.15076 19.8787 12.8492 16.3639 16.3639C12.8492 19.8787 7.15074 19.8787 3.63604 16.3639C0.12132 12.8492 0.12132 7.15074 3.63604 3.63604C7.15076 0.12132 12.8492 0.12132 16.3639 3.63604" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                </svg>
-               <input type="text" name="f-name" class="input-name" id="f-name" placeholder="Your Name">
+               <input type="text" placeholder="Your Name">
+               <p class="text-no-valid">Please tell us your name</p>
             </div>
-            <p class="text-no-valid">Please tell us your name</p>
             <div class="first-screen__formButtons">
-               <button type="button" class="first-screen__formButton back" id="fs-btn-back-4">Back</button>
-               <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-6">Next Step</button>
+               <button type="button" class="first-screen__formButton back" data-step-back-button="step-4">Back</button>
+               <button type="button" class="first-screen__formButton js-validity-check" data-step-button="step-6">Next Step</button>
             </div>
          </div>
-         <div class="step">
+         <div class="first-screen__step js-step" data-step-block="step-6">
             <label>What's Your Email Address?</label>
-            <div class="first-screen__formWrapField email">
+            <div class="first-screen__formWrapField email validation-field">
                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M1 2.8V2.8C1 3.4 1.3 3.9 1.8 4.3L7.8 8.4C9.2 9.3 10.9 9.3 12.3 8.4L18.3 4.4C18.7 3.9 19 3.4 19 2.8V2.8C19 1.8 18.2 1 17.2 1H2.8C1.8 1 1 1.8 1 2.8Z" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M1 3V13C1 14.1 1.9 15 3 15H17C18.1 15 19 14.1 19 13V3" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M1.58801 14.412L7.68201 8.31799" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M12.3604 8.35999L18.4124 14.412" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                </svg>
-               <input type="text" name="f-email" class="input-email" id="f-email" placeholder="Email">
+               <input type="text" class="js-email" placeholder="Email">
+               <p class="text-no-valid">Please tell us your email</p>
             </div>
-            <p class="text-no-valid">Please tell us your email</p>
             <div class="first-screen__formButtons">
-               <button type="button" class="first-screen__formButton back" id="fs-btn-back-5">Back</button>
-               <button type="button" class="first-screen__formButton used-for-validation" id="fs-btn-next-7">Next Step</button>
+               <button type="button" class="first-screen__formButton back" data-step-back-button="step-5">Back</button>
+               <button type="button" class="first-screen__formButton js-validity-check" data-step-button="step-7">Next Step</button>
             </div>
          </div>
-         <div class="step">
+         <div class="first-screen__step js-step" data-step-block="step-7">
             <label>What's Your Phone Number ?</label>
-            <div class="first-screen__formWrapField phone">
+            <div class="first-screen__formWrapField phone validation-field">
                <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 1V2.8C4 3.131 4.224 3.4 4.5 3.4H7.5C7.776 3.4 8 3.131 8 2.8V1" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M4.88 14.5H7.12" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M3 1H9C10.105 1 11 1.895 11 3V15C11 16.105 10.105 17 9 17H3C1.895 17 1 16.105 1 15V3C1 1.895 1.895 1 3 1Z" stroke="#0064D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                </svg>
-               <input type="text" name="f-phone" class="input-phone" id="f-phone" placeholder="Phone Number">
+               <input type="text" class="js-phone" placeholder="Phone Number">
+               <p class="text-no-valid">Please tell us your phone number</p>
             </div>
-            <p class="text-no-valid">Please tell us your phone number</p>
             <div class="first-screen__formButtons">
-               <button type="button" class="first-screen__formButton back" id="fs-btn-back-6">Back</button>
-               <button type="submit" class="first-screen__formButton form-submit used-for-validation" id="fs-btn-submit">Get My Quote</button>
+               <button type="button" class="first-screen__formButton back" data-step-back-button="step-6">Back</button>
+               <button type="submit" class="first-screen__formButton form-submit js-validity-check">Get My Quote</button>
             </div>
          </div>
       </form>
@@ -1996,22 +2002,22 @@
     </svg>
 </button>
 	</div>
-   <script src="js/script.min.js?_v=20241207002904"></script>
+   <script src="js/script.min.js?_v=20241207214424"></script>
 
-   <script src="files/js/jquery-3.6.1.min.js?_v=20241207002904"></script>
-	<script src="files/select2/js/select2.min.js?_v=20241207002904"></script>
-   <script src="files/select2/js/init.js?_v=20241207002904"></script>
+   <script src="files/js/jquery-3.6.1.min.js?_v=20241207214424"></script>
+	<script src="files/select2/js/select2.min.js?_v=20241207214424"></script>
+   <script src="files/select2/js/init.js?_v=20241207214424"></script>
 
-	<script src="files/js/masked-input.js?_v=20241207002904"></script>
+	<script src="files/js/masked-input.js?_v=20241207214424"></script>
 
-	<script src="files/js/validation-form.js?_v=20241207002904"></script>
+	<script src="files/js/validation-form.js?_v=20241207214424"></script>
 
-	<script src="files/calendar/main.min.js?_v=20241207002904"></script>
-	<script src="files/calendar/init.js?_v=20241207002904"></script>
+	<script src="files/calendar/main.min.js?_v=20241207214424"></script>
+	<script src="files/calendar/init.js?_v=20241207214424"></script>
 
-	<script src="files/js/rating.js?_v=20241207002904"></script>
+	<script src="files/js/rating.js?_v=20241207214424"></script>
 
-	<script src="files/js/interlinking-blocks-with-nested-links.js?_v=20241207002904"></script>
+	<script src="files/js/interlinking-blocks-with-nested-links.js?_v=20241207214424"></script>
 	
 </body>
 </html>

@@ -556,6 +556,7 @@ body strong {
   font-weight: 700;
 }
 
+.fs-form__btn-step.active,
 .get-matched-form__btn-step.active {
   background-color: #FFD93D !important;
   color: #fff !important;
@@ -621,11 +622,11 @@ body strong {
   background-color: #fff;
   color: #F43048;
   display: none;
-  left: 31px;
+  left: 5px;
   font-size: 12px;
   line-height: 20px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 3px;
+  padding-right: 3px;
   position: absolute;
   transform: translateY(-50%);
   top: -1px;
@@ -981,6 +982,7 @@ body strong {
   z-index: 5;
 }
 
+.first-screen__formWrapSelect,
 .js-block-date {
   position: relative;
 }
@@ -1011,10 +1013,12 @@ body strong {
   top: 12px;
 }
 
+.first-screen__step,
 .get-matched-step {
   display: none;
 }
 
+.first-screen__step.step-active,
 .get-matched-step.step-active {
   display: block;
 }
@@ -5804,12 +5808,13 @@ body {
   max-width: 92%;
 }
 
-.step {
-  display: none;
+.start-your-quote-online__items .js-block-date .wrap-calendar {
+  top: 54px;
 }
 
-.step.step-active {
-  display: block;
+.start-your-quote-online__items .js-block-date .wrap-calendar,
+.start-your-quote-online .select2-dropdown {
+  width: 324px !important;
 }
 
 /* Page - About Us */
@@ -5930,49 +5935,6 @@ body {
   position: relative;
 }
 
-.wrap-contact-form.sent-successfully .wrap-contact-form__sent-successfully {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.wrap-contact-form__sent-successfully {
-  align-items: center;
-  background-color: #F9FAFF;
-  border-radius: inherit;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  padding: 25px;
-  right: 0;
-  transition: opacity 0.3s ease 0s;
-  top: 0;
-  width: 100%;
-}
-
-.wrap-contact-form__sent-successfully p {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 26px;
-  margin: 0 !important;
-  text-align: center;
-}
-
-.wrap-contact-form__sent-successfully p.title {
-  color: #0064D9;
-}
-
-.wrap-contact-form__sent-successfully img,
-.wrap-contact-form__sent-successfully svg {
-  display: table;
-  margin: 20px auto 0;
-}
-
 .wrap-contact-form.contact-form-in-column {
   background-color: #F9FAFF;
   padding: 10px 25px 38px;
@@ -6091,24 +6053,18 @@ body {
   color: #696969;
 }
 
-.contact-form textarea {
+.contact-form .wrap-textarea {
   height: 120px;
-  resize: none;
-  outline: none;
-  padding: 11px 20px;
   width: 100%;
 }
 
-.contact-form .text-no-valid {
-  bottom: 5px;
-  right: 0;
-  position: absolute;
-  text-align: right;
-  transform: translateY(100%);
-}
-
-.contact-form .text-no-valid.under-textarea {
-  bottom: 14px;
+.contact-form .wrap-textarea textarea {
+  border: none;
+  height: calc(100% - 1px);
+  resize: none;
+  outline: none;
+  padding: 11px 20px;
+  width: inherit;
 }
 
 .contact-form__submit {
@@ -9109,6 +9065,11 @@ body.error404 .info__blockText.text-center {
     padding-right: 12px;
   }
 
+  .start-your-quote-online__items .js-block-date .wrap-calendar,
+  .start-your-quote-online .select2-dropdown {
+    width: 256px !important;
+  }
+
   .button-to-top.there-is-a-block-sta {
     left: 20px;
     right: 20px;
@@ -10444,17 +10405,8 @@ body.error404 .info__blockText.text-center {
     margin-bottom: 4px;
   }
 
-  .contact-form textarea {
+  .contact-form .wrap-textarea {
     height: 160px;
-  }
-
-  .contact-form .text-no-valid {
-    bottom: 10px;
-    font-size: 10px;
-  }
-
-  .contact-form .text-no-valid.under-textarea {
-    bottom: 19px;
   }
 
   .advertise-with-us__items {
@@ -10777,6 +10729,13 @@ body.error404 .info__blockText.text-center {
   }
 }
 
+@media screen and (max-width: 380.98px) {
+  .start-your-quote-online__items .js-block-date .wrap-calendar,
+  .start-your-quote-online .select2-dropdown {
+    width: 286px !important;
+  }
+}
+
 @media screen and (max-width: 360.98px) {
   .part-hidden__block .list-columns .list-column {
     padding-left: 0;
@@ -10788,6 +10747,11 @@ body.error404 .info__blockText.text-center {
 
   .part-hidden__block .list-columns .list-column:nth-child(even) {
     width: 45%;
+  }
+
+  .start-your-quote-online__items .js-block-date .wrap-calendar,
+  .start-your-quote-online .select2-dropdown {
+    width: 246px !important;
   }
 }
 
