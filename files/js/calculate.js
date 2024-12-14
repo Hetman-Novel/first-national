@@ -148,5 +148,78 @@ document.addEventListener('DOMContentLoaded', function() {
          initMap();
          observeFields();
       };
+
+      // Scroll top
+      const wrapCalculatorForm = document.querySelector('.wrap-calculator-form');
+      const headerContainer = document.querySelector('.header-container');
+    
+      if (wrapCalculatorForm && headerContainer) {
+         const stepButtons = wrapCalculatorForm.querySelectorAll('.calculator-form__stepButton');
+         const stepBlockButtons = wrapCalculatorForm.querySelectorAll('.calculator-form__stepBlockHead button');
+      
+         // Function for smooth scrolling
+         function scrollToFormTop() {
+            const headerHeight = headerContainer.offsetHeight;
+      
+            // Scroll to `.wrap-calculator-form`
+            wrapCalculatorForm.scrollIntoView({
+               behavior: 'smooth',
+               block: 'start'
+            });
+      
+            // Adjust the scroll position
+            setTimeout(() => {
+               const currentScroll = window.scrollY;
+               window.scrollTo({
+                  top: currentScroll - headerHeight,
+                  behavior: 'smooth'
+               });
+            }, 300); // Adjust timing for scrollIntoView
+         }
+      
+         // Handler for buttons .calculator-form__stepButton
+         stepButtons.forEach(button => {
+            button.addEventListener('click', () => {
+               const parentStep = button.closest('.calculator-form__step');
+      
+               // Scroll only if parent has step-valid class
+               if (parentStep && parentStep.classList.contains('step-valid') && window.innerWidth <= 900) {
+                  scrollToFormTop();
+               }
+            });
+         });
+      
+         // Handler for buttons inside .calculator-form__stepBlockHead
+         stepBlockButtons.forEach(button => {
+            button.addEventListener('click', () => {
+               if (window.innerWidth <= 900) {
+                  scrollToFormTop();
+               }
+            });
+         });
+      
+         // Update handlers when orientation changes
+         window.addEventListener('orientationchange', () => {
+            stepButtons.forEach(button => {
+               button.removeEventListener('click', scrollToFormTop);
+               button.addEventListener('click', () => {
+                  const parentStep = button.closest('.calculator-form__step');
+         
+                  if (parentStep && parentStep.classList.contains('step-valid') && window.innerWidth <= 900) {
+                     scrollToFormTop();
+                  }
+               });
+            });
+      
+            stepBlockButtons.forEach(button => {
+               button.removeEventListener('click', scrollToFormTop);
+               button.addEventListener('click', () => {
+                  if (window.innerWidth <= 900) {
+                     scrollToFormTop();
+                  }
+               });
+            });
+         });
+      }
    }
 });

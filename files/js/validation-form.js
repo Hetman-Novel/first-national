@@ -64,9 +64,38 @@ document.addEventListener('DOMContentLoaded', () => {
 				// For phones: remove invalid characters
 				if (field.classList.contains('js-phone')) {
 					field.addEventListener('input', () => {
-						field.value = field.value.replace(/[^0-9+]/g, '');
+						// Remove all invalid characters except numbers, plus, hyphens, brackets and spaces
+						field.value = field.value.replace(/[^0-9+()\s-]/g, '');
+			
+						// Limit the string length to 16 characters
+						if (field.value.length > 16) {
+							field.value = field.value.slice(0, 16);
+						}
+			
+						// Remove unnecessary repetitions of symbols + - ( ) and spaces
+						field.value = field.value
+							.replace(/\++/g, '+') // Only one "+" symbol
+							.replace(/-+/g, '-') // Only one "-" symbol in a row
+							.replace(/\(+/g, '(') // Only one character "("
+							.replace(/\)+/g, ')') // Only one character ")"
+							.replace(/\s+/g, ' '); // Only one space in a row
+			
+						// Remove the "+" symbol from anywhere except the beginning
+						if (field.value.indexOf('+') > 0) {
+							field.value = field.value.replace(/\+/g, '');
+						}
+			
+						// Check the correctness of +1 at the beginning
+						if (field.value.startsWith('+') && !field.value.startsWith('+1')) {
+							field.value = field.value.replace(/^\+\d*/, '+1');
+						}
+			
+						// Remove country code repetitions +1
+						if (field.value.startsWith('+1') && field.value.slice(2).includes('+1')) {
+							field.value = field.value.replace(/(?<=\+1).*?\+1/g, '');
+						}
 					});
-				}
+			   }
 		
 				// Add a MutationObserver to track changes to the value attribute
 				const observer = new MutationObserver(() => {
@@ -338,8 +367,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	  * @returns {boolean} - Is this a valid phone number?
 	  */
 	function isValidPhone(phone) {
-		return /^\+?\d{4,}$/.test(phone);
-	}
+		const phoneRegex = /^\+?1?\s*\(?\d{3}\)?[-\s]?\d{3}[-\s]?\d{4}$/;
+		return phoneRegex.test(phone.trim());
+   }
   
 
 	// Logic of form steps (step switching)
@@ -460,14 +490,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// Field validation
 		function validateField(field, parentBlock) {
-			if (field.value.trim() === '') {
+			const currentDate = new Date(); // Current date
+			currentDate.setHours(0, 0, 0, 0); // Remove time for comparison only by date
+	  
+			// Convert the field value to a date
+			const fieldDateParts = field.value.trim().split('/');
+			const fieldDate = new Date(
+				parseInt(fieldDateParts[2], 10), // Year
+				parseInt(fieldDateParts[1], 10) - 1, // Month (0-index)
+				parseInt(fieldDateParts[0], 10) // Day
+			);
+	  
+			if (field.value.trim() === '' || isNaN(fieldDate)) {
+				// Field is empty or date is incorrect
 				parentBlock.classList.add('no-valid');
 				parentBlock.classList.remove('valid');
+			} else if (fieldDate < currentDate) {
+				// Date in the past
+				parentBlock.classList.add('no-valid');
+				parentBlock.classList.remove('valid');
+				//console.error('The selected date cannot be in the past.');
 			} else {
+				// Date is correct
 				parentBlock.classList.add('valid');
 				parentBlock.classList.remove('no-valid');
 			}
-		}
+	   }
 	});
 	/* <- Calendar logic */
 
