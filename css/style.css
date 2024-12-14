@@ -2260,6 +2260,11 @@ body {
   pointer-events: all;
 }
 
+.there-block-info p a {
+  position: relative;
+  z-index: 6;
+}
+
 .written-column .block-info-for-link {
   transform: translateX(85%);
 }
